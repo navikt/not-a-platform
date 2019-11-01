@@ -1,0 +1,12 @@
+{
+  "name": "@navikt/application-wrapper",
+  "version": "1.0.0",
+  "main": "applicationWrapper.js",
+  "scripts": {
+    "tsc": "tsc -w"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "@navikt/decorator": "1.0.0"
+  }
+}

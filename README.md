@@ -1,0 +1,3 @@
+- to build: `npm i -g lerna && lerna bootstrap`
+- to run tsc-compiler with watching: `npm run tsc-watch`
+- to run app: `npm start`

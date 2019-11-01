@@ -1,0 +1,21 @@
+{
+  "name": "not-a-platform",
+  "version": "1.0.0",
+  "author": "navikt",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel ./app/index.html",
+    "tsc-watch": "lerna run tsc --parallel"
+  },
+  "devDependencies": {
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.3",
+    "lerna": "^3.18.3",
+    "prettier": "^1.18.2",
+    "typescript": "^3.6.4"
+  },
+  "dependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0"
+  }
+}

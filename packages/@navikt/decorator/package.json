@@ -1,0 +1,12 @@
+{
+  "name": "@navikt/decorator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "decorator.js",
+  "scripts": {
+    "tsc": "tsc -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT"
+}

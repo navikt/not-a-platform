@@ -1,0 +1,6 @@
+{
+  "packages": [
+    "packages/@navikt/*"
+  ],
+  "version": "0.0.0"
+}
