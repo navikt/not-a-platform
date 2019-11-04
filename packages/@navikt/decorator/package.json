@@ -8,5 +8,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@navikt/bem-utils": "1.0.0"
+  },
+  "devDependencies": {
+    "less": "^3.10.3"
+  }
 }

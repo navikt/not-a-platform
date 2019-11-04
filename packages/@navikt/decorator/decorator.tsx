@@ -1,11 +1,16 @@
 import * as React from 'react';
+import { Sidetittel } from 'nav-frontend-typografi';
+import bem from '@navikt/bem-utils';
+import './decorator.less';
 
-const Decorator: React.FunctionComponent = ({ children }) => {
+const decoratorCls = bem('decorator');
+const Decorator: React.FunctionComponent = () => {
     return (
-        <>
-            <h2 style={{ color: 'red' }}>Decorator</h2>
-            {children}
-        </>
+        <header className={decoratorCls.block}>
+            <Sidetittel className={decoratorCls.element('title')}>
+                NAV
+            </Sidetittel>
+        </header>
     );
 };
 

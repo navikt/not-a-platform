@@ -1,0 +1,15 @@
+{
+  "name": "@navikt/bem-utils",
+  "version": "1.0.0",
+  "description": "> TODO: description",
+  "author": "Erlend Vige <erlend.vige@gmail.com>",
+  "homepage": "https://github.com/navikt/not-a-platform#readme",
+  "license": "MIT",
+  "main": "bemUtils.js",
+  "scripts": {
+    "tsc": "tsc -w"
+  },
+  "bugs": {
+    "url": "https://github.com/navikt/not-a-platform/issues"
+  }
+}
