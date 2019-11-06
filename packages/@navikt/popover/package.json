@@ -1,0 +1,13 @@
+{
+  "name": "@navikt/popover",
+  "version": "1.0.0",
+  "author": "NAV",
+  "license": "MIT",
+  "main": "popover.js",
+  "scripts": {
+    "tsc": "tsc -w"
+  },
+  "dependencies": {
+    "react-popper": "^1.3.4"
+  }
+}

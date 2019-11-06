@@ -10,7 +10,8 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
-    "@navikt/bem-utils": "1.0.0"
+    "@navikt/bem-utils": "1.0.0",
+    "@navikt/popover": "1.0.0"
   },
   "devDependencies": {
     "less": "^3.10.3"
