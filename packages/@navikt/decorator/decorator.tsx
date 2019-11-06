@@ -3,15 +3,35 @@ import { Sidetittel } from 'nav-frontend-typografi';
 import bem from '@navikt/bem-utils';
 import Popover from '@navikt/popover';
 import './decorator.less';
+import User from './components/user/user';
+
+interface DecoratorInterface {
+  pageTitle: string;
+  userName: string;
+  userUnit: string;
+  renderUserPopoverContent?: () => React.ReactNode;
+  renderLinksPopoverContent?: () => React.ReactNode;
+  loading?: boolean;
+}
 
 const decoratorCls = bem('decorator');
-const Decorator: React.FunctionComponent = () => {
+const Decorator: React.FunctionComponent<DecoratorInterface> = ({
+                                                pageTitle,
+                                                userName,
+                                                userUnit,
+                                                loading,
+                                                renderUserPopoverContent,
+                                                renderLinksPopoverContent
+                                            }) => {
     const [popoverIsOpen, setPopoverIsOpen] = React.useState(false);
     return (
         <header className={decoratorCls.block}>
+            <div className={decoratorCls.element('column')}>
             <Sidetittel className={decoratorCls.element('title')}>
                 NAV
+                <span className={decoratorCls.element('subtitle')}>{pageTitle}</span>
             </Sidetittel>
+            </div>
             <Popover
                 popperProps={{
                     children: ({ ref, style, placement, arrowProps }) => (
@@ -45,6 +65,17 @@ const Decorator: React.FunctionComponent = () => {
                 }}
                 isOpen={popoverIsOpen}
             />
+            <div className={decoratorCls.element('column')}>
+                {userName && (
+                    <User
+                        name={userName}
+                        unit={userUnit}
+                        isInteractive={!!renderUserPopoverContent}
+                        renderUserPopoverContent={renderUserPopoverContent}
+                    ></User>
+                )}
+            </div>
+
         </header>
     );
 };
