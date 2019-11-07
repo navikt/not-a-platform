@@ -27,20 +27,13 @@ const Decorator: React.FunctionComponent<DecoratorInterface> = ({
             <div className={decoratorCls.element('column')}>
                 <PageTitle className={decoratorCls.element('title')}>
                     NAV
-                    <span className={decoratorCls.element('subtitle')}>
-                        {pageTitle}
-                    </span>
+                    <span className={decoratorCls.element('subtitle')}>{pageTitle}</span>
                 </PageTitle>
             </div>
             <div className={decoratorCls.element('column')}>
                 <Popover
                     popperProps={{
-                        children: ({
-                            placement,
-                            ref,
-                            style,
-                            scheduleUpdate,
-                        }) => {
+                        children: ({ placement, ref, style, scheduleUpdate }) => {
                             setTimeout(scheduleUpdate);
                             //scheduleUpdate();
                             return (
@@ -50,9 +43,7 @@ const Decorator: React.FunctionComponent<DecoratorInterface> = ({
                                     style={{
                                         ...style,
                                         top: '8px',
-                                        display: !popoverIsOpen
-                                            ? 'none'
-                                            : 'block',
+                                        display: !popoverIsOpen ? 'none' : 'block',
                                     }}
                                 >
                                     {renderUserPopoverContent()}
@@ -68,9 +59,8 @@ const Decorator: React.FunctionComponent<DecoratorInterface> = ({
                                     name={userName}
                                     unit={userUnit}
                                     isInteractive={!!renderUserPopoverContent}
-                                    onClick={() =>
-                                        setPopoverIsOpen(!popoverIsOpen)
-                                    }
+                                    onClick={() => setPopoverIsOpen(!popoverIsOpen)}
+                                    isToggled={popoverIsOpen}
                                 ></User>
                             </div>
                         ),

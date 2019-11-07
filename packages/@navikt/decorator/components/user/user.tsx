@@ -1,8 +1,8 @@
-import * as React from 'react';
 import bem from '@navikt/bem-utils';
+import { NedChevron, OppChevron } from 'nav-frontend-chevron';
 import { Normaltekst as Text } from 'nav-frontend-typografi';
+import * as React from 'react';
 import './user.less';
-
 const userCls = bem('user');
 
 interface UserInterface {
@@ -10,14 +10,10 @@ interface UserInterface {
     unit?: string;
     isInteractive?: boolean;
     onClick: (e: React.FormEvent<HTMLButtonElement>) => void;
+    isToggled?: boolean;
 }
 
-const User: React.FunctionComponent<UserInterface> = ({
-    name,
-    unit,
-    isInteractive,
-    onClick,
-}) => {
+const User: React.FunctionComponent<UserInterface> = ({ name, unit, isInteractive, onClick, isToggled }) => {
     return (
         <>
             {isInteractive ? (
@@ -25,18 +21,29 @@ const User: React.FunctionComponent<UserInterface> = ({
                     onClick={onClick}
                     type="button"
                     className={userCls.block}
+                    aria-haspopup="dialog"
+                    aria-expanded={isToggled}
                 >
-                    <Text className={userCls.element('name')}>{name}</Text>
-                    {unit && (
-                        <Text className={userCls.element('unit')}>{unit}</Text>
+                    <span>
+                        <Text tag="span" className={userCls.element('name')}>
+                            {name}
+                        </Text>
+                        {unit && (
+                            <Text tag="span" className={userCls.element('unit')}>
+                                {unit}
+                            </Text>
+                        )}
+                    </span>
+                    {isToggled ? (
+                        <OppChevron className={userCls.element('chevron')} />
+                    ) : (
+                        <NedChevron className={userCls.element('chevron')} />
                     )}
                 </button>
             ) : (
                 <div className={userCls.block}>
                     <Text className={userCls.element('name')}>{name}</Text>
-                    {unit && (
-                        <Text className={userCls.element('unit')}>{unit}</Text>
-                    )}
+                    {unit && <Text className={userCls.element('unit')}>{unit}</Text>}
                 </div>
             )}
         </>
