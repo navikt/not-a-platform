@@ -1,41 +1,46 @@
 import * as React from 'react';
-import './user.less';
 import bem from '@navikt/bem-utils';
+import { Normaltekst as Text } from 'nav-frontend-typografi';
+import './user.less';
 
 const userCls = bem('user');
 
 interface UserInterface {
-  name: string;
-  unit?: string;
-  isInteractive?: boolean;
-  renderUserPopoverContent?: () => React.ReactNode;
+    name: string;
+    unit?: string;
+    isInteractive?: boolean;
+    onClick: (e: React.FormEvent<HTMLButtonElement>) => void;
 }
 
-const User: React.FunctionComponent<UserInterface> = ({ name, unit, isInteractive, renderUserPopoverContent }) => {
-  const [isToggled, setIsToggled] = React.useState(false);
-
-  const buttonClickHandler = (e: React.FormEvent) => {
-    if (e) {
-      e.preventDefault();
-    }
-    setIsToggled(!isToggled);
-  };
-  return (
-    <>
-      {isInteractive ? (
-        <button onClick={buttonClickHandler} type="button" className={userCls.block}>
-          <span className={userCls.element('name')}>{name}</span>
-          {unit && <span className={userCls.element('unit')}>{unit}</span>}
-        </button>
-      ) : (
-        <div className={userCls.block}>
-          <p className={userCls.element('name')}>{name}</p>
-          {unit && <p className={userCls.element('unit')}>{unit}</p>}
-        </div>
-      )}
-      <div>{isToggled && renderUserPopoverContent()}</div>
-    </>
-  );
+const User: React.FunctionComponent<UserInterface> = ({
+    name,
+    unit,
+    isInteractive,
+    onClick,
+}) => {
+    return (
+        <>
+            {isInteractive ? (
+                <button
+                    onClick={onClick}
+                    type="button"
+                    className={userCls.block}
+                >
+                    <Text className={userCls.element('name')}>{name}</Text>
+                    {unit && (
+                        <Text className={userCls.element('unit')}>{unit}</Text>
+                    )}
+                </button>
+            ) : (
+                <div className={userCls.block}>
+                    <Text className={userCls.element('name')}>{name}</Text>
+                    {unit && (
+                        <Text className={userCls.element('unit')}>{unit}</Text>
+                    )}
+                </div>
+            )}
+        </>
+    );
 };
 
 export default User;

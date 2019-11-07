@@ -7,6 +7,8 @@
   },
   "license": "MIT",
   "dependencies": {
-    "@navikt/decorator": "1.0.0"
+    "@navikt/decorator": "1.0.0",
+    "@navikt/boxed-list-with-links": "1.0.0",
+    "@navikt/boxed-list-with-selection": "1.0.0"
   }
 }
