@@ -2,11 +2,11 @@ import * as React from 'react';
 import { Sidetittel as PageTitle } from 'nav-frontend-typografi';
 import bem from '@navikt/bem-utils';
 import Popover from '@navikt/popover';
-import User from './components/user/user';
+import CurrentUserInfo from './components/user-content/CurrentUserInfo';
 import './decorator.less';
 
 interface DecoratorInterface {
-    pageTitle: string;
+    title: string;
     userName: string;
     userUnit: string;
     renderUserPopoverContent?: () => React.ReactNode;
@@ -16,66 +16,45 @@ interface DecoratorInterface {
 
 const decoratorCls = bem('decorator');
 const Decorator: React.FunctionComponent<DecoratorInterface> = ({
-    pageTitle,
+    title,
     userName,
     userUnit,
     renderUserPopoverContent,
 }) => {
-    const [popoverIsOpen, setPopoverIsOpen] = React.useState(false);
+    const [popperIsVisible, setPopperIsVisible] = React.useState(false);
     return (
         <header className={decoratorCls.block}>
             <div className={decoratorCls.element('column')}>
                 <PageTitle className={decoratorCls.element('title')}>
                     NAV
                     <span className={decoratorCls.element('subtitle')}>
-                        {pageTitle}
+                        {title}
                     </span>
                 </PageTitle>
             </div>
             <div className={decoratorCls.element('column')}>
                 <Popover
+                    popperIsVisible={popperIsVisible}
+                    renderArrowElement={true}
                     popperProps={{
-                        children: ({
-                            placement,
-                            ref,
-                            style,
-                            scheduleUpdate,
-                        }) => {
-                            setTimeout(scheduleUpdate);
-                            //scheduleUpdate();
-                            return (
-                                <div
-                                    data-placement={placement}
-                                    ref={ref}
-                                    style={{
-                                        ...style,
-                                        top: '8px',
-                                        display: !popoverIsOpen
-                                            ? 'none'
-                                            : 'block',
-                                    }}
-                                >
-                                    {renderUserPopoverContent()}
-                                </div>
-                            );
-                        },
+                        children: () => renderUserPopoverContent(),
                         placement: 'bottom-start',
+                        positionFixed: true,
                     }}
                     referenceProps={{
                         children: ({ ref }) => (
                             <div ref={ref}>
-                                <User
+                                <CurrentUserInfo
                                     name={userName}
                                     unit={userUnit}
                                     isInteractive={!!renderUserPopoverContent}
                                     onClick={() =>
-                                        setPopoverIsOpen(!popoverIsOpen)
+                                        setPopperIsVisible(!popperIsVisible)
                                     }
-                                ></User>
+                                />
                             </div>
                         ),
                     }}
-                    isOpen={popoverIsOpen}
                 />
             </div>
         </header>

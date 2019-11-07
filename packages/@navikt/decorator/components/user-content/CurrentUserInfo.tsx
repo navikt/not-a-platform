@@ -1,18 +1,18 @@
 import * as React from 'react';
 import bem from '@navikt/bem-utils';
 import { Normaltekst as Text } from 'nav-frontend-typografi';
-import './user.less';
+import './userContent.less';
 
 const userCls = bem('user');
 
-interface UserInterface {
+interface CurrentUserInfoProps {
     name: string;
     unit?: string;
     isInteractive?: boolean;
     onClick: (e: React.FormEvent<HTMLButtonElement>) => void;
 }
 
-const User: React.FunctionComponent<UserInterface> = ({
+const CurrentUserInfo: React.FunctionComponent<CurrentUserInfoProps> = ({
     name,
     unit,
     isInteractive,
@@ -43,4 +43,4 @@ const User: React.FunctionComponent<UserInterface> = ({
     );
 };
 
-export default User;
+export default CurrentUserInfo;

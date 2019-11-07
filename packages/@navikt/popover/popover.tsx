@@ -10,18 +10,52 @@ import {
 interface PopoverProps {
     popperProps: PopperProps;
     referenceProps: ReferenceProps;
-    isOpen: boolean;
+    popperIsVisible: boolean;
+    renderArrowElement?: boolean;
 }
 
 const Popover: React.FunctionComponent<PopoverProps> = ({
     popperProps,
     referenceProps,
-    isOpen,
+    popperIsVisible,
+    renderArrowElement,
 }) => {
+    const { children, ...otherPopperProps } = popperProps;
     return (
         <Manager>
-            <Popper {...popperProps}></Popper>
-            <Reference {...referenceProps}></Reference>
+            <Reference {...referenceProps} />
+            <Popper {...otherPopperProps}>
+                {popperChildrenProps => {
+                    const {
+                        placement,
+                        ref,
+                        style,
+                        arrowProps,
+                    } = popperChildrenProps;
+                    return (
+                        <span
+                            data-placement={placement}
+                            ref={ref}
+                            style={{
+                                ...style,
+                                top: '8px',
+                                visibility: popperIsVisible
+                                    ? 'visible'
+                                    : 'hidden',
+                            }}
+                        >
+                            {renderArrowElement && (
+                                <div
+                                    {...arrowProps}
+                                    className="arrow"
+                                    data-placement={placement}
+                                />
+                            )}
+                            {children(popperChildrenProps)}
+                        </span>
+                    );
+                }}
+            </Popper>
         </Manager>
     );
 };

@@ -8,24 +8,8 @@ interface BoxedListProps {
     children: React.ReactNode;
 }
 
-// temporarily using index to set selected in order to see styling
 const BoxedList: React.FunctionComponent<BoxedListProps> = ({ children }) => (
-    <ul className={listCls.block}>
-        {children}
-        {/*listItems.map((item, index) => (
-            <li
-                className={listCls.element(
-                    'item',
-                    index === 0 ? 'selected' : ''
-                )}
-                key={item.itemHref}
-            >
-                <a href={item.itemHref} className={listCls.element('anchor')}>
-                    <Normaltekst>{item.itemName}</Normaltekst>
-                </a>
-            </li>
-        ))*/}
-    </ul>
+    <ul className={listCls.block}>{children}</ul>
 );
 
 export default BoxedList;
