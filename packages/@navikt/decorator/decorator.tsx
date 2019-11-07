@@ -51,6 +51,7 @@ const Decorator: React.FunctionComponent<DecoratorInterface> = ({
                                     onClick={() =>
                                         setPopperIsVisible(!popperIsVisible)
                                     }
+                                    isToggled={popperIsVisible}
                                 />
                             </div>
                         ),

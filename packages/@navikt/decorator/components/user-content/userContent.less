@@ -1,27 +1,35 @@
 .user {
-  color: white;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  justify-content: center;
-  background-color: transparent;
-  border: none;
-  border-left: 1px solid rgb(89, 81, 75);
-  padding: 0 0 0 16px;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: transparent;
+    border: none;
+    border-left: 1px solid rgb(89, 81, 75);
+    padding: 0 0 0 16px;
 }
 
 .user[type='button'] {
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .user__name {
-  font-size: 1rem;
-  margin: 0;
-  position: relative;
-  top: 4px;
+    font-size: 1rem;
+    margin: 0;
+    position: relative;
+    top: 4px;
+    display: block;
 }
 
 .user__unit {
-  font-size: 0.75rem;
-  margin: 0;
+    font-size: 0.75rem;
+    margin: 0;
+    display: block;
+}
+
+.user__chevron {
+    color: white;
+    margin-left: 16px;
 }

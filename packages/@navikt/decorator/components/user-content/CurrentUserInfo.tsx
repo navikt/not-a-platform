@@ -1,8 +1,8 @@
 import * as React from 'react';
 import bem from '@navikt/bem-utils';
+import { NedChevron, OppChevron } from 'nav-frontend-chevron';
 import { Normaltekst as Text } from 'nav-frontend-typografi';
 import './userContent.less';
-
 const userCls = bem('user');
 
 interface CurrentUserInfoProps {
@@ -10,6 +10,7 @@ interface CurrentUserInfoProps {
     unit?: string;
     isInteractive?: boolean;
     onClick: (e: React.FormEvent<HTMLButtonElement>) => void;
+    isToggled?: boolean;
 }
 
 const CurrentUserInfo: React.FunctionComponent<CurrentUserInfoProps> = ({
@@ -17,6 +18,7 @@ const CurrentUserInfo: React.FunctionComponent<CurrentUserInfoProps> = ({
     unit,
     isInteractive,
     onClick,
+    isToggled,
 }) => {
     return (
         <>
@@ -25,10 +27,26 @@ const CurrentUserInfo: React.FunctionComponent<CurrentUserInfoProps> = ({
                     onClick={onClick}
                     type="button"
                     className={userCls.block}
+                    aria-haspopup="dialog"
+                    aria-expanded={isToggled}
                 >
-                    <Text className={userCls.element('name')}>{name}</Text>
-                    {unit && (
-                        <Text className={userCls.element('unit')}>{unit}</Text>
+                    <span>
+                        <Text tag="span" className={userCls.element('name')}>
+                            {name}
+                        </Text>
+                        {unit && (
+                            <Text
+                                tag="span"
+                                className={userCls.element('unit')}
+                            >
+                                {unit}
+                            </Text>
+                        )}
+                    </span>
+                    {isToggled ? (
+                        <OppChevron className={userCls.element('chevron')} />
+                    ) : (
+                        <NedChevron className={userCls.element('chevron')} />
                     )}
                 </button>
             ) : (
