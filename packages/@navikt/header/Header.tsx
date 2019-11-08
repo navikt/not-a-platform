@@ -3,20 +3,20 @@ import { Sidetittel as PageTitle } from 'nav-frontend-typografi';
 import bem from '@navikt/bem-utils';
 import Popover from '@navikt/popover';
 import CurrentUserInfo from './components/user-content/CurrentUserInfo';
-import './decorator.less';
 import Systems from './components/systems/systems';
+import './header.less';
 
-interface DecoratorInterface {
+interface HeaderProps {
     title: string;
     userName: string;
-    userUnit: string;
+    userUnit?: string;
     renderUserPopoverContent?: () => React.ReactNode;
     renderLinksPopoverContent?: () => React.ReactNode;
     loading?: boolean;
 }
 
-const decoratorCls = bem('decorator');
-const Decorator: React.FunctionComponent<DecoratorInterface> = ({
+const headerCls = bem('header');
+const Header: React.FunctionComponent<HeaderProps> = ({
     title,
     userName,
     userUnit,
@@ -46,16 +46,16 @@ const Decorator: React.FunctionComponent<DecoratorInterface> = ({
     };
 
     return (
-        <header className={decoratorCls.block}>
-            <div className={decoratorCls.element('column')}>
-                <PageTitle className={decoratorCls.element('title')}>
+        <header className={headerCls.block}>
+            <div className={headerCls.element('column')}>
+                <PageTitle className={headerCls.element('title')}>
                     NAV
-                    <span className={decoratorCls.element('subtitle')}>
+                    <span className={headerCls.element('subtitle')}>
                         {title}
                     </span>
                 </PageTitle>
             </div>
-            <div className={decoratorCls.element('column')}>
+            <div className={headerCls.element('column')}>
                 <Popover
                     popperIsVisible={linksPopperIsVisible}
                     renderArrowElement={true}
@@ -104,4 +104,4 @@ const Decorator: React.FunctionComponent<DecoratorInterface> = ({
     );
 };
 
-export default Decorator;
+export default Header;

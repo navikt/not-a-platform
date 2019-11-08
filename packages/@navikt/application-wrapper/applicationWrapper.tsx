@@ -1,10 +1,10 @@
 import * as React from 'react';
-import Decorator from '@navikt/decorator';
+import Header from '@navikt/header';
 import BoxedListWithLinks from '@navikt/boxed-list-with-links';
 import BoxedListWithSelection from '@navikt/boxed-list-with-selection';
 
 const ApplicationWrapper: React.FunctionComponent = ({ children }) => (
-    <Decorator
+    <Header
         title="Svangerskap og Fødsel"
         userName="Navn Brukersen"
         userUnit="NFP Drammen"
@@ -26,7 +26,7 @@ const ApplicationWrapper: React.FunctionComponent = ({ children }) => (
         )}
     >
         {children}
-    </Decorator>
+    </Header>
 );
 
 export default ApplicationWrapper;
