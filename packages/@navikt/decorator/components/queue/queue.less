@@ -1,0 +1,48 @@
+.queue {
+    display: flex;
+    align-items: center;
+    border-left: 1px solid rgb(89, 81, 75);
+    position: relative;
+
+    &__anchor {
+        padding: 0 8px;
+        border: 2px solid transparent;
+        height: calc(100% - 4px);
+        align-items: center;
+        display: flex;
+
+        &:hover {
+            border: 2px solid white;
+        }
+    }
+
+    &__hidden-text {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        padding: 0;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        border: 0;
+    }
+
+    &__tasks-counter {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 4px;
+        right: 4px;
+        height: 16px;
+        width: 21px;
+        border-radius: 10px;
+        background-color: #c30000;
+        border: 2px solid white;
+        color: white;
+        font-size: 0.875rem;
+        line-height: 0.875rem;
+        font-family: 'Source Sans Pro', Arial, sans-serif;
+        font-weight: 600;
+    }
+}

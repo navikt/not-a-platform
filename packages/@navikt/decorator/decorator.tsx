@@ -12,6 +12,7 @@ interface DecoratorInterface {
     userUnit: string;
     renderUserPopoverContent?: () => React.ReactNode;
     renderLinksPopoverContent?: () => React.ReactNode;
+    renderSearchLink?: () => React.ReactNode;
     loading?: boolean;
 }
 
@@ -22,14 +23,10 @@ const Decorator: React.FunctionComponent<DecoratorInterface> = ({
     userUnit,
     renderUserPopoverContent,
     renderLinksPopoverContent,
+    renderSearchLink,
 }) => {
-    const [
-        userInfoPopperIsVisible,
-        setUserInfoPopperIsVisible,
-    ] = React.useState(false);
-    const [linksPopperIsVisible, setLinksPopperIsVisible] = React.useState(
-        false
-    );
+    const [userInfoPopperIsVisible, setUserInfoPopperIsVisible] = React.useState(false);
+    const [linksPopperIsVisible, setLinksPopperIsVisible] = React.useState(false);
 
     const systemsClickHandler = () => {
         setLinksPopperIsVisible(!linksPopperIsVisible);
@@ -50,12 +47,11 @@ const Decorator: React.FunctionComponent<DecoratorInterface> = ({
             <div className={decoratorCls.element('column')}>
                 <PageTitle className={decoratorCls.element('title')}>
                     NAV
-                    <span className={decoratorCls.element('subtitle')}>
-                        {title}
-                    </span>
+                    <span className={decoratorCls.element('subtitle')}>{title}</span>
                 </PageTitle>
             </div>
             <div className={decoratorCls.element('column')}>
+                {renderSearchLink && renderSearchLink()}
                 <Popover
                     popperIsVisible={linksPopperIsVisible}
                     renderArrowElement={true}
@@ -68,10 +64,7 @@ const Decorator: React.FunctionComponent<DecoratorInterface> = ({
                     referenceProps={{
                         children: ({ ref }) => (
                             <div ref={ref}>
-                                <Systems
-                                    onClick={systemsClickHandler}
-                                    isToggled={linksPopperIsVisible}
-                                />
+                                <Systems onClick={systemsClickHandler} isToggled={linksPopperIsVisible} />
                             </div>
                         ),
                     }}
