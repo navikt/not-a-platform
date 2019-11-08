@@ -10,7 +10,10 @@ interface SystemsInterface {
     isToggled?: boolean;
 }
 
-const Systems: React.FunctionComponent<SystemsInterface> = ({ onClick, isToggled }) => {
+const Systems: React.FunctionComponent<SystemsInterface> = ({
+    onClick,
+    isToggled,
+}) => {
     return (
         <div className={systemsCls.block}>
             <Systemerknapp

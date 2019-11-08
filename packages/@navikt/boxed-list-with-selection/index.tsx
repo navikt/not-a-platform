@@ -13,15 +13,18 @@ interface BoxedListWithSelectionProps {
     items: ListItemProps[];
 }
 
-const listItemCls = bem('boxedList__selectItem');
+const boxedListWithSelectionItemCls = bem('boxedList__selectItem');
 
 const BoxedListWithSelection: React.FunctionComponent<
     BoxedListWithSelectionProps
 > = ({ items }) => (
     <BoxedList>
         {items.map(({ name, href }) => (
-            <li className={listItemCls.block} key={href}>
-                <a href={href} className={listItemCls.element('anchor')}>
+            <li className={boxedListWithSelectionItemCls.block} key={href}>
+                <a
+                    href={href}
+                    className={boxedListWithSelectionItemCls.element('anchor')}
+                >
                     <Normaltekst>{name}</Normaltekst>
                 </a>
             </li>

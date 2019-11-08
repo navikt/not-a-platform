@@ -12,6 +12,7 @@ interface PopoverProps {
     referenceProps: ReferenceProps;
     popperIsVisible: boolean;
     renderArrowElement?: boolean;
+    customPopperStyles?: React.CSSProperties;
 }
 
 const Popover: React.FunctionComponent<PopoverProps> = ({
@@ -19,6 +20,7 @@ const Popover: React.FunctionComponent<PopoverProps> = ({
     referenceProps,
     popperIsVisible,
     renderArrowElement,
+    customPopperStyles,
 }) => {
     const { children, ...otherPopperProps } = popperProps;
     return (
@@ -38,7 +40,7 @@ const Popover: React.FunctionComponent<PopoverProps> = ({
                             ref={ref}
                             style={{
                                 ...style,
-                                top: '8px',
+                                ...customPopperStyles,
                                 visibility: popperIsVisible
                                     ? 'visible'
                                     : 'hidden',

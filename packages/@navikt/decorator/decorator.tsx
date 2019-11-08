@@ -23,8 +23,13 @@ const Decorator: React.FunctionComponent<DecoratorInterface> = ({
     renderUserPopoverContent,
     renderLinksPopoverContent,
 }) => {
-    const [userInfoPopperIsVisible, setUserInfoPopperIsVisible] = React.useState(false);
-    const [linksPopperIsVisible, setLinksPopperIsVisible] = React.useState(false);
+    const [
+        userInfoPopperIsVisible,
+        setUserInfoPopperIsVisible,
+    ] = React.useState(false);
+    const [linksPopperIsVisible, setLinksPopperIsVisible] = React.useState(
+        false
+    );
 
     const systemsClickHandler = () => {
         setLinksPopperIsVisible(!linksPopperIsVisible);
@@ -45,13 +50,16 @@ const Decorator: React.FunctionComponent<DecoratorInterface> = ({
             <div className={decoratorCls.element('column')}>
                 <PageTitle className={decoratorCls.element('title')}>
                     NAV
-                    <span className={decoratorCls.element('subtitle')}>{title}</span>
+                    <span className={decoratorCls.element('subtitle')}>
+                        {title}
+                    </span>
                 </PageTitle>
             </div>
             <div className={decoratorCls.element('column')}>
                 <Popover
                     popperIsVisible={linksPopperIsVisible}
                     renderArrowElement={true}
+                    customPopperStyles={{ top: '8px' }}
                     popperProps={{
                         children: () => renderLinksPopoverContent(),
                         placement: 'bottom-start',
@@ -60,7 +68,10 @@ const Decorator: React.FunctionComponent<DecoratorInterface> = ({
                     referenceProps={{
                         children: ({ ref }) => (
                             <div ref={ref}>
-                                <Systems onClick={systemsClickHandler} isToggled={linksPopperIsVisible} />
+                                <Systems
+                                    onClick={systemsClickHandler}
+                                    isToggled={linksPopperIsVisible}
+                                />
                             </div>
                         ),
                     }}
@@ -68,6 +79,7 @@ const Decorator: React.FunctionComponent<DecoratorInterface> = ({
                 <Popover
                     popperIsVisible={userInfoPopperIsVisible}
                     renderArrowElement={true}
+                    customPopperStyles={{ top: '8px' }}
                     popperProps={{
                         children: () => renderUserPopoverContent(),
                         placement: 'bottom-start',
