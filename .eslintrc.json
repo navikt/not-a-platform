@@ -1,0 +1,37 @@
+{
+  "env": {
+    "es6": true,
+    "browser": true,
+    "mocha": true
+  },
+
+  "globals": {
+    "VERSION": "off"
+  },
+
+  "parser": "@typescript-eslint/parser",
+
+  "plugins": ["@typescript-eslint"],
+
+  "extends": ["airbnb", "plugin:@typescript-eslint/recommended", "prettier", "prettier/@typescript-eslint"],
+
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "ecmaVersion": 8,
+      "jsx": true,
+      "impliedStrict": true
+    }
+  },
+  "rules": {
+    "react/jsx-filename-extension": 0
+  },
+  "overrides": [
+    {
+      "files": ["*.spec.tsx"],
+      "rules": {
+        "no-unused-expressions": 0
+      }
+    }
+  ]
+}
