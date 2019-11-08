@@ -7,6 +7,7 @@ import './list.less';
 interface ListItemProps {
     name: string;
     href: string;
+    selected?: boolean;
 }
 
 interface BoxedListWithSelectionProps {
@@ -15,16 +16,18 @@ interface BoxedListWithSelectionProps {
 
 const boxedListWithSelectionItemCls = bem('boxedList__selectItem');
 
-const BoxedListWithSelection: React.FunctionComponent<
-    BoxedListWithSelectionProps
-> = ({ items }) => (
+const BoxedListWithSelection: React.FunctionComponent<BoxedListWithSelectionProps> = ({ items }) => (
     <BoxedList>
-        {items.map(({ name, href }) => (
-            <li className={boxedListWithSelectionItemCls.block} key={href}>
-                <a
-                    href={href}
-                    className={boxedListWithSelectionItemCls.element('anchor')}
-                >
+        {items.map(({ name, href, selected }) => (
+            <li
+                className={
+                    selected
+                        ? boxedListWithSelectionItemCls.blockModifier('selected')
+                        : boxedListWithSelectionItemCls.block
+                }
+                key={href}
+            >
+                <a href={href} className={boxedListWithSelectionItemCls.element('anchor')} aria-current={selected}>
                     <Normaltekst>{name}</Normaltekst>
                 </a>
             </li>
