@@ -1,27 +1,58 @@
 {
-  "name": "not-a-platform",
-  "version": "1.0.0",
-  "author": "navikt",
-  "license": "MIT",
-  "scripts": {
-    "start": "parcel ./app/index.html",
-    "tsc-watch": "lerna run tsc --parallel"
-  },
-  "devDependencies": {
-    "@types/react": "^16.9.11",
-    "@types/react-dom": "^16.9.3",
-    "lerna": "^3.18.3",
-    "nav-frontend-typografi-style": "^1.0.17",
-    "prettier": "^1.18.2",
-    "typescript": "^3.7.2"
-  },
-  "dependencies": {
-    "classnames": "^2.2.6",
-    "nav-frontend-core": "^4.0.11",
-    "nav-frontend-typografi": "^2.0.16",
-    "normalize.css": "^8.0.1",
-    "prop-types": "^15.7.2",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0"
-  }
+    "name": "not-a-platform",
+    "version": "1.0.0",
+    "author": "navikt",
+    "license": "MIT",
+    "scripts": {
+        "start": "parcel ./app/index.html",
+        "tsc-watch": "lerna run tsc --parallel"
+    },
+    "devDependencies": {
+        "@types/react": "^16.9.11",
+        "@types/react-dom": "^16.9.3",
+        "@typescript-eslint/eslint-plugin": "^2.3.2",
+        "@typescript-eslint/parser": "^2.3.2",
+        "eslint": "^6.5.1",
+        "eslint-config-airbnb": "^18.0.1",
+        "eslint-config-prettier": "^6.5.0",
+        "eslint-plugin-import": "^2.18.0",
+        "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-react": "^7.15.1",
+        "eslint-plugin-react-hooks": "^2.2.0",
+        "husky": "^3.0.9",
+        "lerna": "^3.18.3",
+        "lint-staged": "^9.4.2",
+        "nav-frontend-typografi-style": "^1.0.17",
+        "prettier": "^1.18.2",
+        "stylelint": "^11.1.1",
+        "stylelint-config-prettier": "^6.0.0",
+        "stylelint-prettier": "^1.1.1",
+        "typescript": "^3.7.2"
+    },
+    "dependencies": {
+        "classnames": "^2.2.6",
+        "nav-frontend-core": "^4.0.11",
+        "nav-frontend-typografi": "^2.0.16",
+        "normalize.css": "^8.0.1",
+        "prop-types": "^15.7.2",
+        "react": "^16.11.0",
+        "react-dom": "^16.11.0"
+    },
+    "lint-staged": {
+        "*.{ts,tsx}": [
+            "eslint --fix",
+            "prettier --write",
+            "git add"
+        ],
+        "*.{less}": [
+            "stylelint --fix",
+            "prettier --write",
+            "git add"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    }
 }
