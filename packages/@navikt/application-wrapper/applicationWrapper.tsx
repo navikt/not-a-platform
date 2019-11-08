@@ -24,9 +24,7 @@ const ApplicationWrapper: React.FunctionComponent = ({ children }) => (
                 ]}
             />
         )}
-    >
-        {children}
-    </Header>
+    />
 );
 
 export default ApplicationWrapper;
