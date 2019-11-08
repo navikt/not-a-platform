@@ -4,6 +4,7 @@ import bem from '@navikt/bem-utils';
 import Popover from '@navikt/popover';
 import CurrentUserInfo from './components/user-content/CurrentUserInfo';
 import './decorator.less';
+import Systems from './components/systems/systems';
 
 interface DecoratorInterface {
     title: string;
@@ -20,21 +21,52 @@ const Decorator: React.FunctionComponent<DecoratorInterface> = ({
     userName,
     userUnit,
     renderUserPopoverContent,
+    renderLinksPopoverContent,
 }) => {
-    const [popperIsVisible, setPopperIsVisible] = React.useState(false);
+    const [userInfoPopperIsVisible, setUserInfoPopperIsVisible] = React.useState(false);
+    const [linksPopperIsVisible, setLinksPopperIsVisible] = React.useState(false);
+
+    const systemsClickHandler = () => {
+        setLinksPopperIsVisible(!linksPopperIsVisible);
+        if (!linksPopperIsVisible) {
+            setUserInfoPopperIsVisible(false);
+        }
+    };
+
+    const currentUserInfoClickHandler = () => {
+        setUserInfoPopperIsVisible(!userInfoPopperIsVisible);
+        if (!userInfoPopperIsVisible) {
+            setLinksPopperIsVisible(false);
+        }
+    };
+
     return (
         <header className={decoratorCls.block}>
             <div className={decoratorCls.element('column')}>
                 <PageTitle className={decoratorCls.element('title')}>
                     NAV
-                    <span className={decoratorCls.element('subtitle')}>
-                        {title}
-                    </span>
+                    <span className={decoratorCls.element('subtitle')}>{title}</span>
                 </PageTitle>
             </div>
             <div className={decoratorCls.element('column')}>
                 <Popover
-                    popperIsVisible={popperIsVisible}
+                    popperIsVisible={linksPopperIsVisible}
+                    renderArrowElement={true}
+                    popperProps={{
+                        children: () => renderLinksPopoverContent(),
+                        placement: 'bottom-start',
+                        positionFixed: true,
+                    }}
+                    referenceProps={{
+                        children: ({ ref }) => (
+                            <div ref={ref}>
+                                <Systems onClick={systemsClickHandler} isToggled={linksPopperIsVisible} />
+                            </div>
+                        ),
+                    }}
+                />
+                <Popover
+                    popperIsVisible={userInfoPopperIsVisible}
                     renderArrowElement={true}
                     popperProps={{
                         children: () => renderUserPopoverContent(),
@@ -48,10 +80,8 @@ const Decorator: React.FunctionComponent<DecoratorInterface> = ({
                                     name={userName}
                                     unit={userUnit}
                                     isInteractive={!!renderUserPopoverContent}
-                                    onClick={() =>
-                                        setPopperIsVisible(!popperIsVisible)
-                                    }
-                                    isToggled={popperIsVisible}
+                                    onClick={currentUserInfoClickHandler}
+                                    isToggled={userInfoPopperIsVisible}
                                 />
                             </div>
                         ),
