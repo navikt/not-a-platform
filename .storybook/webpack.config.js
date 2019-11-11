@@ -12,11 +12,21 @@ module.exports = async ({ config, mode }) => {
         },
         {
             test: /\.(ts|tsx)$/,
-            loader: require.resolve('babel-loader'),
-            options: {
-                sourceType: 'unambiguous',
-                presets: [['react-app', { flow: false, typescript: true }]],
-            },
+            use: [
+                {
+                    loader: require.resolve('babel-loader'),
+                    options: {
+                        sourceType: 'unambiguous',
+                        presets: [['react-app', { flow: false, typescript: true }]],
+                    },
+                },
+                {
+                    loader: require.resolve('@storybook/source-loader'),
+                    options: { parser: 'typescript' },
+                },
+                require.resolve('react-docgen-typescript-loader'),
+            ],
+            enforce: 'pre',
         }
     );
 

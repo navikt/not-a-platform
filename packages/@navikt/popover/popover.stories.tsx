@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Popover from './popover';
 
-export default { title: 'Popover' };
+export default { title: '@navikt/popover' };
 
-export const withContent = () => {
+export const normal = () => {
     const [isOpen, setIsOpen] = React.useState(false);
     return (
       <Popover
@@ -18,7 +18,9 @@ export const withContent = () => {
         referenceProps={{
                 children: ({ ref }) => (
                   <div ref={ref}>
-                    <button onClick={() => setIsOpen(!isOpen)}>Click me</button>
+                    <button onClick={() => setIsOpen(!isOpen)} type="button">
+                            Click me
+                    </button>
                   </div>
                 ),
             }}

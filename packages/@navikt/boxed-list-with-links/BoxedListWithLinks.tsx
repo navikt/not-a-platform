@@ -5,18 +5,25 @@ import * as React from 'react';
 import './list.less';
 
 interface ListItemProps {
+    /** Display name for link */
     name: string;
+    /** Url for link */
     href: string;
+    /** Is this an external url? */
     isExternal?: boolean;
 }
 
 interface BoxedListWithLinksProps {
+    /** Array of links */
     items?: ListItemProps[];
 }
 
 const listItemCls = bem('boxedList__item');
 
-const BoxedListWithLinks: React.FunctionComponent<BoxedListWithLinksProps> = ({ items }: BoxedListWithLinksProps) => (
+/** Test */
+export const BoxedListWithLinks: React.FunctionComponent<BoxedListWithLinksProps> = ({
+    items,
+}: BoxedListWithLinksProps) => (
   <BoxedList>
     {items.map(({ name, href, isExternal }) => (
       <li className={listItemCls.block} key={href}>
