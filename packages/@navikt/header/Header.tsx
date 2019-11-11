@@ -23,13 +23,8 @@ const Header: React.FunctionComponent<HeaderProps> = ({
     renderUserPopoverContent,
     renderLinksPopoverContent,
 }) => {
-    const [
-        userInfoPopperIsVisible,
-        setUserInfoPopperIsVisible,
-    ] = React.useState(false);
-    const [linksPopperIsVisible, setLinksPopperIsVisible] = React.useState(
-        false
-    );
+    const [userInfoPopperIsVisible, setUserInfoPopperIsVisible] = React.useState(false);
+    const [linksPopperIsVisible, setLinksPopperIsVisible] = React.useState(false);
 
     const systemsClickHandler = () => {
         setLinksPopperIsVisible(!linksPopperIsVisible);
@@ -46,61 +41,56 @@ const Header: React.FunctionComponent<HeaderProps> = ({
     };
 
     return (
-        <header className={headerCls.block}>
-            <div className={headerCls.element('column')}>
-                <PageTitle className={headerCls.element('title')}>
+      <header className={headerCls.block}>
+        <div className={headerCls.element('column')}>
+          <PageTitle className={headerCls.element('title')}>
                     NAV
-                    <span className={headerCls.element('subtitle')}>
-                        {title}
-                    </span>
-                </PageTitle>
-            </div>
-            <div className={headerCls.element('column')}>
-                <Popover
-                    popperIsVisible={linksPopperIsVisible}
-                    renderArrowElement={true}
-                    customPopperStyles={{ top: '8px' }}
-                    popperProps={{
-                        children: () => renderLinksPopoverContent(),
+            <span className={headerCls.element('subtitle')}>{title}</span>
+          </PageTitle>
+        </div>
+        <div className={headerCls.element('column')}>
+          <Popover
+            popperIsVisible={linksPopperIsVisible}
+            renderArrowElement
+            customPopperStyles={{ top: '8px' }}
+            popperProps={{
+                        children: () => renderLinksPopoverContent && renderLinksPopoverContent(),
                         placement: 'bottom-start',
                         positionFixed: true,
                     }}
-                    referenceProps={{
+            referenceProps={{
                         children: ({ ref }) => (
-                            <div ref={ref}>
-                                <Systems
-                                    onClick={systemsClickHandler}
-                                    isToggled={linksPopperIsVisible}
-                                />
-                            </div>
+                          <div ref={ref}>
+                            <Systems onClick={systemsClickHandler} isToggled={linksPopperIsVisible} />
+                          </div>
                         ),
                     }}
-                />
-                <Popover
-                    popperIsVisible={userInfoPopperIsVisible}
-                    renderArrowElement={true}
-                    customPopperStyles={{ top: '8px' }}
-                    popperProps={{
-                        children: () => renderUserPopoverContent(),
+          />
+          <Popover
+            popperIsVisible={userInfoPopperIsVisible}
+            renderArrowElement
+            customPopperStyles={{ top: '8px' }}
+            popperProps={{
+                        children: () => renderUserPopoverContent && renderUserPopoverContent(),
                         placement: 'bottom-start',
                         positionFixed: true,
                     }}
-                    referenceProps={{
+            referenceProps={{
                         children: ({ ref }) => (
-                            <div ref={ref}>
-                                <CurrentUserInfo
-                                    name={userName}
-                                    unit={userUnit}
-                                    isInteractive={!!renderUserPopoverContent}
-                                    onClick={currentUserInfoClickHandler}
-                                    isToggled={userInfoPopperIsVisible}
-                                />
-                            </div>
+                          <div ref={ref}>
+                            <CurrentUserInfo
+                              name={userName}
+                              unit={userUnit}
+                              isInteractive={!!renderUserPopoverContent}
+                              onClick={currentUserInfoClickHandler}
+                              isToggled={userInfoPopperIsVisible}
+                            />
+                          </div>
                         ),
                     }}
-                />
-            </div>
-        </header>
+          />
+        </div>
+      </header>
     );
 };
 

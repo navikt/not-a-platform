@@ -8,6 +8,7 @@
     "tsc": "tsc -w"
   },
   "dependencies": {
+    "react": "^16.11.0",
     "react-popper": "^1.3.5"
   }
 }
