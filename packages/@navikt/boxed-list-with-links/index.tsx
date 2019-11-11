@@ -16,9 +16,7 @@ interface BoxedListWithLinksProps {
 
 const listItemCls = bem('boxedList__item');
 
-const BoxedListWithLinks: React.FunctionComponent<BoxedListWithLinksProps> = ({
-    items,
-}) => (
+const BoxedListWithLinks: React.FunctionComponent<BoxedListWithLinksProps> = ({ items }) => (
     <BoxedList>
         {items.map(({ name, href, isExternal }) => (
             <li className={listItemCls.block} key={href}>

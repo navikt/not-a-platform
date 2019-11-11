@@ -6,13 +6,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "@navikt/bem-utils": "1.0.0",
-    "react": "^16.11.0"
-  },
   "author": "NAV",
   "license": "MIT",
+  "dependencies": {
+    "@navikt/bem-utils": "1.0.0"
+  },
   "devDependencies": {
     "less": "^3.10.3"
+  },
+  "peerDependencies": {
+    "react": "^16.11.0"
   }
 }
