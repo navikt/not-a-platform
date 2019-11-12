@@ -1,7 +1,7 @@
 {
     "name": "not-a-platform",
     "version": "1.0.0",
-    "author": "navikt",
+    "author": "NAV",
     "license": "MIT",
     "scripts": {
         "start": "parcel ./app/index.html",
