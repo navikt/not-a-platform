@@ -1,15 +1,19 @@
 {
-  "name": "@navikt/boxed-list-with-selection",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "author": "NAV",
-  "license": "MIT",
-  "dependencies": {
-    "@navikt/bem-utils": "1.0.0",
-    "@navikt/boxed-list": "1.0.0"
-  },
-  "devDependencies": {
-    "less": "^3.10.3"
-  }
+    "name": "@navikt/boxed-list-with-selection",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "author": "NAV",
+    "license": "MIT",
+    "dependencies": {
+        "@navikt/bem-utils": "1.0.0",
+        "@navikt/boxed-list": "1.0.0",
+        "nav-frontend-typografi": "^2.0.16"
+    },
+    "devDependencies": {
+        "less": "^3.10.3"
+    },
+    "peerDependencies": {
+        "react": "^16.11.0"
+    }
 }

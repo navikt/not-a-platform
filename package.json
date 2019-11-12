@@ -1,13 +1,14 @@
 {
     "name": "not-a-platform",
     "version": "1.0.0",
-    "author": "navikt",
+    "author": "NAV",
     "license": "MIT",
     "scripts": {
         "deploy-storybook": "storybook-to-ghpages -o docs",
         "start": "parcel ./app/index.html",
-        "storybook": "start-storybook",
-        "tsc-watch": "lerna run tsc --parallel"
+        "tsc-watch": "lerna run tsc --parallel",
+        "lint": "eslint '**/*.{ts,tsx}'",
+        "storybook": "start-storybook"
     },
     "devDependencies": {
         "@storybook/addon-a11y": "^5.2.6",
@@ -26,6 +27,7 @@
         "eslint-config-prettier": "^6.5.0",
         "eslint-plugin-import": "^2.18.0",
         "eslint-plugin-jsx-a11y": "^6.2.3",
+        "eslint-plugin-prettier": "^3.1.1",
         "eslint-plugin-react": "^7.15.1",
         "eslint-plugin-react-hooks": "^2.2.0",
         "husky": "^3.0.9",

@@ -3,6 +3,7 @@ import bem from '@navikt/bem-utils';
 import { NedChevron, OppChevron } from 'nav-frontend-chevron';
 import { Normaltekst as Text } from 'nav-frontend-typografi';
 import './userContent.less';
+
 const userCls = bem('user');
 
 interface CurrentUserInfoProps {
@@ -35,10 +36,7 @@ const CurrentUserInfo: React.FunctionComponent<CurrentUserInfoProps> = ({
                             {name}
                         </Text>
                         {unit && (
-                            <Text
-                                tag="span"
-                                className={userCls.element('unit')}
-                            >
+                            <Text tag="span" className={userCls.element('unit')}>
                                 {unit}
                             </Text>
                         )}
@@ -52,9 +50,7 @@ const CurrentUserInfo: React.FunctionComponent<CurrentUserInfoProps> = ({
             ) : (
                 <div className={userCls.block}>
                     <Text className={userCls.element('name')}>{name}</Text>
-                    {unit && (
-                        <Text className={userCls.element('unit')}>{unit}</Text>
-                    )}
+                    {unit && <Text className={userCls.element('unit')}>{unit}</Text>}
                 </div>
             )}
         </>

@@ -1,11 +1,5 @@
 import * as React from 'react';
-import {
-    Manager,
-    Popper,
-    PopperProps,
-    Reference,
-    ReferenceProps,
-} from 'react-popper';
+import { Manager, Popper, PopperProps, Reference, ReferenceProps } from 'react-popper';
 
 interface PopoverProps {
     popperProps: PopperProps;
@@ -27,13 +21,8 @@ const Popover: React.FunctionComponent<PopoverProps> = ({
         <Manager>
             <Reference {...referenceProps} />
             <Popper {...otherPopperProps}>
-                {popperChildrenProps => {
-                    const {
-                        placement,
-                        ref,
-                        style,
-                        arrowProps,
-                    } = popperChildrenProps;
+                {(popperChildrenProps): React.ReactNode => {
+                    const { placement, ref, style, arrowProps } = popperChildrenProps;
                     return (
                         <span
                             data-placement={placement}
@@ -41,18 +30,10 @@ const Popover: React.FunctionComponent<PopoverProps> = ({
                             style={{
                                 ...style,
                                 ...customPopperStyles,
-                                visibility: popperIsVisible
-                                    ? 'visible'
-                                    : 'hidden',
+                                visibility: popperIsVisible ? 'visible' : 'hidden',
                             }}
                         >
-                            {renderArrowElement && (
-                                <div
-                                    {...arrowProps}
-                                    className="arrow"
-                                    data-placement={placement}
-                                />
-                            )}
+                            {renderArrowElement && <div {...arrowProps} className="arrow" data-placement={placement} />}
                             {children(popperChildrenProps)}
                         </span>
                     );
