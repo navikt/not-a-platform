@@ -30,6 +30,15 @@ module.exports = async ({ config, mode }) => {
                 },
             ],
             enforce: 'pre',
+        },
+        {
+            test: /\.js$/,
+            include: [/(.storybook)/],
+            exclude: [path.resolve(__dirname, 'packages'), /(node_modules)/],
+            loader: 'babel-loader',
+            options: {
+                presets: ['@babel/preset-env', '@babel/preset-react'],
+            },
         }
     );
 
