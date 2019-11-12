@@ -1,2 +1,1 @@
-* @erlendev
-* @hallvardastark
+* @navikt/verktoykasse

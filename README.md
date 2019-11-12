@@ -19,10 +19,7 @@ omfatte andre ting som er lurt å lage likt på tvers.
 
 # Henvendelser
 
-Spørsmål knyttet til koden eller prosjektet kan rettes mot:
-
-* Erlend Edvardsen Vige, [erlend.edvardsen.vige@nav.no](mailto://erlend.edvardsen.vige@nav.no)
-* Hallvard Andreas Stark, [hallvard.andreas.stark@nav.no](mailto://hallvard.andreas.stark@nav.no)
+Spørsmål knyttet til koden kan stilles som issues her på GitHub.
 
 ## For NAV-ansatte
 
