@@ -10,10 +10,7 @@ interface SystemsInterface {
     isToggled?: boolean;
 }
 
-const Systems: React.FunctionComponent<SystemsInterface> = ({
-    onClick,
-    isToggled,
-}) => {
+const Systems: React.FunctionComponent<SystemsInterface> = ({ onClick, isToggled }) => {
     return (
         <div className={systemsCls.block}>
             <Systemerknapp
@@ -21,7 +18,7 @@ const Systems: React.FunctionComponent<SystemsInterface> = ({
                 className={systemsCls.element('button')}
                 aria-haspopup="dialog"
                 aria-expanded={isToggled}
-            ></Systemerknapp>
+            />
         </div>
     );
 };

@@ -23,22 +23,17 @@ const Header: React.FunctionComponent<HeaderProps> = ({
     renderUserPopoverContent,
     renderLinksPopoverContent,
 }) => {
-    const [
-        userInfoPopperIsVisible,
-        setUserInfoPopperIsVisible,
-    ] = React.useState(false);
-    const [linksPopperIsVisible, setLinksPopperIsVisible] = React.useState(
-        false
-    );
+    const [userInfoPopperIsVisible, setUserInfoPopperIsVisible] = React.useState(false);
+    const [linksPopperIsVisible, setLinksPopperIsVisible] = React.useState(false);
 
-    const systemsClickHandler = () => {
+    const systemsClickHandler = (): void => {
         setLinksPopperIsVisible(!linksPopperIsVisible);
         if (!linksPopperIsVisible) {
             setUserInfoPopperIsVisible(false);
         }
     };
 
-    const currentUserInfoClickHandler = () => {
+    const currentUserInfoClickHandler = (): void => {
         setUserInfoPopperIsVisible(!userInfoPopperIsVisible);
         if (!userInfoPopperIsVisible) {
             setLinksPopperIsVisible(false);
@@ -50,43 +45,38 @@ const Header: React.FunctionComponent<HeaderProps> = ({
             <div className={headerCls.element('column')}>
                 <PageTitle className={headerCls.element('title')}>
                     NAV
-                    <span className={headerCls.element('subtitle')}>
-                        {title}
-                    </span>
+                    <span className={headerCls.element('subtitle')}>{title}</span>
                 </PageTitle>
             </div>
             <div className={headerCls.element('column')}>
                 <Popover
                     popperIsVisible={linksPopperIsVisible}
-                    renderArrowElement={true}
+                    renderArrowElement
                     customPopperStyles={{ top: '8px' }}
                     popperProps={{
-                        children: () => renderLinksPopoverContent(),
+                        children: (): React.ReactNode => renderLinksPopoverContent(),
                         placement: 'bottom-start',
                         positionFixed: true,
                     }}
                     referenceProps={{
-                        children: ({ ref }) => (
+                        children: ({ ref }): React.ReactNode => (
                             <div ref={ref}>
-                                <Systems
-                                    onClick={systemsClickHandler}
-                                    isToggled={linksPopperIsVisible}
-                                />
+                                <Systems onClick={systemsClickHandler} isToggled={linksPopperIsVisible} />
                             </div>
                         ),
                     }}
                 />
                 <Popover
                     popperIsVisible={userInfoPopperIsVisible}
-                    renderArrowElement={true}
+                    renderArrowElement
                     customPopperStyles={{ top: '8px' }}
                     popperProps={{
-                        children: () => renderUserPopoverContent(),
+                        children: (): React.ReactNode => renderUserPopoverContent(),
                         placement: 'bottom-start',
                         positionFixed: true,
                     }}
                     referenceProps={{
-                        children: ({ ref }) => (
+                        children: ({ ref }): React.ReactNode => (
                             <div ref={ref}>
                                 <CurrentUserInfo
                                     name={userName}

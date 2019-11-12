@@ -7,9 +7,13 @@
   "license": "MIT",
   "dependencies": {
     "@navikt/bem-utils": "1.0.0",
-    "@navikt/boxed-list": "1.0.0"
+    "@navikt/boxed-list": "1.0.0",
+    "nav-frontend-typografi": "^2.0.16"
   },
   "devDependencies": {
     "less": "^3.10.3"
+  },
+  "peerDependencies": {
+    "react": "^16.11.0"
   }
 }

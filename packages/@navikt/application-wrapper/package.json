@@ -10,5 +10,8 @@
     "@navikt/header": "1.0.0",
     "@navikt/boxed-list-with-links": "1.0.0",
     "@navikt/boxed-list-with-selection": "1.0.0"
+  },
+  "peerDependencies": {
+    "react": "^16.11.0"
   }
 }
