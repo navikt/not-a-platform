@@ -20,11 +20,11 @@ module.exports = async ({ config, mode }) => {
                         presets: [['react-app', { flow: false, typescript: true }]],
                     },
                 },
+                require.resolve('react-docgen-typescript-loader'),
                 {
                     loader: require.resolve('@storybook/source-loader'),
                     options: { parser: 'typescript' },
                 },
-                require.resolve('react-docgen-typescript-loader'),
             ],
             enforce: 'pre',
         }
