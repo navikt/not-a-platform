@@ -20,24 +20,24 @@ interface BoxedListWithLinksProps {
 
 const listItemCls = bem('boxedList__item');
 
-/** Test */
+/** Bordered list with links */
 export const BoxedListWithLinks: React.FunctionComponent<BoxedListWithLinksProps> = ({
     items,
 }: BoxedListWithLinksProps) => (
-  <BoxedList>
-    {items.map(({ name, href, isExternal }) => (
-      <li className={listItemCls.block} key={href}>
-        <a
-          href={href}
-          className={listItemCls.element('anchor')}
-          target={isExternal ? '_blank' : ''}
-          rel={isExternal ? 'noopener' : ''}
-        >
-          <Normaltekst>{name}</Normaltekst>
-        </a>
-      </li>
+    <BoxedList>
+        {items.map(({ name, href, isExternal }) => (
+            <li className={listItemCls.block} key={href}>
+                <a
+                    href={href}
+                    className={listItemCls.element('anchor')}
+                    target={isExternal ? '_blank' : ''}
+                    rel={isExternal ? 'noopener' : ''}
+                >
+                    <Normaltekst>{name}</Normaltekst>
+                </a>
+            </li>
         ))}
-  </BoxedList>
+    </BoxedList>
 );
 
 export default BoxedListWithLinks;
