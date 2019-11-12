@@ -1,9 +1,12 @@
 const path = require('path');
 
 module.exports = async ({ config, mode }) => {
-    config.module.rules = config.module.rules.filter(
-        rule => !(rule.use && rule.use.length && rule.use.find(({ loader }) => loader === 'babel-loader'))
-    );
+    const getRulesExceptBabelLoader = () =>
+        config.module.rules.filter(
+            rule => !(rule.use && rule.use.length && rule.use.find(({ loader }) => loader === 'babel-loader'))
+        );
+
+    config.module.rules = getRulesExceptBabelLoader();
     config.module.rules.push(
         {
             test: /\.less$/,
@@ -20,7 +23,7 @@ module.exports = async ({ config, mode }) => {
                         presets: [['react-app', { flow: false, typescript: true }]],
                     },
                 },
-                require.resolve('react-docgen-typescript-loader'),
+                { loader: require.resolve('react-docgen-typescript-loader') },
                 {
                     loader: require.resolve('@storybook/source-loader'),
                     options: { parser: 'typescript' },

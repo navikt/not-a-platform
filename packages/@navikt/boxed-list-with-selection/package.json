@@ -2,7 +2,7 @@
     "name": "@navikt/boxed-list-with-selection",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "BoxedListWithSelection.js",
     "author": "NAV",
     "license": "MIT",
     "dependencies": {
