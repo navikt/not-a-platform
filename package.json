@@ -4,6 +4,7 @@
     "author": "navikt",
     "license": "MIT",
     "scripts": {
+        "deploy-storybook": "storybook-to-ghpages -o docs",
         "start": "parcel ./app/index.html",
         "storybook": "start-storybook",
         "tsc-watch": "lerna run tsc --parallel"
@@ -14,6 +15,7 @@
         "@storybook/addon-info": "^5.2.6",
         "@storybook/addon-storysource": "^5.2.6",
         "@storybook/react": "^5.2.6",
+        "@storybook/storybook-deployer": "^2.8.1",
         "@types/react": "^16.9.11",
         "@types/react-dom": "^16.9.3",
         "@typescript-eslint/eslint-plugin": "^2.3.2",
