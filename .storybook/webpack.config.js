@@ -15,6 +15,7 @@ module.exports = async ({ config, mode }) => {
         },
         {
             test: /\.(ts|tsx)$/,
+            include: [/(packages)/],
             use: [
                 {
                     loader: require.resolve('babel-loader'),
@@ -43,5 +44,6 @@ module.exports = async ({ config, mode }) => {
     );
 
     config.resolve.extensions.push('.ts', '.tsx');
+    // console.dir(config, { depth: null }) || config;
     return config;
 };

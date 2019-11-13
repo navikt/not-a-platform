@@ -2,7 +2,7 @@
     "name": "@navikt/boxed-list-with-links",
     "version": "1.0.0",
     "description": "",
-    "main": "BoxedListWithLinks.js",
+    "main": "src/BoxedListWithLinks.js",
     "author": "NAV",
     "license": "MIT",
     "dependencies": {

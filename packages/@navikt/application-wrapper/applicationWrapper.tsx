@@ -1,7 +1,7 @@
-import * as React from 'react';
-import Header from '@navikt/header';
 import BoxedListWithLinks from '@navikt/boxed-list-with-links';
 import BoxedListWithSelection from '@navikt/boxed-list-with-selection';
+import Header from '@navikt/header';
+import * as React from 'react';
 
 const ApplicationWrapper: React.FunctionComponent = () => (
     <Header
@@ -22,7 +22,10 @@ const ApplicationWrapper: React.FunctionComponent = () => (
         )}
         renderLinksPopoverContent={(): React.ReactNode => (
             <BoxedListWithLinks
-                items={[{ name: 'Test 1', href: 'nav.no' }, { name: 'Test 2', href: 'localhost:1234' }]}
+                items={[
+                    { name: 'Test 1', href: 'nav.no' },
+                    { name: 'Test 2', href: 'localhost:1234' },
+                ]}
             />
         )}
     />

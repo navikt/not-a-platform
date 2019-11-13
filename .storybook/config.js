@@ -14,4 +14,4 @@ addParameters({
         page: DocsPage,
     },
 });
-configure(require.context('../packages/@navikt/', true, /\.stories\.(ts|tsx)$/), module);
+configure(require.context('../packages/@navikt', true, /\.stories\.(ts|tsx)$/), module);
