@@ -5,6 +5,9 @@ export default { title: '@navikt/boxed-list-with-selection' };
 
 export const normal = (): JSX.Element => (
     <BoxedListWithSelection
-        items={[{ name: 'Test 1', href: 'nav.no', selected: true }, { name: 'Test 2', href: 'localhost:1234' }]}
+        items={[
+            { name: 'Test 1', href: 'nav.no', selected: true },
+            { name: 'Test 2', href: 'localhost:1234' },
+        ]}
     />
 );

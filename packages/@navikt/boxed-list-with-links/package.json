@@ -19,6 +19,6 @@
     },
     "scripts": {
         "tsc": "tsc -p tsconfig.json",
-        "lessc": "less-watch-compiler"
+        "lessc": "less-watch-compiler src dist"
     }
 }

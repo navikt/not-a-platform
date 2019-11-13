@@ -2,7 +2,7 @@
     "name": "@navikt/boxed-list-with-selection",
     "version": "1.0.0",
     "description": "",
-    "main": "BoxedListWithSelection.js",
+    "main": "dist/BoxedListWithSelection.js",
     "author": "NAV",
     "license": "MIT",
     "dependencies": {
@@ -11,9 +11,14 @@
         "nav-frontend-typografi": "^2.0.16"
     },
     "devDependencies": {
-        "less": "^3.10.3"
+        "less": "^3.10.3",
+        "less-watch-compiler": "^1.14.1"
     },
     "peerDependencies": {
         "react": "^16.11.0"
+    },
+    "scripts": {
+        "tsc": "tsc -p tsconfig.json",
+        "lessc": "less-watch-compiler src dist"
     }
 }

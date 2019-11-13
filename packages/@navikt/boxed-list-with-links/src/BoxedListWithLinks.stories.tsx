@@ -1,7 +1,7 @@
 import * as React from 'react';
 import BoxedListWithLinks from './BoxedListWithLinks';
 
-export default { title: '@navikt/boxed-list-with-links', component: BoxedListWithLinks };
+export default { title: '@navikt/boxed-list-with-links' };
 
 export const normal = (): JSX.Element => (
     <BoxedListWithLinks

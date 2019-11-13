@@ -3,7 +3,7 @@
     "version": "1.0.0",
     "author": "NAV",
     "license": "MIT",
-    "main": "popover.js",
+    "main": "dist/popover.js",
     "scripts": {
         "tsc": "tsc -w"
     },
