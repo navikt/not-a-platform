@@ -35,7 +35,7 @@ module.exports = async ({ config, mode }) => {
         {
             test: /\.js$/,
             include: [/(.storybook)/],
-            exclude: [path.resolve(__dirname, 'packages'), /(node_modules)/],
+            exclude: [/(packages)/, /(node_modules)/],
             loader: 'babel-loader',
             options: {
                 presets: ['@babel/preset-env', '@babel/preset-react'],
@@ -43,7 +43,7 @@ module.exports = async ({ config, mode }) => {
         }
     );
 
-    config.resolve.extensions.push('.ts', '.tsx');
+    config.resolve.extensions.push('.ts', '.tsx', '.less');
     // console.dir(config, { depth: null }) || config;
     return config;
 };

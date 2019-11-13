@@ -1,6 +1,7 @@
 {
     "compilerOptions": {
         "jsx": "react",
-        "sourceMap": true
+        "sourceMap": true,
+        "outDir": "./dist"
     }
 }
