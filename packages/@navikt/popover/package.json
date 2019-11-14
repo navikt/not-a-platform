@@ -5,8 +5,11 @@
     "license": "MIT",
     "main": "dist/popover.js",
     "module": "src/popover.tsx",
+    "types": "dist/popover.d.ts",
     "scripts": {
-        "tsc": "tsc -w"
+        "build": "npm run clean && npm run tsc",
+        "clean": "rm -rf ./dist",
+        "tsc": "tsc -p tsconfig.json"
     },
     "dependencies": {
         "react-popper": "^1.3.5",

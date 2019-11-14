@@ -5,7 +5,10 @@
     "license": "MIT",
     "main": "dist/bemUtils.js",
     "module": "src/bemUtils.ts",
+    "types": "dist/bemUtils.d.ts",
     "scripts": {
+        "build": "npm run clean && npm run tsc",
+        "clean": "rm -rf ./dist",
         "tsc": "tsc -p tsconfig.json"
     },
     "bugs": {
