@@ -2,7 +2,8 @@
     "name": "@navikt/boxed-list-with-links",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "dist/BoxedListWithLinks.js",
+    "module": "src/BoxedListWithLinks.tsx",
     "author": "NAV",
     "license": "MIT",
     "dependencies": {
@@ -11,9 +12,14 @@
         "nav-frontend-typografi": "^2.0.16"
     },
     "devDependencies": {
-        "less": "^3.10.3"
+        "less": "^3.10.3",
+        "less-watch-compiler": "^1.14.1"
     },
     "peerDependencies": {
         "react": "^16.11.0"
+    },
+    "scripts": {
+        "tsc": "tsc -p tsconfig.json",
+        "lessc": "less-watch-compiler src dist"
     }
 }

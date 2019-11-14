@@ -7,3 +7,6 @@ packages/**/*.js
 app/**/*.js
 *.js.map
 .vscode
+lerna-debug.log
+out*/
+*.d.ts

@@ -1,7 +1,7 @@
-import * as React from 'react';
-import Header from '@navikt/header';
 import BoxedListWithLinks from '@navikt/boxed-list-with-links';
 import BoxedListWithSelection from '@navikt/boxed-list-with-selection';
+import Header from '@navikt/header';
+import * as React from 'react';
 
 const ApplicationWrapper: React.FunctionComponent = () => (
     <Header

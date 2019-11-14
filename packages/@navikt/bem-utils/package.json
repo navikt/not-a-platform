@@ -3,9 +3,10 @@
     "name": "@navikt/bem-utils",
     "author": "NAV",
     "license": "MIT",
-    "main": "bemUtils.js",
+    "main": "dist/bemUtils.js",
+    "module": "src/bemUtils.ts",
     "scripts": {
-        "tsc": "tsc -w"
+        "tsc": "tsc -p tsconfig.json"
     },
     "bugs": {
         "url": "https://github.com/navikt/not-a-platform/issues"

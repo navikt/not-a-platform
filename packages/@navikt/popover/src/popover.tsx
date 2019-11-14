@@ -9,7 +9,7 @@ interface PopoverProps {
     customPopperStyles?: React.CSSProperties;
 }
 
-const Popover: React.FunctionComponent<PopoverProps> = ({
+export const Popover: React.FunctionComponent<PopoverProps> = ({
     popperProps,
     referenceProps,
     popperIsVisible,

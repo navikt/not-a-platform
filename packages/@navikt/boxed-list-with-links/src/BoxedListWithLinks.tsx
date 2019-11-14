@@ -1,22 +1,29 @@
-import * as React from 'react';
-import BoxedList from '@navikt/boxed-list';
 import bem from '@navikt/bem-utils';
+import BoxedList from '@navikt/boxed-list';
 import { Normaltekst } from 'nav-frontend-typografi';
-import './list.less';
+import * as React from 'react';
+import './list';
 
 interface ListItemProps {
+    /** Display name for link */
     name: string;
+    /** Url for link */
     href: string;
+    /** Is this an external url? */
     isExternal?: boolean;
 }
 
 interface BoxedListWithLinksProps {
-    items: ListItemProps[];
+    /** Array of links */
+    items?: ListItemProps[];
 }
 
 const listItemCls = bem('boxedList__item');
 
-const BoxedListWithLinks: React.FunctionComponent<BoxedListWithLinksProps> = ({ items }) => (
+/** Bordered list with links */
+export const BoxedListWithLinks: React.FunctionComponent<BoxedListWithLinksProps> = ({
+    items,
+}: BoxedListWithLinksProps) => (
     <BoxedList>
         {items.map(({ name, href, isExternal }) => (
             <li className={listItemCls.block} key={href}>

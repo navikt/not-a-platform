@@ -2,7 +2,7 @@ import * as React from 'react';
 import BoxedList from '@navikt/boxed-list';
 import bem from '@navikt/bem-utils';
 import { Normaltekst } from 'nav-frontend-typografi';
-import './list.less';
+import './list';
 
 interface ListItemProps {
     name: string;

@@ -1,6 +1,10 @@
 {
-  "compilerOptions": {
-    "jsx": "react",
-    "sourceMap": true
-  }
+    "compilerOptions": {
+        "jsx": "react",
+        "sourceMap": true,
+        "outDir": "./dist",
+        "module": "commonjs",
+        "declaration": true
+    },
+    "exclude": ["**/*.stories.tsx"]
 }

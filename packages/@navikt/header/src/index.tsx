@@ -4,7 +4,7 @@ import bem from '@navikt/bem-utils';
 import Popover from '@navikt/popover';
 import CurrentUserInfo from './components/user-content/CurrentUserInfo';
 import Systems from './components/systems/systems';
-import './header.less';
+import './header';
 
 interface HeaderProps {
     title: string;
@@ -16,7 +16,7 @@ interface HeaderProps {
 }
 
 const headerCls = bem('header');
-const Header: React.FunctionComponent<HeaderProps> = ({
+export const Header: React.FunctionComponent<HeaderProps> = ({
     title,
     userName,
     userUnit,
@@ -54,7 +54,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
                     renderArrowElement
                     customPopperStyles={{ top: '8px' }}
                     popperProps={{
-                        children: (): React.ReactNode => renderLinksPopoverContent(),
+                        children: (): React.ReactNode => renderLinksPopoverContent && renderLinksPopoverContent(),
                         placement: 'bottom-start',
                         positionFixed: true,
                     }}
@@ -71,7 +71,7 @@ const Header: React.FunctionComponent<HeaderProps> = ({
                     renderArrowElement
                     customPopperStyles={{ top: '8px' }}
                     popperProps={{
-                        children: (): React.ReactNode => renderUserPopoverContent(),
+                        children: (): React.ReactNode => renderUserPopoverContent && renderUserPopoverContent(),
                         placement: 'bottom-start',
                         positionFixed: true,
                     }}
