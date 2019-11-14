@@ -9,3 +9,4 @@ app/**/*.js
 .vscode
 lerna-debug.log
 out*/
+*.d.ts

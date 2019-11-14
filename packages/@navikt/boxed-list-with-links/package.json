@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "main": "dist/BoxedListWithLinks.js",
+    "module": "src/BoxedListWithLinks.tsx",
     "author": "NAV",
     "license": "MIT",
     "dependencies": {

@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "description": "",
     "main": "dist/BoxedListWithSelection.js",
+    "module": "src/BoxedListWithSelection.tsx",
     "author": "NAV",
     "license": "MIT",
     "dependencies": {

@@ -44,6 +44,5 @@ module.exports = async ({ config, mode }) => {
     );
 
     config.resolve.extensions.push('.ts', '.tsx', '.less');
-    // console.dir(config, { depth: null }) || config;
     return config;
 };

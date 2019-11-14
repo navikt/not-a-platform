@@ -1,6 +1,6 @@
 import bem from '@navikt/bem-utils';
 import * as React from 'react';
-import './list.less';
+import './boxedList';
 
 const listCls = bem('boxedList');
 

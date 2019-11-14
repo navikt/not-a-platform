@@ -1,9 +1,10 @@
 {
     "name": "@navikt/application-wrapper",
     "version": "1.0.0",
-    "main": "applicationWrapper.js",
+    "main": "dist/applicationWrapper.js",
+    "module": "src/applicationWrapper.tsx",
     "scripts": {
-        "tsc": "tsc -w"
+        "tsc": "tsc -p tsconfig.json"
     },
     "license": "MIT",
     "dependencies": {

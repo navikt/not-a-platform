@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
+    "module": "src/index.tsx",
     "scripts": {
         "tsc": "tsc -p tsconfig.json",
         "lessc": "less-watch-compiler src dist"
