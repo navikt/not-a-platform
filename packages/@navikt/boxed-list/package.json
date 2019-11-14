@@ -1,23 +1,23 @@
 {
-  "name": "@navikt/boxed-list",
-  "version": "1.0.0",
-  "description": "",
-  "main": "dist/index.js",
-  "module": "src/index.tsx",
-  "scripts": {
-    "lessc": "less-watch-compiler src dist",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "tsc": "tsc -p tsconfig.json"
-  },
-  "author": "NAV",
-  "license": "MIT",
-  "dependencies": {
-    "@navikt/bem-utils": "1.0.0"
-  },
-  "devDependencies": {
-    "less": "^3.10.3"
-  },
-  "peerDependencies": {
-    "react": "^16.11.0"
-  }
+    "name": "@navikt/boxed-list",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "module": "src/index.tsx",
+    "scripts": {
+        "lessc": "less-watch-compiler src dist",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "tsc": "tsc -p tsconfig.json"
+    },
+    "author": "NAV",
+    "license": "MIT",
+    "dependencies": {
+        "@navikt/bem-utils": "1.0.0"
+    },
+    "devDependencies": {
+        "less": "^3.10.3"
+    },
+    "peerDependencies": {
+        "react": "^16.11.0"
+    }
 }
