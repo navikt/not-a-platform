@@ -9,9 +9,9 @@ Modulene består i hovedsak av React-komponenter med tilhørende styling og funk
 
 
 # Komme i gang
-
-* Kjøre tsc med watching: `npm run tsc-watch`
-* Kjøring av app: `npm start`
+* Kjøre opp storybook: `npm run storybook`
+* Boostrapping av moduler: `lerna bootstrap --hoist`
+* Bygge alle moduler under `packages/@navikt`: `npm run build`
 * Lint: `npm run lint`
 
 # Henvendelser

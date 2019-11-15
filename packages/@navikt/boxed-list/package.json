@@ -4,10 +4,12 @@
     "description": "",
     "main": "dist/index.js",
     "module": "src/index.tsx",
+    "types": "dist/index.d.ts",
     "scripts": {
-        "lessc": "less-watch-compiler src dist",
-        "test": "echo \"Error: no test specified\" && exit 1",
-        "tsc": "tsc -p tsconfig.json"
+        "build": "npm run clean && npm run lessc && npm run tsc",
+        "tsc": "tsc -p tsconfig.json",
+        "clean": "rm -rf ./dist",
+        "lessc": "lessc src/boxedList.less dist/boxedList.css"
     },
     "author": "NAV",
     "license": "MIT",

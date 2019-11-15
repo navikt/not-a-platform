@@ -4,6 +4,7 @@
     "description": "",
     "main": "dist/BoxedListWithLinks.js",
     "module": "src/BoxedListWithLinks.tsx",
+    "types": "dist/BoxedListWithLinks.d.ts",
     "author": "NAV",
     "license": "MIT",
     "dependencies": {
@@ -19,7 +20,9 @@
         "react": "^16.11.0"
     },
     "scripts": {
+        "build": "npm run clean && npm run lessc && npm run tsc",
         "tsc": "tsc -p tsconfig.json",
-        "lessc": "less-watch-compiler src dist"
+        "clean": "rm -rf ./dist",
+        "lessc": "lessc src/list.less dist/list.css"
     }
 }

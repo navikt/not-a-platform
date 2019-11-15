@@ -5,9 +5,8 @@
     "license": "MIT",
     "scripts": {
         "deploy-storybook": "storybook-to-ghpages -o docs",
-        "start": "parcel ./app/index.html",
-        "tsc-watch": "lerna run tsc --parallel",
-        "lessc-watch": "lerna run lessc --parallel",
+        "build": "lerna run build",
+        "less": "lerna run lessc",
         "lint": "eslint '**/*.{ts,tsx}'",
         "storybook": "start-storybook"
     },
@@ -32,7 +31,7 @@
         "eslint-plugin-react": "^7.15.1",
         "eslint-plugin-react-hooks": "^2.2.0",
         "husky": "^3.0.9",
-        "lerna": "^3.18.3",
+        "lerna": "^3.18.4",
         "less": "^3.10.3",
         "less-loader": "^5.0.0",
         "lint-staged": "^9.4.2",

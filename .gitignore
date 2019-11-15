@@ -10,3 +10,4 @@ app/**/*.js
 lerna-debug.log
 out*/
 *.d.ts
+storybook-static

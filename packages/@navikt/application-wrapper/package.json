@@ -3,7 +3,10 @@
     "version": "1.0.0",
     "main": "dist/applicationWrapper.js",
     "module": "src/applicationWrapper.tsx",
+    "types": "dist/applicationWrapper.d.ts",
     "scripts": {
+        "build": "npm run clean && npm run tsc",
+        "clean": "rm -rf ./dist",
         "tsc": "tsc -p tsconfig.json"
     },
     "license": "MIT",

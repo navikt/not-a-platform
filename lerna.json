@@ -1,6 +1,4 @@
 {
-  "packages": [
-    "packages/@navikt/*"
-  ],
-  "version": "0.0.0"
+    "version": "3.18.4",
+    "packages": ["./packages/@navikt/*"]
 }
