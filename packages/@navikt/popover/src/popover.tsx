@@ -24,7 +24,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
                 {(popperChildrenProps): React.ReactNode => {
                     const { placement, ref, style, arrowProps } = popperChildrenProps;
                     return (
-                        <span
+                        <div
                             data-placement={placement}
                             ref={ref}
                             style={{
@@ -35,7 +35,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
                         >
                             {renderArrowElement && <div {...arrowProps} className="arrow" data-placement={placement} />}
                             {children(popperChildrenProps)}
-                        </span>
+                        </div>
                     );
                 }}
             </Popper>
