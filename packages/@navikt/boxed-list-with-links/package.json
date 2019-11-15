@@ -10,12 +10,12 @@
     "dependencies": {
         "@navikt/bem-utils": "1.0.0",
         "@navikt/boxed-list": "1.0.0",
-        "nav-frontend-typografi": "^2.0.16"
+        "nav-frontend-typografi": "^2.0.16",
+        "nav-frontend-typografi-style": "^1.0.17"
     },
     "devDependencies": {
         "less": "^3.10.3",
-        "less-watch-compiler": "^1.14.1",
-        "nav-frontend-typografi-style": "^1.0.17"
+        "less-watch-compiler": "^1.14.1"
     },
     "peerDependencies": {
         "react": "^16.11.0"
