@@ -6,5 +6,5 @@
         "declaration": true,
         "watch": false
     },
-    "exclude": ["**/*.stories.tsx"]
+    "exclude": ["**/*.stories.tsx", "node_modules", "dist"]
 }

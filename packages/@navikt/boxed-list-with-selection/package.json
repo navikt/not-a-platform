@@ -14,7 +14,8 @@
     },
     "devDependencies": {
         "less": "^3.10.3",
-        "less-watch-compiler": "^1.14.1"
+        "less-watch-compiler": "^1.14.1",
+        "nav-frontend-typografi-style": "^1.0.17"
     },
     "peerDependencies": {
         "react": "^16.11.0"
