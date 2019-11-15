@@ -15,5 +15,5 @@ addParameters({
         page: DocsPage,
     },
 });
-const req = requireContext('../packages/@navikt', true, /\.stories\.(ts|tsx)$/);
-configure(req, module);
+const context = requireContext('../packages/@navikt', true, /\.stories\.(ts|tsx)$/);
+configure(context, module);

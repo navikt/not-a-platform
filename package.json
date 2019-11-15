@@ -11,6 +11,7 @@
         "storybook": "start-storybook -p 6006",
         "storybook-test": "start-storybook -p 6006 --ci",
         "test": "start-server-and-test storybook-test http://localhost:6006 jest",
+        "test-update": "start-server-and-test storybook-test http://localhost:6006 test-update-snapshot",
         "test-update-snapshot": "jest --updateSnapshot"
     },
     "devDependencies": {
