@@ -3,7 +3,7 @@
 node_modules
 dist
 package-lock.json
-packages/**/*.js
+packages/@navikt/**/*.js
 app/**/*.js
 *.js.map
 .vscode

@@ -6,7 +6,7 @@ module.exports = {
         '^.+.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
     },
     moduleNameMapper: {
-        '.*\\.(css|less)$': '<rootDir>/styleMock.js',
+        '.*\\.(css|less)$': '<rootDir>/packages/__mocks__/styleMock.js',
     },
     moduleFileExtensions: ['js', 'json', 'jsx', 'ts', 'tsx', 'node', 'less'],
     testPathIgnorePatterns: ['/node_modules/', '/dist/'],

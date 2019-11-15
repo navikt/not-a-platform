@@ -8,8 +8,9 @@
         "build": "lerna run build",
         "less": "lerna run lessc",
         "lint": "eslint '**/*.{ts,tsx}'",
-        "storybook": "start-storybook",
-        "test": "jest",
+        "storybook": "start-storybook -p 6006",
+        "storybook-test": "start-storybook -p 6006 --ci",
+        "test": "start-server-and-test storybook-test http://localhost:6006 jest",
         "test-update-snapshot": "jest --updateSnapshot"
     },
     "devDependencies": {
@@ -21,6 +22,7 @@
         "@storybook/addon-docs": "^5.2.6",
         "@storybook/addon-info": "^5.2.6",
         "@storybook/addon-storyshots": "^5.2.6",
+        "@storybook/addon-storyshots-puppeteer": "^5.2.6",
         "@storybook/addon-storysource": "^5.2.6",
         "@storybook/react": "^5.2.6",
         "@storybook/storybook-deployer": "^2.8.1",
@@ -52,6 +54,7 @@
         "react-docgen-typescript-loader": "^3.3.0",
         "react-test-renderer": "^16.11.0",
         "require-context.macro": "^1.2.2",
+        "start-server-and-test": "^1.10.6",
         "stylelint": "^11.1.1",
         "stylelint-config-prettier": "^6.0.0",
         "stylelint-prettier": "^1.1.1",
