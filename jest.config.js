@@ -12,4 +12,6 @@ module.exports = {
     moduleFileExtensions: ['js', 'json', 'ts', 'tsx', 'less'],
     testPathIgnorePatterns: ['/node_modules/', '/dist/'],
     transformIgnorePatterns: ['<rootDir>.*(node_modules)(?!.*nav.*).*$'],
+    collectCoverage: true,
+    collectCoverageFrom: ['packages/**/src/*.(ts|tsx|js)'],
 };

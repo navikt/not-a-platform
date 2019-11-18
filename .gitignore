@@ -11,3 +11,4 @@ lerna-debug.log
 out*/
 *.d.ts
 storybook-static
+coverage
