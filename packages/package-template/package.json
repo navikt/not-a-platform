@@ -1,0 +1,28 @@
+{
+    "version": "1.0.0",
+    "name": "@navikt/package-name",
+    "author": "NAV",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "module": "src/index.tsx",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "npm run clean && npm run lessc && npm run tsc",
+        "tsc": "tsc -p tsconfig.json",
+        "clean": "rm -rf ./dist",
+        "lessc": "lessc src/indexStyles.less dist/indexStyles.css"
+    },
+    "bugs": {
+        "url": "https://github.com/navikt/not-a-platform/issues"
+    },
+    "dependencies": {
+        "@navikt/bem-utils": "1.0.0"
+    },
+    "devDependencies": {
+        "less": "^3.10.3",
+        "less-watch-compiler": "^1.14.1"
+    },
+    "peerDependencies": {
+        "react": "^16.11.0"
+    }
+}
