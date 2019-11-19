@@ -79,11 +79,29 @@
         width: 20px;
         height: 20px;
         vertical-align: sub;
+        display: inline;
         margin-right: 8px;
+
+        @media screen and (max-width: 1024px) {
+            display: block;
+            margin: 0 auto;
+        }
 
         &--check {
             width: 14px;
             height: 14px;
+
+            @media screen and (max-width: 1024px) {
+                padding: 3px;
+            }
+        }
+    }
+
+    &__icon-placeholder {
+        @media screen and (max-width: 1024px) {
+            display: block;
+            width: 20px;
+            height: 20px;
         }
     }
 }

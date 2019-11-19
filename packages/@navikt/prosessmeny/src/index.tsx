@@ -28,7 +28,7 @@ export const Prosessmeny = ({ steps, onClick }: ProsessmenyProps): JSX.Element =
         <ol className={prosessmenyCls.block}>
             {steps.map((step, index) => (
                 <Step
-                    key={step.label}
+                    key={step.label.split(' ').join('')}
                     index={index}
                     isFinished={index < activeIndex}
                     isActive={index === activeIndex}
