@@ -1,6 +1,9 @@
 import bem from '@navikt/bem-utils';
 import { Normaltekst } from 'nav-frontend-typografi';
 import * as React from 'react';
+import advarselImg from '../assets/images/advarsel.svg';
+import avslaatImg from '../assets/images/avslaatt_valgt.svg';
+import checkImg from '../assets/images/check.svg';
 import './stepStyles';
 
 interface StepProps {
@@ -38,31 +41,61 @@ export const Step = ({
         event.preventDefault();
         onClick(index);
     };
+
     const getModifierClass = (): string => {
-        if (stepIsFinished) {
-            return 'finished';
-        }
         if (isManual) {
             return 'manual';
         }
         if (isDenied) {
             return 'denied';
         }
+        if (stepIsFinished) {
+            return 'finished';
+        }
         return '';
     };
-    let statusCls = stepCls.element('indicator', getModifierClass());
+
+    const getIcon = (): JSX.Element | null => {
+        if (stepIsFinished) {
+            if (isManual) {
+                return (
+                    <img
+                        src={advarselImg}
+                        alt="Behandlet - Manuell oppgave"
+                        className={stepCls.element('icon', 'warning')}
+                    />
+                );
+            }
+            if (isDenied) {
+                return (
+                    <img src={avslaatImg} alt="Oppgave løst/avslått" className={stepCls.element('icon', 'denied')} />
+                );
+            }
+            return (
+                <img
+                    src={checkImg}
+                    alt="Behandlet - Oppgave løst/godkjent"
+                    className={stepCls.element('icon', 'check')}
+                />
+            );
+        }
+        return null;
+    };
+
+    let statusCls = stepCls.element('indicator', stepIsFinished && getModifierClass());
     if (isActive) {
         statusCls = statusCls.concat(' -active');
     }
 
     return (
-        <li key={label} className={stepCls.block} aria-current={isActive ? 'step' : undefined}>
+        <li key={label.split(' ').join('')} className={stepCls.block} aria-current={isActive ? 'step' : undefined}>
             <button
-                className={stepCls.element('button', getModifierClass())}
+                className={stepCls.element('button', isActive ? 'active' : undefined)}
                 type="button"
                 onClick={handleButtonClick}
                 disabled={isDisabled && !stepIsFinished}
             >
+                {getIcon()}
                 <Normaltekst tag="span">{label}</Normaltekst>
                 <span className={statusCls} />
             </button>

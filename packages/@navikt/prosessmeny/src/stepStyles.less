@@ -19,6 +19,14 @@
         &:focus {
             border: solid 3px #254b6d;
         }
+
+        &--active {
+            &:focus {
+                .typo-normal {
+                    font-weight: 600;
+                }
+            }
+        }
     }
 
     &__indicator {
@@ -64,6 +72,18 @@
                 border: solid 1px #88392b;
                 background-color: #a13a28;
             }
+        }
+    }
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+        vertical-align: sub;
+        margin-right: 8px;
+
+        &--check {
+            width: 14px;
+            height: 14px;
         }
     }
 }

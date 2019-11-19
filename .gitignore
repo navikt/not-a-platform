@@ -9,5 +9,5 @@ app/**/*.js
 .vscode
 lerna-debug.log
 out*/
-*.d.ts
+packages/**/*.d.ts
 storybook-static

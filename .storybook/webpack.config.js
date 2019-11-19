@@ -6,6 +6,13 @@ module.exports = async ({ config, mode }) => {
             rule => !(rule.use && rule.use.length && rule.use.find(({ loader }) => loader === 'babel-loader'))
         );
 
+    //Fjern default svg-loader
+    config.module.rules = config.module.rules.map(data => {
+        if (/svg\|/.test(String(data.test))) {
+            data.test = /\.(ico|jpg|jpeg|png|gif|eot|otf|webp|ttf|woff|woff2|cur|ani)(\?.*)?$/;
+        }
+        return data;
+    });
     config.module.rules = getRulesExceptBabelLoader();
     config.module.rules.push(
         {
@@ -48,6 +55,13 @@ module.exports = async ({ config, mode }) => {
             options: {
                 presets: ['@babel/preset-env', '@babel/preset-react'],
                 cacheDirectory: true,
+            },
+        },
+        {
+            test: /\.(svg)$/,
+            loader: 'file-loader',
+            options: {
+                name: '[name]_[hash].[ext]',
             },
         }
     );
