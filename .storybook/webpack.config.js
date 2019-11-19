@@ -25,6 +25,12 @@ module.exports = async ({ config, mode }) => {
                     },
                 },
                 { loader: require.resolve('react-docgen-typescript-loader') },
+            ],
+        },
+        {
+            test: /\.stories\.tsx?$/,
+            include: [/(packages)/],
+            use: [
                 {
                     loader: require.resolve('@storybook/source-loader'),
                     options: { parser: 'typescript' },
