@@ -6,7 +6,7 @@ import React from 'react';
 
 addDecorator(withA11y);
 addDecorator(withInfo);
-addDecorator(storyFn => <div style={{ maxWidth: '800px', width: '100%' }}>{storyFn()}</div>);
+addDecorator(storyFn => <div style={{ maxWidth: '1920px', width: '100%' }}>{storyFn()}</div>);
 addParameters({ info: { inline: true } });
 addParameters({
     docs: {
@@ -14,4 +14,10 @@ addParameters({
         page: DocsPage,
     },
 });
-configure(require.context('../packages/@navikt', true, /\.stories\.(ts|tsx)$/), module);
+configure(
+    [
+        require.context('../packages/@navikt', true, /\.stories\.(ts|tsx)$/),
+        require.context('../packages/stories', true, /\.stories\.(ts|tsx)$/),
+    ],
+    module
+);
