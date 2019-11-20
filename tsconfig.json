@@ -7,5 +7,5 @@
         "watch": false,
         "typeRoots": ["./node_modules/@types", "./@types"]
     },
-    "exclude": ["**/*.stories.tsx"]
+    "exclude": ["**/*.stories.tsx", "node_modules", "dist"]
 }
