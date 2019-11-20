@@ -9,7 +9,7 @@ module.exports = {
     moduleNameMapper: {
         '.*\\.(css|less)$': '<rootDir>/__mocks__/styleMock.js',
     },
-    moduleFileExtensions: ['js', 'json', 'ts', 'tsx', 'less'],
+    moduleFileExtensions: ['js', 'json', 'ts', 'tsx', 'less', 'css'],
     testPathIgnorePatterns: ['/node_modules/', '/dist/'],
     transformIgnorePatterns: ['<rootDir>.*(node_modules)(?!.*nav.*).*$'],
     collectCoverage: true,
