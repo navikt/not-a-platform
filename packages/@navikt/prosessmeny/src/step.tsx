@@ -63,9 +63,8 @@ export const Step = React.memo(
             }
             return <span className={stepCls.element('icon-placeholder')} />;
         };
-
         const stepIndicatorCls = classnames(stepCls.element('indicator', type), {
-            '-active': isActive,
+            [stepCls.element('indicator', 'active')]: isActive,
         });
 
         return (

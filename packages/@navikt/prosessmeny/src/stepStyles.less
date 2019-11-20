@@ -21,10 +21,8 @@
         }
 
         &--active {
-            &:focus {
-                .typo-normal {
-                    font-weight: 600;
-                }
+            .typo-normal {
+                font-weight: 600;
             }
         }
     }
@@ -39,39 +37,36 @@
         border: solid 1px #b7b1a9;
         background-color: #e7e9e9;
 
-        &.-active {
+        &--active {
             border: solid 1px #b7b1a9;
             background-color: #b7b1a9;
+            &.step__indicator--success {
+                border: solid 1px #1c6937;
+                background-color: #1c6937;
+            }
+            &.step__indicator--warning {
+                border: solid 1px #b26d14;
+                background-color: #ffa733;
+            }
+            &.step__indicator--danger {
+                border: solid 1px #88392b;
+                background-color: #a13a28;
+            }
         }
 
         &--success {
             border: solid 1px #1c6937;
             background-color: #9bd0b0;
-
-            &.-active {
-                border: solid 1px #1c6937;
-                background-color: #1c6937;
-            }
         }
 
         &--warning {
             border: solid 1px #b26d14;
             background-color: #ffe5c2;
-
-            &.-active {
-                border: solid 1px #b26d14;
-                background-color: #ffa733;
-            }
         }
 
         &--danger {
             border: solid 1px #88392b;
             background-color: #e3b0a8;
-
-            &.-active {
-                border: solid 1px #88392b;
-                background-color: #a13a28;
-            }
         }
     }
 
