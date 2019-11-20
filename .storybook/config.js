@@ -16,7 +16,7 @@ addParameters({
     },
 });
 const context = [
-    require.context('../packages/@navikt', true, /\.stories\.(ts|tsx)$/),
-    require.context('../packages/stories', true, /\.stories\.(ts|tsx)$/),
+    requireContext('../packages/@navikt', true, /\.stories\.(ts|tsx)$/),
+    requireContext('../packages/stories', true, /\.stories\.(ts|tsx)$/),
 ];
 configure(context, module);
