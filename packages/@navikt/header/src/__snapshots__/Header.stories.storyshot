@@ -4,7 +4,7 @@ exports[`Storyshots @navikt/header Normal 1`] = `
 <div
   style={
     Object {
-      "maxWidth": "800px",
+      "maxWidth": "1920px",
       "width": "100%",
     }
   }
@@ -114,7 +114,7 @@ exports[`Storyshots @navikt/header Normal 1`] = `
             </button>
           </div>
         </div>
-        <span
+        <div
           style={
             Object {
               "left": 0,
@@ -130,7 +130,7 @@ exports[`Storyshots @navikt/header Normal 1`] = `
             className="arrow"
             style={Object {}}
           />
-        </span>
+        </div>
         <div>
           <div
             className="user"
@@ -142,7 +142,7 @@ exports[`Storyshots @navikt/header Normal 1`] = `
             </p>
           </div>
         </div>
-        <span
+        <div
           style={
             Object {
               "left": 0,
@@ -158,7 +158,7 @@ exports[`Storyshots @navikt/header Normal 1`] = `
             className="arrow"
             style={Object {}}
           />
-        </span>
+        </div>
       </div>
     </header>
   </div>
@@ -377,7 +377,7 @@ exports[`Storyshots @navikt/header With Unit 1`] = `
 <div
   style={
     Object {
-      "maxWidth": "800px",
+      "maxWidth": "1920px",
       "width": "100%",
     }
   }
@@ -487,7 +487,7 @@ exports[`Storyshots @navikt/header With Unit 1`] = `
             </button>
           </div>
         </div>
-        <span
+        <div
           style={
             Object {
               "left": 0,
@@ -503,7 +503,7 @@ exports[`Storyshots @navikt/header With Unit 1`] = `
             className="arrow"
             style={Object {}}
           />
-        </span>
+        </div>
         <div>
           <div
             className="user"
@@ -520,7 +520,7 @@ exports[`Storyshots @navikt/header With Unit 1`] = `
             </p>
           </div>
         </div>
-        <span
+        <div
           style={
             Object {
               "left": 0,
@@ -536,7 +536,7 @@ exports[`Storyshots @navikt/header With Unit 1`] = `
             className="arrow"
             style={Object {}}
           />
-        </span>
+        </div>
       </div>
     </header>
   </div>
@@ -782,7 +782,7 @@ exports[`Storyshots @navikt/header With User Popover 1`] = `
 <div
   style={
     Object {
-      "maxWidth": "800px",
+      "maxWidth": "1920px",
       "width": "100%",
     }
   }
@@ -892,7 +892,7 @@ exports[`Storyshots @navikt/header With User Popover 1`] = `
             </button>
           </div>
         </div>
-        <span
+        <div
           style={
             Object {
               "left": 0,
@@ -908,7 +908,7 @@ exports[`Storyshots @navikt/header With User Popover 1`] = `
             className="arrow"
             style={Object {}}
           />
-        </span>
+        </div>
         <div>
           <button
             aria-expanded={false}
@@ -934,7 +934,7 @@ exports[`Storyshots @navikt/header With User Popover 1`] = `
             />
           </button>
         </div>
-        <span
+        <div
           style={
             Object {
               "left": 0,
@@ -953,7 +953,7 @@ exports[`Storyshots @navikt/header With User Popover 1`] = `
           <div>
             Test
           </div>
-        </span>
+        </div>
       </div>
     </header>
   </div>

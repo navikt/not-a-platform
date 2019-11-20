@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots @navikt/boxed-list-with-links Normal 1`] = `
+exports[`Storyshots Examples Application Wrapper 1`] = `
 <div
   style={
     Object {
@@ -42,7 +42,7 @@ exports[`Storyshots @navikt/boxed-list-with-links Normal 1`] = `
             }
           }
         >
-          @navikt/boxed-list-with-links
+          Examples
         </h1>
         <h2
           style={
@@ -54,7 +54,7 @@ exports[`Storyshots @navikt/boxed-list-with-links Normal 1`] = `
             }
           }
         >
-          Normal
+          Application Wrapper
         </h2>
       </div>
     </div>
@@ -63,42 +63,187 @@ exports[`Storyshots @navikt/boxed-list-with-links Normal 1`] = `
     id="story-root"
     style={Object {}}
   >
-    <ul
-      className="boxedList"
+    <header
+      className="header"
     >
-      <li
-        className="boxedList__item"
+      <div
+        className="header__column"
       >
-        <a
-          className="boxedList__item__anchor"
-          href="nav.no"
-          rel=""
-          target=""
+        <h1
+          className="typo-sidetittel header__title"
         >
-          <p
-            className="typo-normal"
+          NAV
+          <span
+            className="header__subtitle"
           >
-            Test 1
-          </p>
-        </a>
-      </li>
-      <li
-        className="boxedList__item"
+            Svangerskap og Fødsel
+          </span>
+        </h1>
+      </div>
+      <div
+        className="header__column"
       >
-        <a
-          className="boxedList__item__anchor"
-          href="localhost:1234"
-          rel=""
-          target=""
-        >
-          <p
-            className="typo-normal"
+        <div>
+          <div
+            className="systems"
           >
-            Test 2
-          </p>
-        </a>
-      </li>
-    </ul>
+            <button
+              aria-expanded={false}
+              aria-haspopup="dialog"
+              className="knapp systems__button knapp--flat knapp--kompakt"
+              disabled={false}
+              onClick={[Function]}
+              type="submit"
+            >
+              <svg
+                focusable="false"
+                height={32}
+                kind="systemer"
+                viewBox="0 0 128 128"
+                width={32}
+              >
+                <path
+                  d="M0 0h32v32H0zm48 0h32v32H48zm48 0h32v32H96zM0 48h32v32H0zm48 0h32v32H48zm48 0h32v32H96zM0 96h32v32H0zm48 0h32v32H48zm48 0h32v32H96z"
+                />
+              </svg>
+              <span
+                className="sr-only"
+              >
+                Systemer
+              </span>
+            </button>
+          </div>
+        </div>
+        <div
+          style={
+            Object {
+              "left": 0,
+              "opacity": 0,
+              "pointerEvents": "none",
+              "position": "absolute",
+              "top": "8px",
+              "visibility": "hidden",
+            }
+          }
+        >
+          <div
+            className="arrow"
+            style={Object {}}
+          />
+          <ul
+            className="boxedList"
+          >
+            <li
+              className="boxedList__item"
+            >
+              <a
+                className="boxedList__item__anchor"
+                href="nav.no"
+                rel=""
+                target=""
+              >
+                <p
+                  className="typo-normal"
+                >
+                  Test 1
+                </p>
+              </a>
+            </li>
+            <li
+              className="boxedList__item"
+            >
+              <a
+                className="boxedList__item__anchor"
+                href="localhost:1234"
+                rel=""
+                target=""
+              >
+                <p
+                  className="typo-normal"
+                >
+                  Test 2
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <button
+            aria-expanded={false}
+            aria-haspopup="dialog"
+            className="user"
+            onClick={[Function]}
+            type="button"
+          >
+            <span>
+              <span
+                className="typo-normal user__name"
+              >
+                Navn Brukersen
+              </span>
+              <span
+                className="typo-normal user__unit"
+              >
+                NFP Drammen
+              </span>
+            </span>
+            <i
+              className="nav-frontend-chevron chevronboks user__chevron chevron--ned"
+            />
+          </button>
+        </div>
+        <div
+          style={
+            Object {
+              "left": 0,
+              "opacity": 0,
+              "pointerEvents": "none",
+              "position": "absolute",
+              "top": "8px",
+              "visibility": "hidden",
+            }
+          }
+        >
+          <div
+            className="arrow"
+            style={Object {}}
+          />
+          <ul
+            className="boxedList"
+          >
+            <li
+              className="boxedList__selectItem boxedList__selectItem--selected"
+            >
+              <a
+                aria-current={true}
+                className="boxedList__selectItem__anchor"
+                href="nav.no"
+              >
+                <p
+                  className="typo-normal"
+                >
+                  Test 1
+                </p>
+              </a>
+            </li>
+            <li
+              className="boxedList__selectItem"
+            >
+              <a
+                className="boxedList__selectItem__anchor"
+                href="localhost:1234"
+              >
+                <p
+                  className="typo-normal"
+                >
+                  Test 2
+                </p>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
   </div>
   <div>
     <div
@@ -177,7 +322,7 @@ exports[`Storyshots @navikt/boxed-list-with-links Normal 1`] = `
                             <span
                               className="token class-name"
                             >
-                              BoxedListWithLinks
+                              Header
                             </span>
                           </span>
                           
@@ -185,7 +330,7 @@ exports[`Storyshots @navikt/boxed-list-with-links Normal 1`] = `
                           <span
                             className="token attr-name"
                           >
-                            items
+                            renderLinksPopoverContent
                           </span>
                           <span
                             className="token script language-javascript"
@@ -201,111 +346,36 @@ exports[`Storyshots @navikt/boxed-list-with-links Normal 1`] = `
                               {
                             </span>
                             <span
+                              className="token keyword"
+                            >
+                              function
+                            </span>
+                             
+                            <span
+                              className="token function"
+                            >
+                              noRefCheck
+                            </span>
+                            <span
                               className="token punctuation"
                             >
-                              [
+                              (
                             </span>
-                            
-    
+                            <span
+                              className="token punctuation"
+                            >
+                              )
+                            </span>
+                             
                             <span
                               className="token punctuation"
                             >
                               {
                             </span>
-                            
-      href
-                            <span
-                              className="token punctuation"
-                            >
-                              :
-                            </span>
-                             
-                            <span
-                              className="token string"
-                            >
-                              'nav.no'
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              ,
-                            </span>
-                            
-      name
-                            <span
-                              className="token punctuation"
-                            >
-                              :
-                            </span>
-                             
-                            <span
-                              className="token string"
-                            >
-                              'Test 1'
-                            </span>
-                            
-    
                             <span
                               className="token punctuation"
                             >
                               }
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              ,
-                            </span>
-                            
-    
-                            <span
-                              className="token punctuation"
-                            >
-                              {
-                            </span>
-                            
-      href
-                            <span
-                              className="token punctuation"
-                            >
-                              :
-                            </span>
-                             
-                            <span
-                              className="token string"
-                            >
-                              'localhost:1234'
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              ,
-                            </span>
-                            
-      name
-                            <span
-                              className="token punctuation"
-                            >
-                              :
-                            </span>
-                             
-                            <span
-                              className="token string"
-                            >
-                              'Test 2'
-                            </span>
-                            
-    
-                            <span
-                              className="token punctuation"
-                            >
-                              }
-                            </span>
-                            
-  
-                            <span
-                              className="token punctuation"
-                            >
-                              ]
                             </span>
                             <span
                               className="token punctuation"
@@ -314,7 +384,146 @@ exports[`Storyshots @navikt/boxed-list-with-links Normal 1`] = `
                             </span>
                           </span>
                           
- 
+  
+                          <span
+                            className="token attr-name"
+                          >
+                            renderUserPopoverContent
+                          </span>
+                          <span
+                            className="token script language-javascript"
+                          >
+                            <span
+                              className="token script-punctuation punctuation"
+                            >
+                              =
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              {
+                            </span>
+                            <span
+                              className="token keyword"
+                            >
+                              function
+                            </span>
+                             
+                            <span
+                              className="token function"
+                            >
+                              noRefCheck
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              (
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              )
+                            </span>
+                             
+                            <span
+                              className="token punctuation"
+                            >
+                              {
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              }
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              }
+                            </span>
+                          </span>
+                          
+  
+                          <span
+                            className="token attr-name"
+                          >
+                            title
+                          </span>
+                          <span
+                            className="token attr-value"
+                          >
+                            <span
+                              className="token punctuation"
+                            >
+                              =
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              "
+                            </span>
+                            Svangerskap og Fødsel
+                            <span
+                              className="token punctuation"
+                            >
+                              "
+                            </span>
+                          </span>
+                          
+  
+                          <span
+                            className="token attr-name"
+                          >
+                            userName
+                          </span>
+                          <span
+                            className="token attr-value"
+                          >
+                            <span
+                              className="token punctuation"
+                            >
+                              =
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              "
+                            </span>
+                            Navn Brukersen
+                            <span
+                              className="token punctuation"
+                            >
+                              "
+                            </span>
+                          </span>
+                          
+  
+                          <span
+                            className="token attr-name"
+                          >
+                            userUnit
+                          </span>
+                          <span
+                            className="token attr-value"
+                          >
+                            <span
+                              className="token punctuation"
+                            >
+                              =
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              "
+                            </span>
+                            NFP Drammen
+                            <span
+                              className="token punctuation"
+                            >
+                              "
+                            </span>
+                          </span>
+                          
+
                           <span
                             className="token punctuation"
                           >
@@ -378,7 +587,7 @@ exports[`Storyshots @navikt/boxed-list-with-links Normal 1`] = `
           }
         >
           "
-          BoxedListWithLinks
+          Header
           " Component
         </h3>
         <small>
