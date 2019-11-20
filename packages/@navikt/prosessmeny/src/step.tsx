@@ -2,10 +2,13 @@ import bem from '@navikt/bem-utils';
 import classnames from 'classnames';
 import { Normaltekst } from 'nav-frontend-typografi';
 import * as React from 'react';
-import advarselImg from '../assets/images/advarsel.svg';
-import avslaatImg from '../assets/images/avslaatt_valgt.svg';
-import checkImg from '../assets/images/check.svg';
 import './stepStyles';
+
+/* eslint-disable global-require */
+const advarselImgPath = require('./assets/images/advarsel.svg') as string;
+const avslaatImgPath = require('./assets/images/avslaatt_valgt.svg') as string;
+const checkImgPath = require('./assets/images/check.svg') as string;
+/* eslint-enable global-require */
 
 export enum StepType {
     warning = 'warning',
@@ -38,7 +41,7 @@ export const Step = React.memo(
                 if (type === StepType.warning) {
                     return (
                         <img
-                            src={advarselImg}
+                            src={advarselImgPath}
                             alt="Behandlet - Manuell oppgave"
                             className={stepCls.element('icon', 'warning')}
                         />
@@ -47,7 +50,7 @@ export const Step = React.memo(
                 if (type === StepType.danger) {
                     return (
                         <img
-                            src={avslaatImg}
+                            src={avslaatImgPath}
                             alt="Oppgave løst/avslått"
                             className={stepCls.element('icon', 'danger')}
                         />
@@ -55,7 +58,7 @@ export const Step = React.memo(
                 }
                 return (
                     <img
-                        src={checkImg}
+                        src={checkImgPath}
                         alt="Behandlet - Oppgave løst/godkjent"
                         className={stepCls.element('icon', 'success')}
                     />
