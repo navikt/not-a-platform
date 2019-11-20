@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Should render 1`] = `
+<ul
+  className="boxedList"
+>
+  <li>
+    Test
+  </li>
+</ul>
+`;

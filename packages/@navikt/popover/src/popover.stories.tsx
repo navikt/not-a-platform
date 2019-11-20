@@ -3,11 +3,10 @@ import Popover from './popover';
 
 export default { title: '@navikt/popover' };
 
-export const normal = () => {
-    const [isOpen, setIsOpen] = React.useState(false);
+export const closed = () => {
     return (
         <Popover
-            popperIsVisible={isOpen}
+            popperIsVisible={false}
             renderArrowElement
             customPopperStyles={{ top: '8px' }}
             popperProps={{
@@ -18,7 +17,31 @@ export const normal = () => {
             referenceProps={{
                 children: ({ ref }) => (
                     <div ref={ref}>
-                        <button onClick={() => setIsOpen(!isOpen)} type="button">
+                        <button onClick={() => null} type="button">
+                            Click me
+                        </button>
+                    </div>
+                ),
+            }}
+        />
+    );
+};
+
+export const open = () => {
+    return (
+        <Popover
+            popperIsVisible
+            renderArrowElement
+            customPopperStyles={{ top: '8px' }}
+            popperProps={{
+                children: () => <div>Content</div>,
+                placement: 'bottom-start',
+                positionFixed: true,
+            }}
+            referenceProps={{
+                children: ({ ref }) => (
+                    <div ref={ref}>
+                        <button onClick={() => null} type="button">
                             Click me
                         </button>
                     </div>

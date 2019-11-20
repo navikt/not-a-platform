@@ -3,6 +3,7 @@ import { withA11y } from '@storybook/addon-a11y';
 import { withInfo } from '@storybook/addon-info';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import React from 'react';
+import requireContext from 'require-context.macro';
 
 addDecorator(withA11y);
 addDecorator(withInfo);
@@ -14,4 +15,5 @@ addParameters({
         page: DocsPage,
     },
 });
-configure(require.context('../packages/@navikt', true, /\.stories\.(ts|tsx)$/), module);
+const context = requireContext('../packages/@navikt', true, /\.stories\.(ts|tsx)$/);
+configure(context, module);
