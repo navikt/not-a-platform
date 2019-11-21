@@ -1,11 +1,11 @@
 import * as React from 'react';
-import Prosessmeny from './index';
-import { StepType } from './step';
+import ProcessMenu from './index';
+import { StepType } from './Step';
 
-export default { title: '@navikt/prosessmeny' };
+export default { title: '@navikt/process-menu' };
 
 export const withStates = (): React.ReactNode => (
-    <Prosessmeny
+    <ProcessMenu
         steps={[
             {
                 label: 'Inngangsvilkår',

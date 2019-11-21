@@ -11,7 +11,7 @@ interface StepProps {
     isDisabled?: boolean;
 }
 
-interface ProsessmenyProps {
+interface ProcessMenuProps {
     /**
      * label: string;
     type?: StepType ('warning' | 'success' | 'danger' | 'default');
@@ -23,15 +23,15 @@ interface ProsessmenyProps {
     onClick?: (index: number) => void;
 }
 
-const prosessmenyCls = bem('prosessmeny');
+const processMenuCls = bem('process-menu');
 
-export const Prosessmeny = ({ steps, onClick }: ProsessmenyProps): JSX.Element => {
+export const ProcessMenu = ({ steps, onClick }: ProcessMenuProps): JSX.Element => {
     return (
-        <ol className={prosessmenyCls.block}>
+        <ol className={processMenuCls.block}>
             {steps.map((step, index) => (
                 <Step key={step.label.split(' ').join('')} index={index} onClick={onClick} {...step} />
             ))}
         </ol>
     );
 };
-export default Prosessmeny;
+export default ProcessMenu;
