@@ -1,10 +1,11 @@
 import * as React from 'react';
 import ProcessMenu from './index';
 import { StepType } from './Step';
+import StatefulProcessMenu from './StatefulProcessMenu';
 
 export default { title: '@navikt/process-menu' };
 
-export const withStates = (): React.ReactNode => (
+export const stateFromProps = (): React.ReactNode => (
     <ProcessMenu
         steps={[
             {
@@ -21,12 +22,10 @@ export const withStates = (): React.ReactNode => (
             {
                 label: 'Uttak',
                 type: StepType.warning,
-                isFinished: true,
             },
             {
                 label: 'Tilkjent ytelse',
                 type: StepType.danger,
-                isFinished: true,
             },
             {
                 label: 'Simulering',
@@ -36,6 +35,34 @@ export const withStates = (): React.ReactNode => (
                 label: 'Vedtak',
                 type: StepType.default,
                 isDisabled: true,
+            },
+        ]}
+        onClick={(index: number): void => console.log(index)}
+    />
+);
+
+export const stateful = (): React.ReactNode => (
+    <StatefulProcessMenu
+        steps={[
+            {
+                label: 'Inngangsvilkår',
+            },
+            {
+                label: 'Beregning',
+            },
+            {
+                label: 'Uttak',
+                type: StepType.warning,
+            },
+            {
+                label: 'Tilkjent ytelse',
+            },
+            {
+                label: 'Simulering',
+                type: StepType.danger,
+            },
+            {
+                label: 'Vedtak',
             },
         ]}
         onClick={(index: number): void => console.log(index)}

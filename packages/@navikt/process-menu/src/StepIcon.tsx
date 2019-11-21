@@ -18,20 +18,6 @@ const stepCls = bem('step');
 
 const StepIcon = ({ type, isFinished }): JSX.Element => {
     if (isFinished) {
-        if (type === StepType.warning) {
-            return (
-                <img
-                    src={advarselImgPath}
-                    alt="Behandlet - Manuell oppgave"
-                    className={stepCls.element('icon', 'warning')}
-                />
-            );
-        }
-        if (type === StepType.danger) {
-            return (
-                <img src={avslaatImgPath} alt="Oppgave løst/avslått" className={stepCls.element('icon', 'danger')} />
-            );
-        }
         return (
             <img
                 src={checkImgPath}
@@ -39,6 +25,18 @@ const StepIcon = ({ type, isFinished }): JSX.Element => {
                 className={stepCls.element('icon', 'success')}
             />
         );
+    }
+    if (type === StepType.warning) {
+        return (
+            <img
+                src={advarselImgPath}
+                alt="Behandlet - Manuell oppgave"
+                className={stepCls.element('icon', 'warning')}
+            />
+        );
+    }
+    if (type === StepType.danger) {
+        return <img src={avslaatImgPath} alt="Oppgave løst/avslått" className={stepCls.element('icon', 'danger')} />;
     }
     return <span className={stepCls.element('icon-placeholder')} />;
 };
