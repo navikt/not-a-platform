@@ -5,6 +5,7 @@ import ProcessMenu from './index';
 interface StepProps {
     label: string;
     type?: StepType;
+    ikonAltText?: string;
 }
 
 interface StatefulProcessMenuProps {
