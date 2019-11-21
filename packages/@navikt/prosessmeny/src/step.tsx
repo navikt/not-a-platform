@@ -3,12 +3,7 @@ import classnames from 'classnames';
 import { Normaltekst } from 'nav-frontend-typografi';
 import * as React from 'react';
 import './stepStyles';
-
-/* eslint-disable global-require */
-const advarselImgPath = require('./assets/images/advarsel.svg') as string;
-const avslaatImgPath = require('./assets/images/avslaatt_valgt.svg') as string;
-const checkImgPath = require('./assets/images/check.svg') as string;
-/* eslint-enable global-require */
+import StepIcon from './StepIcon';
 
 export enum StepType {
     warning = 'warning',
@@ -36,36 +31,6 @@ export const Step = React.memo(
             onClick(index);
         };
 
-        const getIcon = (): JSX.Element => {
-            if (isFinished) {
-                if (type === StepType.warning) {
-                    return (
-                        <img
-                            src={advarselImgPath}
-                            alt="Behandlet - Manuell oppgave"
-                            className={stepCls.element('icon', 'warning')}
-                        />
-                    );
-                }
-                if (type === StepType.danger) {
-                    return (
-                        <img
-                            src={avslaatImgPath}
-                            alt="Oppgave løst/avslått"
-                            className={stepCls.element('icon', 'danger')}
-                        />
-                    );
-                }
-                return (
-                    <img
-                        src={checkImgPath}
-                        alt="Behandlet - Oppgave løst/godkjent"
-                        className={stepCls.element('icon', 'success')}
-                    />
-                );
-            }
-            return <span className={stepCls.element('icon-placeholder')} />;
-        };
         const stepIndicatorCls = classnames(stepCls.element('indicator', type), {
             [stepCls.element('indicator', 'active')]: isActive,
         });
@@ -76,9 +41,9 @@ export const Step = React.memo(
                     className={stepCls.element('button', isActive ? 'active' : undefined)}
                     type="button"
                     onClick={handleButtonClick}
-                    disabled={isDisabled && !isFinished}
+                    disabled={isDisabled}
                 >
-                    {getIcon()}
+                    <StepIcon type={type} isFinished={isFinished} />
                     <Normaltekst tag="span">{label}</Normaltekst>
                     <span className={stepIndicatorCls} />
                 </button>

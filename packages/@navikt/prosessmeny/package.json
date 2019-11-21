@@ -2,7 +2,7 @@
     "version": "1.0.0",
     "name": "@navikt/package-name",
     "author": "NAV",
-    "license": "MIT",
+    "license": "SEE LICENSE IN LICENSE",
     "main": "dist/index.js",
     "module": "src/index.tsx",
     "types": "dist/index.d.ts",

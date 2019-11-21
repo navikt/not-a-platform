@@ -1,7 +1,7 @@
 import bem from '@navikt/bem-utils';
 import * as React from 'react';
 import './indexStyles';
-import Step, { StepType } from './step';
+import Step, { StepType } from './Step';
 
 interface StepProps {
     label: string;
