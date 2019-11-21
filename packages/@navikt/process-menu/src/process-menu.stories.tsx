@@ -68,3 +68,51 @@ export const stateful = (): React.ReactNode => (
         onClick={(index: number): void => console.log(index)}
     />
 );
+
+export const manySteps = (): React.ReactNode => (
+    <StatefulProcessMenu
+        steps={[
+            {
+                label: 'Inngangsvilkår',
+            },
+            {
+                label: 'Beregning',
+            },
+            {
+                label: 'Uttak',
+                type: StepType.warning,
+            },
+            {
+                label: 'Tilkjent ytelse',
+            },
+            {
+                label: 'Simulering',
+                type: StepType.danger,
+            },
+            {
+                label: 'Vedtak',
+            },
+            {
+                label: 'Inngangsvilkår',
+            },
+            {
+                label: 'Beregning',
+            },
+            {
+                label: 'Uttak',
+                type: StepType.warning,
+            },
+            {
+                label: 'Tilkjent ytelse',
+            },
+            {
+                label: 'Simulering',
+                type: StepType.danger,
+            },
+            {
+                label: 'Vedtak',
+            },
+        ]}
+        onClick={(index: number): void => console.log(index)}
+    />
+);

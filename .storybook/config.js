@@ -4,6 +4,7 @@ import { withInfo } from '@storybook/addon-info';
 import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import React from 'react';
 import requireContext from 'require-context.macro';
+import { themes } from '@storybook/theming';
 
 addDecorator(withA11y);
 addDecorator(withInfo);
@@ -13,6 +14,9 @@ addParameters({
     docs: {
         container: DocsContainer,
         page: DocsPage,
+    },
+    options: {
+        theme: themes.normal,
     },
 });
 const context = [
