@@ -1,6 +1,6 @@
 import * as React from 'react';
 import BoxedList from '@navikt/boxed-list';
-import bem from '@navikt/bem-utils';
+import bem from '@navikt/nap-bem-utils';
 import { Normaltekst } from 'nav-frontend-typografi';
 import './list';
 

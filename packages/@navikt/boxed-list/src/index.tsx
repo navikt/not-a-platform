@@ -1,4 +1,4 @@
-import bem from '@navikt/bem-utils';
+import bem from '@navikt/nap-bem-utils';
 import * as React from 'react';
 import './boxedList';
 
