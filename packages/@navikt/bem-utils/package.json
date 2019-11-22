@@ -1,6 +1,6 @@
 {
     "version": "1.0.0",
-    "name": "@navikt/bem-utils",
+    "name": "@navikt/nap-bem-utils",
     "author": "NAV",
     "license": "MIT",
     "main": "dist/bemUtils.js",
