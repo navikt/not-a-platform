@@ -1,6 +1,6 @@
 import BoxedListWithLinks from '@navikt/boxed-list-with-links';
 import BoxedListWithSelection from '@navikt/boxed-list-with-selection';
-import Header from '@navikt/header';
+import Header from '@navikt/nap-header';
 import * as React from 'react';
 
 const ApplicationWrapper: React.FunctionComponent = () => (
