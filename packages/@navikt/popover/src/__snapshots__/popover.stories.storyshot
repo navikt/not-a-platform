@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots @navikt/popover Closed 1`] = `
+exports[`Storyshots @navikt/nap-popover Closed 1`] = `
 <div
   style={
     Object {
@@ -42,7 +42,7 @@ exports[`Storyshots @navikt/popover Closed 1`] = `
             }
           }
         >
-          @navikt/popover
+          @navikt/nap-popover
         </h1>
         <h2
           style={
@@ -509,7 +509,7 @@ exports[`Storyshots @navikt/popover Closed 1`] = `
 </div>
 `;
 
-exports[`Storyshots @navikt/popover Open 1`] = `
+exports[`Storyshots @navikt/nap-popover Open 1`] = `
 <div
   style={
     Object {
@@ -551,7 +551,7 @@ exports[`Storyshots @navikt/popover Open 1`] = `
             }
           }
         >
-          @navikt/popover
+          @navikt/nap-popover
         </h1>
         <h2
           style={
