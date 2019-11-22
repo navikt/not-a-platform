@@ -51,7 +51,6 @@ export const Step = React.memo(
                     className={stepCls.element('button', isActive ? 'active' : undefined)}
                     type="button"
                     onClick={handleButtonClick}
-                    disabled={isDisabled}
                 >
                     <StepIcon type={type} isFinished={isFinished} ikonAltText={ikonAltText} />
                     <Normaltekst tag="span">{label}</Normaltekst>
