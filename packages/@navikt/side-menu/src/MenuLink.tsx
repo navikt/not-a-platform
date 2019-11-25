@@ -20,8 +20,8 @@ const MenuLink = ({ label, active, onClick, index, iconSrc }: MenuLinkProps): JS
         onClick(index);
     };
 
-    const labelCls = classnames(menuLinkCls.element('label', active ? 'active' : undefined), {
-        [menuLinkCls.element('label', 'with-icon')]: !!iconSrc,
+    const labelCls = classnames(menuLinkCls.elementWithModifier('label', active ? 'active' : undefined), {
+        [menuLinkCls.elementWithModifier('label', 'with-icon')]: !!iconSrc,
     });
 
     return (
