@@ -2,7 +2,7 @@ import * as React from 'react';
 import SideMenu from './index';
 import StatefulSideMenu from './StatefulSideMenu';
 
-export default { title: '@navikt/side-menu' };
+export default { title: '@navikt/nap-side-menu' };
 
 export const propsControlled = (): React.ReactNode => (
     <SideMenu
