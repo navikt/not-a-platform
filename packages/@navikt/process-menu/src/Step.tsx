@@ -1,4 +1,4 @@
-import bem from '@navikt/bem-utils';
+import bem from '@navikt/nap-bem-utils';
 import classnames from 'classnames';
 import { Normaltekst } from 'nav-frontend-typografi';
 import * as React from 'react';
