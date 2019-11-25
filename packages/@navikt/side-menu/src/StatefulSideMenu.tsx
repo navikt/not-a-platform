@@ -15,14 +15,11 @@ const StatefulSideMenu = ({ heading, links, onClick }: StatefulSideMenuProps): J
         onClick(index);
     };
 
-    const getLinksWithActiveState = (): Link[] => {
-        return links.map((link, index) => {
-            return {
-                ...link,
-                active: currentIndex === index,
-            };
-        });
-    };
+    const getLinksWithActiveState = (): Link[] =>
+        links.map((link, index) => ({
+            ...link,
+            active: currentIndex === index,
+        }));
 
     return (
         <div style={{ display: 'flex' }}>
