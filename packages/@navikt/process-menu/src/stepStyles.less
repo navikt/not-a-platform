@@ -1,0 +1,111 @@
+.step {
+    flex: 1;
+    padding: 0 4px;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+
+    &__button {
+        padding: 8px 0 6px;
+        background: transparent;
+        cursor: pointer;
+        height: 48px;
+        border: none;
+        border-radius: 4px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex: 1;
+        color: #3e3832;
+
+        &:disabled {
+            color: #3e3832;
+        }
+
+        &:hover {
+            background-color: #e7e9e9;
+        }
+
+        &:focus {
+            border: solid 3px #254b6d;
+            margin: -3px;
+            outline: none;
+        }
+
+        &--active {
+            .typo-normal {
+                font-weight: 600;
+            }
+        }
+    }
+
+    &__indicator {
+        display: block;
+        margin-bottom: -6px;
+        margin-top: 6px;
+        width: calc(100% - 2px);
+        height: 8px;
+        border-radius: 3px;
+        border: solid 1px #78706a;
+        background-color: #e7e9e9;
+
+        &--active {
+            border: solid 1px #78706a;
+            background-color: #78706a;
+            &.step__indicator--success {
+                border: solid 1px #1c6937;
+                background-color: #1c6937;
+            }
+            &.step__indicator--warning {
+                border: solid 1px #b26d14;
+                background-color: #ffa733;
+            }
+            &.step__indicator--danger {
+                border: solid 1px #88392b;
+                background-color: #a13a28;
+            }
+        }
+
+        &--success {
+            border: solid 1px #1c6937;
+            background-color: #9bd0b0;
+        }
+
+        &--warning {
+            border: solid 1px #b26d14;
+            background-color: #ffe5c2;
+        }
+
+        &--danger {
+            border: solid 1px #88392b;
+            background-color: #e3b0a8;
+        }
+    }
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+        vertical-align: sub;
+        display: inline;
+        margin-right: 8px;
+
+        @media screen and (max-width: 1024px) {
+            display: block;
+            margin: 0 auto;
+        }
+
+        &--success {
+            width: 14px;
+            height: 14px;
+            padding: 3px;
+        }
+    }
+
+    &__icon-placeholder {
+        @media screen and (max-width: 1024px) {
+            display: block;
+            width: 20px;
+            height: 20px;
+        }
+    }
+}

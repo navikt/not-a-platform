@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots @navikt/nap-popover Closed 1`] = `
+exports[`Storyshots @navikt/prosessmeny With States 1`] = `
 <div
   style={
     Object {
@@ -42,7 +42,7 @@ exports[`Storyshots @navikt/nap-popover Closed 1`] = `
             }
           }
         >
-          @navikt/nap-popover
+          @navikt/prosessmeny
         </h1>
         <h2
           style={
@@ -54,7 +54,7 @@ exports[`Storyshots @navikt/nap-popover Closed 1`] = `
             }
           }
         >
-          Closed
+          With States
         </h2>
       </div>
     </div>
@@ -63,34 +63,146 @@ exports[`Storyshots @navikt/nap-popover Closed 1`] = `
     id="story-root"
     style={Object {}}
   >
-    <div>
-      <button
-        onClick={[Function]}
-        type="button"
-      >
-        Click me
-      </button>
-    </div>
-    <div
-      style={
-        Object {
-          "left": 0,
-          "opacity": 0,
-          "pointerEvents": "none",
-          "position": "absolute",
-          "top": "8px",
-          "visibility": "hidden",
-        }
-      }
+    <ol
+      className="prosessmeny"
     >
-      <div
-        className="arrow"
-        style={Object {}}
-      />
-      <div>
-        Content
-      </div>
-    </div>
+      <li
+        className="step"
+      >
+        <button
+          className="step__button"
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Behandlet - Oppgave løst/godkjent"
+            className="step__icon step__icon--success"
+            src=""
+          />
+          <span
+            className="typo-normal"
+          >
+            Inngangsvilkår
+          </span>
+          <span
+            className="step__indicator step__indicator--success"
+          />
+        </button>
+      </li>
+      <li
+        aria-current="step"
+        className="step"
+      >
+        <button
+          className="step__button step__button--active"
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Behandlet - Oppgave løst/godkjent"
+            className="step__icon step__icon--success"
+            src=""
+          />
+          <span
+            className="typo-normal"
+          >
+            Beregning
+          </span>
+          <span
+            className="step__indicator step__indicator--success step__indicator step__indicator--active"
+          />
+        </button>
+      </li>
+      <li
+        className="step"
+      >
+        <button
+          className="step__button"
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Behandlet - Manuell oppgave"
+            className="step__icon step__icon--warning"
+            src=""
+          />
+          <span
+            className="typo-normal"
+          >
+            Uttak
+          </span>
+          <span
+            className="step__indicator step__indicator--warning"
+          />
+        </button>
+      </li>
+      <li
+        className="step"
+      >
+        <button
+          className="step__button"
+          onClick={[Function]}
+          type="button"
+        >
+          <img
+            alt="Oppgave løst/avslått"
+            className="step__icon step__icon--danger"
+            src=""
+          />
+          <span
+            className="typo-normal"
+          >
+            Tilkjent ytelse
+          </span>
+          <span
+            className="step__indicator step__indicator--danger"
+          />
+        </button>
+      </li>
+      <li
+        className="step"
+      >
+        <button
+          className="step__button"
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="step__icon-placeholder"
+          />
+          <span
+            className="typo-normal"
+          >
+            Simulering
+          </span>
+          <span
+            className="step__indicator step__indicator--default"
+          />
+        </button>
+      </li>
+      <li
+        className="step"
+      >
+        <button
+          className="step__button"
+          disabled={true}
+          onClick={[Function]}
+          type="button"
+        >
+          <span
+            className="step__icon-placeholder"
+          />
+          <span
+            className="typo-normal"
+          >
+            Vedtak
+          </span>
+          <span
+            className="step__indicator step__indicator--default"
+          />
+        </button>
+      </li>
+    </ol>
   </div>
   <div>
     <div
@@ -169,7 +281,7 @@ exports[`Storyshots @navikt/nap-popover Closed 1`] = `
                             <span
                               className="token class-name"
                             >
-                              Popover
+                              Prosessmeny
                             </span>
                           </span>
                           
@@ -177,7 +289,7 @@ exports[`Storyshots @navikt/nap-popover Closed 1`] = `
                           <span
                             className="token attr-name"
                           >
-                            customPopperStyles
+                            onClick
                           </span>
                           <span
                             className="token script language-javascript"
@@ -192,75 +304,6 @@ exports[`Storyshots @navikt/nap-popover Closed 1`] = `
                             >
                               {
                             </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              {
-                            </span>
-                            
-    top
-                            <span
-                              className="token punctuation"
-                            >
-                              :
-                            </span>
-                             
-                            <span
-                              className="token string"
-                            >
-                              '8px'
-                            </span>
-                            
-  
-                            <span
-                              className="token punctuation"
-                            >
-                              }
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              }
-                            </span>
-                          </span>
-                          
-  
-                          <span
-                            className="token attr-name"
-                          >
-                            popperProps
-                          </span>
-                          <span
-                            className="token script language-javascript"
-                          >
-                            <span
-                              className="token script-punctuation punctuation"
-                            >
-                              =
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              {
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              {
-                            </span>
-                            
-    
-                            <span
-                              className="token function-variable function"
-                            >
-                              children
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              :
-                            </span>
-                             
                             <span
                               className="token keyword"
                             >
@@ -296,28 +339,43 @@ exports[`Storyshots @navikt/nap-popover Closed 1`] = `
                             <span
                               className="token punctuation"
                             >
-                              ,
+                              }
                             </span>
-                            
-    placement
+                          </span>
+                          
+  
+                          <span
+                            className="token attr-name"
+                          >
+                            steps
+                          </span>
+                          <span
+                            className="token script language-javascript"
+                          >
+                            <span
+                              className="token script-punctuation punctuation"
+                            >
+                              =
+                            </span>
                             <span
                               className="token punctuation"
                             >
-                              :
-                            </span>
-                             
-                            <span
-                              className="token string"
-                            >
-                              'bottom-start'
+                              {
                             </span>
                             <span
                               className="token punctuation"
                             >
-                              ,
+                              [
                             </span>
                             
-    positionFixed
+    
+                            <span
+                              className="token punctuation"
+                            >
+                              {
+                            </span>
+                            
+      isFinished
                             <span
                               className="token punctuation"
                             >
@@ -329,51 +387,13 @@ exports[`Storyshots @navikt/nap-popover Closed 1`] = `
                             >
                               true
                             </span>
-                            
-  
                             <span
                               className="token punctuation"
                             >
-                              }
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              }
-                            </span>
-                          </span>
-                          
-  
-                          <span
-                            className="token attr-name"
-                          >
-                            referenceProps
-                          </span>
-                          <span
-                            className="token script language-javascript"
-                          >
-                            <span
-                              className="token script-punctuation punctuation"
-                            >
-                              =
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              {
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              {
+                              ,
                             </span>
                             
-    
-                            <span
-                              className="token function-variable function"
-                            >
-                              children
-                            </span>
+      label
                             <span
                               className="token punctuation"
                             >
@@ -381,32 +401,370 @@ exports[`Storyshots @navikt/nap-popover Closed 1`] = `
                             </span>
                              
                             <span
-                              className="token keyword"
+                              className="token string"
                             >
-                              function
-                            </span>
-                             
-                            <span
-                              className="token function"
-                            >
-                              noRefCheck
+                              'Inngangsvilkår'
                             </span>
                             <span
                               className="token punctuation"
                             >
-                              (
+                              ,
+                            </span>
+                            
+      type
+                            <span
+                              className="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              className="token string"
+                            >
+                              'success'
+                            </span>
+                            
+    
+                            <span
+                              className="token punctuation"
+                            >
+                              }
                             </span>
                             <span
                               className="token punctuation"
                             >
-                              )
+                              ,
                             </span>
-                             
+                            
+    
                             <span
                               className="token punctuation"
                             >
                               {
                             </span>
+                            
+      isActive
+                            <span
+                              className="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              className="token boolean"
+                            >
+                              true
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+      isFinished
+                            <span
+                              className="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              className="token boolean"
+                            >
+                              true
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+      label
+                            <span
+                              className="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              className="token string"
+                            >
+                              'Beregning'
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+      type
+                            <span
+                              className="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              className="token string"
+                            >
+                              'success'
+                            </span>
+                            
+    
+                            <span
+                              className="token punctuation"
+                            >
+                              }
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+    
+                            <span
+                              className="token punctuation"
+                            >
+                              {
+                            </span>
+                            
+      isFinished
+                            <span
+                              className="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              className="token boolean"
+                            >
+                              true
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+      label
+                            <span
+                              className="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              className="token string"
+                            >
+                              'Uttak'
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+      type
+                            <span
+                              className="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              className="token string"
+                            >
+                              'warning'
+                            </span>
+                            
+    
+                            <span
+                              className="token punctuation"
+                            >
+                              }
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+    
+                            <span
+                              className="token punctuation"
+                            >
+                              {
+                            </span>
+                            
+      isFinished
+                            <span
+                              className="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              className="token boolean"
+                            >
+                              true
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+      label
+                            <span
+                              className="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              className="token string"
+                            >
+                              'Tilkjent ytelse'
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+      type
+                            <span
+                              className="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              className="token string"
+                            >
+                              'danger'
+                            </span>
+                            
+    
+                            <span
+                              className="token punctuation"
+                            >
+                              }
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+    
+                            <span
+                              className="token punctuation"
+                            >
+                              {
+                            </span>
+                            
+      label
+                            <span
+                              className="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              className="token string"
+                            >
+                              'Simulering'
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+      type
+                            <span
+                              className="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              className="token string"
+                            >
+                              'default'
+                            </span>
+                            
+    
+                            <span
+                              className="token punctuation"
+                            >
+                              }
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+    
+                            <span
+                              className="token punctuation"
+                            >
+                              {
+                            </span>
+                            
+      isDisabled
+                            <span
+                              className="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              className="token boolean"
+                            >
+                              true
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+      label
+                            <span
+                              className="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              className="token string"
+                            >
+                              'Vedtak'
+                            </span>
+                            <span
+                              className="token punctuation"
+                            >
+                              ,
+                            </span>
+                            
+      type
+                            <span
+                              className="token punctuation"
+                            >
+                              :
+                            </span>
+                             
+                            <span
+                              className="token string"
+                            >
+                              'default'
+                            </span>
+                            
+    
                             <span
                               className="token punctuation"
                             >
@@ -417,20 +775,13 @@ exports[`Storyshots @navikt/nap-popover Closed 1`] = `
                             <span
                               className="token punctuation"
                             >
-                              }
+                              ]
                             </span>
                             <span
                               className="token punctuation"
                             >
                               }
                             </span>
-                          </span>
-                          
-  
-                          <span
-                            className="token attr-name"
-                          >
-                            renderArrowElement
                           </span>
                           
 
@@ -497,523 +848,7 @@ exports[`Storyshots @navikt/nap-popover Closed 1`] = `
           }
         >
           "
-          Popover
-          " Component
-        </h3>
-        <small>
-          No propTypes defined!
-        </small>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots @navikt/nap-popover Open 1`] = `
-<div
-  style={
-    Object {
-      "maxWidth": "1920px",
-      "width": "100%",
-    }
-  }
->
-  <div>
-    <div
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderRadius": "2px",
-          "color": "black",
-          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
-          "fontSize": "15px",
-          "fontWeight": 300,
-          "lineHeight": 1.45,
-          "padding": "20px 40px 40px",
-        }
-      }
-    >
-      <div
-        style={
-          Object {
-            "borderBottom": "1px solid #eee",
-            "marginBottom": 10,
-            "paddingTop": 10,
-          }
-        }
-      >
-        <h1
-          style={
-            Object {
-              "fontSize": "35px",
-              "margin": 0,
-              "padding": 0,
-            }
-          }
-        >
-          @navikt/nap-popover
-        </h1>
-        <h2
-          style={
-            Object {
-              "fontSize": "22px",
-              "fontWeight": 400,
-              "margin": "0 0 10px 0",
-              "padding": 0,
-            }
-          }
-        >
-          Open
-        </h2>
-      </div>
-    </div>
-  </div>
-  <div
-    id="story-root"
-    style={Object {}}
-  >
-    <div>
-      <button
-        onClick={[Function]}
-        type="button"
-      >
-        Click me
-      </button>
-    </div>
-    <div
-      style={
-        Object {
-          "left": 0,
-          "opacity": 0,
-          "pointerEvents": "none",
-          "position": "absolute",
-          "top": "8px",
-          "visibility": "visible",
-        }
-      }
-    >
-      <div
-        className="arrow"
-        style={Object {}}
-      />
-      <div>
-        Content
-      </div>
-    </div>
-  </div>
-  <div>
-    <div
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderRadius": "2px",
-          "color": "black",
-          "fontFamily": "Helvetica Neue, Helvetica, Segoe UI, Arial, freesans, sans-serif",
-          "fontSize": "15px",
-          "fontWeight": 300,
-          "lineHeight": 1.45,
-          "padding": "20px 40px 40px",
-        }
-      }
-    >
-      
-      <h1
-        style={
-          Object {
-            "borderBottom": "1px solid #EEE",
-            "fontSize": "25px",
-            "margin": "20px 0 0 0",
-            "padding": "0 0 5px 0",
-          }
-        }
-      >
-        Story Source
-      </h1>
-      <div
-        className="css-1fhpnuv"
-      >
-        <div
-          className="css-1si67pu"
-          data-simplebar={true}
-        >
-          <div
-            className="simplebar-wrapper"
-          >
-            <div
-              className="simplebar-height-auto-observer-wrapper"
-            >
-              <div
-                className="simplebar-height-auto-observer"
-              />
-            </div>
-            <div
-              className="simplebar-mask"
-            >
-              <div
-                className="simplebar-offset"
-              >
-                <div
-                  className="simplebar-content-wrapper"
-                >
-                  <div
-                    className="simplebar-content"
-                  >
-                    <pre
-                      className="hljs css-4zr3vl"
-                    >
-                      <code
-                        className="css-1maezg8"
-                      >
-                        <span
-                          className="token tag"
-                        >
-                          <span
-                            className="token tag"
-                          >
-                            <span
-                              className="token punctuation"
-                            >
-                              &lt;
-                            </span>
-                            <span
-                              className="token class-name"
-                            >
-                              Popover
-                            </span>
-                          </span>
-                          
-  
-                          <span
-                            className="token attr-name"
-                          >
-                            customPopperStyles
-                          </span>
-                          <span
-                            className="token script language-javascript"
-                          >
-                            <span
-                              className="token script-punctuation punctuation"
-                            >
-                              =
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              {
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              {
-                            </span>
-                            
-    top
-                            <span
-                              className="token punctuation"
-                            >
-                              :
-                            </span>
-                             
-                            <span
-                              className="token string"
-                            >
-                              '8px'
-                            </span>
-                            
-  
-                            <span
-                              className="token punctuation"
-                            >
-                              }
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              }
-                            </span>
-                          </span>
-                          
-  
-                          <span
-                            className="token attr-name"
-                          >
-                            popperIsVisible
-                          </span>
-                          
-  
-                          <span
-                            className="token attr-name"
-                          >
-                            popperProps
-                          </span>
-                          <span
-                            className="token script language-javascript"
-                          >
-                            <span
-                              className="token script-punctuation punctuation"
-                            >
-                              =
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              {
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              {
-                            </span>
-                            
-    
-                            <span
-                              className="token function-variable function"
-                            >
-                              children
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              :
-                            </span>
-                             
-                            <span
-                              className="token keyword"
-                            >
-                              function
-                            </span>
-                             
-                            <span
-                              className="token function"
-                            >
-                              noRefCheck
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              (
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              )
-                            </span>
-                             
-                            <span
-                              className="token punctuation"
-                            >
-                              {
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              }
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              ,
-                            </span>
-                            
-    placement
-                            <span
-                              className="token punctuation"
-                            >
-                              :
-                            </span>
-                             
-                            <span
-                              className="token string"
-                            >
-                              'bottom-start'
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              ,
-                            </span>
-                            
-    positionFixed
-                            <span
-                              className="token punctuation"
-                            >
-                              :
-                            </span>
-                             
-                            <span
-                              className="token boolean"
-                            >
-                              true
-                            </span>
-                            
-  
-                            <span
-                              className="token punctuation"
-                            >
-                              }
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              }
-                            </span>
-                          </span>
-                          
-  
-                          <span
-                            className="token attr-name"
-                          >
-                            referenceProps
-                          </span>
-                          <span
-                            className="token script language-javascript"
-                          >
-                            <span
-                              className="token script-punctuation punctuation"
-                            >
-                              =
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              {
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              {
-                            </span>
-                            
-    
-                            <span
-                              className="token function-variable function"
-                            >
-                              children
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              :
-                            </span>
-                             
-                            <span
-                              className="token keyword"
-                            >
-                              function
-                            </span>
-                             
-                            <span
-                              className="token function"
-                            >
-                              noRefCheck
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              (
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              )
-                            </span>
-                             
-                            <span
-                              className="token punctuation"
-                            >
-                              {
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              }
-                            </span>
-                            
-  
-                            <span
-                              className="token punctuation"
-                            >
-                              }
-                            </span>
-                            <span
-                              className="token punctuation"
-                            >
-                              }
-                            </span>
-                          </span>
-                          
-  
-                          <span
-                            className="token attr-name"
-                          >
-                            renderArrowElement
-                          </span>
-                          
-
-                          <span
-                            className="token punctuation"
-                          >
-                            /&gt;
-                          </span>
-                        </span>
-                      </code>
-                    </pre>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              className="simplebar-placeholder"
-            />
-          </div>
-          <div
-            className="simplebar-track simplebar-horizontal"
-          >
-            <div
-              className="simplebar-scrollbar"
-            />
-          </div>
-          <div
-            className="simplebar-track simplebar-vertical"
-          >
-            <div
-              className="simplebar-scrollbar"
-            />
-          </div>
-        </div>
-        <div
-          className="css-11xgcgt"
-        >
-          <button
-            className="css-1imo1gr"
-            onClick={[Function]}
-          >
-            Copy
-          </button>
-        </div>
-      </div>
-      <h1
-        style={
-          Object {
-            "borderBottom": "1px solid #EEE",
-            "fontSize": "25px",
-            "margin": "20px 0 0 0",
-            "padding": "0 0 5px 0",
-          }
-        }
-      >
-        Prop Types
-      </h1>
-      <div>
-        <h3
-          style={
-            Object {
-              "margin": "20px 0 0 0",
-            }
-          }
-        >
-          "
-          Popover
+          Prosessmeny
           " Component
         </h3>
         <small>

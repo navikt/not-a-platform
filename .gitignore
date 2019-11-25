@@ -9,6 +9,7 @@ app/**/*.js
 .vscode
 lerna-debug.log
 out*/
-*.d.ts
+packages/**/*.d.ts
 storybook-static
 coverage
+__tests__/__image_snapshots__/__diff_output__

@@ -4,7 +4,7 @@ exports[`Storyshots @navikt/boxed-list-with-selection Normal 1`] = `
 <div
   style={
     Object {
-      "maxWidth": "800px",
+      "maxWidth": "1920px",
       "width": "100%",
     }
   }

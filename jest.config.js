@@ -8,6 +8,7 @@ module.exports = {
     },
     moduleNameMapper: {
         '.*\\.(css|less)$': '<rootDir>/__mocks__/styleMock.js',
+        '.*\\.(svg)$': '<rootDir>/__mocks__/fileMock.js',
     },
     moduleFileExtensions: ['js', 'json', 'ts', 'tsx', 'less', 'css'],
     testPathIgnorePatterns: ['/node_modules/', '/dist/'],
