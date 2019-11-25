@@ -4,8 +4,7 @@
         "sourceMap": true,
         "module": "commonjs",
         "declaration": true,
-        "watch": false,
-        "typeRoots": ["./node_modules/@types", "./@types"]
+        "watch": false
     },
     "exclude": ["**/*.stories.tsx", "node_modules", "dist"]
 }

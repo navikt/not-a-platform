@@ -1,7 +1,3 @@
-Font License
-
-The Source Sans Pro font files in packages/node_modules/nav-frontend-typografi-style/assets are a subset of Source Sans Pro, licensed under the SIL Open Font License, and copyright Adobe Systems Incorporated, with Reserved Font Name 'Source'. All Rights Reserved. Source is a trademark of Adobe Systems Incorporated in the United States and/or other countries.
-
 Icon License
 
 This project uses Streamline Icons. If you use nav-frontend-moduler in your project please adhere to the Streamline Icons license agreement found here: https://streamlineicons.com/ux/extended-license.html

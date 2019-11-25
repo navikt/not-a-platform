@@ -9,7 +9,7 @@ interface StepProps {
     isActive?: boolean;
     isFinished?: boolean;
     isDisabled?: boolean;
-    ikonAltText?: string;
+    iconAltText?: string;
 }
 
 interface ProcessMenuProps {

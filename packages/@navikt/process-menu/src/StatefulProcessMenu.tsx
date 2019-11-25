@@ -5,7 +5,7 @@ import ProcessMenu from './index';
 interface StepProps {
     label: string;
     type?: StepType;
-    ikonAltText?: string;
+    iconAltText?: string;
 }
 
 interface StatefulProcessMenuProps {
@@ -13,24 +13,24 @@ interface StatefulProcessMenuProps {
     onClick?: (index: number) => void;
 }
 export const StatefulProcessMenu = ({ steps, onClick }: StatefulProcessMenuProps): JSX.Element => {
-    const [currentIndex, setCurrentIndex] = React.useState(0);
+    const [activeIndex, setActiveIndex] = React.useState(0);
     const handleOnClick = (index: number): void => {
-        setCurrentIndex(index);
+        setActiveIndex(index);
         onClick(index);
     };
 
-    const getStepsWithIndex = (): StepProps[] => {
+    const buildSteps = (): StepProps[] => {
         return steps.map((step, index) => {
             return {
                 ...step,
-                isActive: currentIndex === index,
-                isFinished: currentIndex > index,
-                isDisabled: currentIndex + 1 < index,
-                type: currentIndex > index ? StepType.success : step.type,
+                isActive: activeIndex === index,
+                isFinished: activeIndex > index,
+                isDisabled: activeIndex + 1 < index,
+                type: activeIndex > index ? StepType.success : step.type,
             };
         });
     };
-    return <ProcessMenu steps={getStepsWithIndex()} onClick={handleOnClick} />;
+    return <ProcessMenu steps={buildSteps()} onClick={handleOnClick} />;
 };
 
 export default StatefulProcessMenu;

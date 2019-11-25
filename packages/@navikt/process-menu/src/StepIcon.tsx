@@ -12,12 +12,12 @@ const checkImgPath = require('./assets/images/check.svg') as string;
 interface StepIconProps {
     type: string;
     isFinished?: boolean;
-    ikonAltText?: string;
+    iconAltText?: string;
 }
 
 const stepCls = bem('step');
 
-const StepIcon = ({ type, isFinished, ikonAltText }): JSX.Element => {
+const StepIcon = ({ type, isFinished, iconAltText }): JSX.Element => {
     if (isFinished) {
         return (
             <img
@@ -31,7 +31,7 @@ const StepIcon = ({ type, isFinished, ikonAltText }): JSX.Element => {
         return (
             <img
                 src={advarselImgPath}
-                alt={ikonAltText || 'Behandlet - Manuell oppgave'}
+                alt={iconAltText || 'Behandlet - Manuell oppgave'}
                 className={stepCls.element('icon', 'warning')}
             />
         );
@@ -40,7 +40,7 @@ const StepIcon = ({ type, isFinished, ikonAltText }): JSX.Element => {
         return (
             <img
                 src={avslaatImgPath}
-                alt={ikonAltText || 'Oppgave løst/avslått'}
+                alt={iconAltText || 'Oppgave løst/avslått'}
                 className={stepCls.element('icon', 'danger')}
             />
         );

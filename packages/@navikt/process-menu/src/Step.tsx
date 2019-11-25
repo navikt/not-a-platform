@@ -20,7 +20,7 @@ interface StepProps {
     isDisabled?: boolean;
     type?: StepType;
     onClick?: (index: number) => void;
-    ikonAltText?: string;
+    iconAltText?: string;
 }
 
 const stepCls = bem('step');
@@ -34,7 +34,7 @@ export const Step = React.memo(
         isDisabled,
         isFinished,
         type = StepType.default,
-        ikonAltText,
+        iconAltText,
     }: StepProps): JSX.Element => {
         const handleButtonClick = (event: React.FormEvent<HTMLButtonElement>): void => {
             event.preventDefault();
@@ -52,7 +52,7 @@ export const Step = React.memo(
                     type="button"
                     onClick={handleButtonClick}
                 >
-                    <StepIcon type={type} isFinished={isFinished} ikonAltText={ikonAltText} />
+                    <StepIcon type={type} isFinished={isFinished} iconAltText={iconAltText} />
                     <Normaltekst tag="span">{label}</Normaltekst>
                     <span className={stepIndicatorCls} />
                 </button>
