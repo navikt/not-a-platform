@@ -41,14 +41,14 @@ export const Step = React.memo(
             onClick(index);
         };
 
-        const stepIndicatorCls = classnames(stepCls.element('indicator', type), {
-            [stepCls.element('indicator', 'active')]: isActive,
+        const stepIndicatorCls = classnames(stepCls.elementWithModifier('indicator', type), {
+            [stepCls.elementWithModifier('indicator', 'active')]: isActive,
         });
 
         return (
             <li key={label.split(' ').join('')} className={stepCls.block} aria-current={isActive ? 'step' : undefined}>
                 <button
-                    className={stepCls.element('button', isActive ? 'active' : undefined)}
+                    className={stepCls.elementWithModifier('button', isActive ? 'active' : undefined)}
                     type="button"
                     onClick={handleButtonClick}
                 >
