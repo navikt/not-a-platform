@@ -11,10 +11,10 @@ test('Element gets block and element class', () => {
 });
 
 test('Element gets block, element and modifier class', () => {
-    expect(testCls.element('element', 'modifier')).toBe('block__element block__element--modifier');
+    expect(testCls.elementWithModifier('element', 'modifier')).toBe('block__element block__element--modifier');
     expect(testCls.modifier('modifier')).toBe('block--modifier');
 });
 
 test('Element gets block and modifier class', () => {
-    expect(testCls.blockModifier('modifier')).toBe('block block--modifier');
+    expect(`${testCls.block} ${testCls.modifier('modifier')}`).toBe('block block--modifier');
 });

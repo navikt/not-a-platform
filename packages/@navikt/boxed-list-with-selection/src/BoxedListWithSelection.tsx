@@ -22,7 +22,7 @@ const BoxedListWithSelection: React.FunctionComponent<BoxedListWithSelectionProp
             <li
                 className={
                     selected
-                        ? boxedListWithSelectionItemCls.blockModifier('selected')
+                        ? `${boxedListWithSelectionItemCls.block} ${boxedListWithSelectionItemCls.modifier('selected')}`
                         : boxedListWithSelectionItemCls.block
                 }
                 key={href}
