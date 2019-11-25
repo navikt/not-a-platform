@@ -23,7 +23,7 @@ const StepIcon = ({ type, isFinished, iconAltText }): JSX.Element => {
             <img
                 src={checkImgPath}
                 alt="Behandlet - Oppgave løst/godkjent"
-                className={stepCls.element('icon', 'success')}
+                className={stepCls.elementWithModifier('icon', 'success')}
             />
         );
     }
@@ -32,7 +32,7 @@ const StepIcon = ({ type, isFinished, iconAltText }): JSX.Element => {
             <img
                 src={advarselImgPath}
                 alt={iconAltText || 'Behandlet - Manuell oppgave'}
-                className={stepCls.element('icon', 'warning')}
+                className={stepCls.elementWithModifier('icon', 'warning')}
             />
         );
     }
@@ -41,7 +41,7 @@ const StepIcon = ({ type, isFinished, iconAltText }): JSX.Element => {
             <img
                 src={avslaatImgPath}
                 alt={iconAltText || 'Oppgave løst/avslått'}
-                className={stepCls.element('icon', 'danger')}
+                className={stepCls.elementWithModifier('icon', 'danger')}
             />
         );
     }
