@@ -11,7 +11,7 @@
     },
     "license": "MIT",
     "dependencies": {
-        "@navikt/header": "1.0.0",
+        "@navikt/nap-header": "1.0.0",
         "@navikt/boxed-list-with-links": "1.0.0",
         "@navikt/boxed-list-with-selection": "1.0.0"
     },

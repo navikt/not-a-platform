@@ -1,5 +1,5 @@
 {
-    "name": "@navikt/header",
+    "name": "@navikt/nap-header",
     "version": "1.0.0",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
@@ -14,8 +14,8 @@
     "author": "NAV",
     "license": "MIT",
     "dependencies": {
-        "@navikt/bem-utils": "1.0.0",
-        "@navikt/popover": "1.0.0",
+        "@navikt/nap-bem-utils": "1.0.0",
+        "@navikt/nap-popover": "1.0.0",
         "classnames": "^2.2.6",
         "lodash.throttle": "^4.1.1",
         "nav-frontend-chevron": "^1.0.10",

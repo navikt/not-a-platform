@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Popover from './popover';
 
-export default { title: '@navikt/popover' };
+export default { title: '@navikt/nap-popover' };
 
 export const closed = () => {
     return (

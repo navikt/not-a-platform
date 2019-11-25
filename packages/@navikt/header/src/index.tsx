@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Sidetittel as PageTitle } from 'nav-frontend-typografi';
-import bem from '@navikt/bem-utils';
-import Popover from '@navikt/popover';
+import bem from '@navikt/nap-bem-utils';
+import Popover from '@navikt/nap-popover';
 import CurrentUserInfo from './components/user-content/CurrentUserInfo';
 import Systems from './components/systems/systems';
 import './header';

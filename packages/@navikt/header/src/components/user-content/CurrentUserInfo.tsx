@@ -1,5 +1,5 @@
 import * as React from 'react';
-import bem from '@navikt/bem-utils';
+import bem from '@navikt/nap-bem-utils';
 import { NedChevron, OppChevron } from 'nav-frontend-chevron';
 import { Normaltekst as Text } from 'nav-frontend-typografi';
 import './userContent';

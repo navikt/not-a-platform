@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots @navikt/header Normal 1`] = `
+exports[`Storyshots @navikt/nap-header Normal 1`] = `
 <div
   style={
     Object {
@@ -42,7 +42,7 @@ exports[`Storyshots @navikt/header Normal 1`] = `
             }
           }
         >
-          @navikt/header
+          @navikt/nap-header
         </h1>
         <h2
           style={
@@ -373,7 +373,7 @@ exports[`Storyshots @navikt/header Normal 1`] = `
 </div>
 `;
 
-exports[`Storyshots @navikt/header With Unit 1`] = `
+exports[`Storyshots @navikt/nap-header With Unit 1`] = `
 <div
   style={
     Object {
@@ -415,7 +415,7 @@ exports[`Storyshots @navikt/header With Unit 1`] = `
             }
           }
         >
-          @navikt/header
+          @navikt/nap-header
         </h1>
         <h2
           style={
@@ -778,7 +778,7 @@ exports[`Storyshots @navikt/header With Unit 1`] = `
 </div>
 `;
 
-exports[`Storyshots @navikt/header With User Popover 1`] = `
+exports[`Storyshots @navikt/nap-header With User Popover 1`] = `
 <div
   style={
     Object {
@@ -820,7 +820,7 @@ exports[`Storyshots @navikt/header With User Popover 1`] = `
             }
           }
         >
-          @navikt/header
+          @navikt/nap-header
         </h1>
         <h2
           style={

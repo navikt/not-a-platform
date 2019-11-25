@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Header from './index';
 
-export default { title: '@navikt/header' };
+export default { title: '@navikt/nap-header' };
 
 export const normal = () => <Header title="Svangerskap og Fødsel" userName="Navn Brukersen" />;
 export const withUnit = () => <Header title="Svangerskap og Fødsel" userName="Navn Brukersen" userUnit="NFP Drammen" />;
