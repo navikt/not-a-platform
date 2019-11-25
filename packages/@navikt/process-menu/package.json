@@ -1,6 +1,6 @@
 {
     "version": "1.0.0",
-    "name": "@navikt/process-menu",
+    "name": "@navikt/nap-process-menu",
     "author": "NAV",
     "license": "SEE LICENSE IN LICENSE",
     "main": "dist/index.js",
