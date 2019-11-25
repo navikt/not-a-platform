@@ -3,7 +3,7 @@ import ProcessMenu from './index';
 import { StepType } from './Step';
 import StatefulProcessMenu from './StatefulProcessMenu';
 
-export default { title: '@navikt/process-menu' };
+export default { title: '@navikt/nap-process-menu' };
 
 export const stateFromProps = (): React.ReactNode => (
     <ProcessMenu
