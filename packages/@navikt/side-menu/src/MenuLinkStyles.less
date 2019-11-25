@@ -8,41 +8,62 @@
         width: 100%;
         padding: 0;
         cursor: pointer;
+        height: 32px;
+        border: 3px solid transparent;
 
-        &:hover .menu-link__label {
+        &:hover {
             background: #e7e9e9;
         }
 
         &:focus {
-            outline: solid 3px #254b6d;
-        }
-    }
-
-    &__label {
-        padding: 0 2rem 0 1rem;
-        height: 2rem;
-        display: flex;
-        align-items: center;
-        color: #3e3832;
-        position: relative;
-
-        &--with-icon {
-            padding-left: 3rem;
+            border: 3px solid #254b6d;
+            outline: none;
         }
 
         &--active {
-            font-weight: 600;
             background: #e7e9e9;
+            border: 3px solid #e7e9e9;
+            border-left: transparent;
+            padding-left: 3px;
 
             &:before {
                 content: '';
                 position: absolute;
                 background: #0067c5;
-                height: 100%;
-                width: 0.25rem;
+                height: calc(100% + 6px);
+                width: 4px;
                 left: 0;
-                top: 0;
+                top: -3px;
+                z-index: 1;
+            }
+
+            &:focus {
+                padding-left: 0;
+                &:before {
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                }
             }
         }
+    }
+
+    &__label {
+        padding: 0 16px 0 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: #3e3832;
+        position: relative;
+        height: 26px;
+
+        &--active {
+            font-weight: 600;
+            background: #e7e9e9;
+        }
+    }
+
+    &__icon {
+        margin-left: 8px;
     }
 }
