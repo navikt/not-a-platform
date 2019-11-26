@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Popover from './popover';
+import Popover from '../@navikt/popover/src/popover';
 
 export default { title: '@navikt/nap-popover' };
 

@@ -19,8 +19,5 @@ addParameters({
         theme: themes.normal,
     },
 });
-const context = [
-    requireContext('../packages/@navikt', true, /\.stories\.(ts|tsx)$/),
-    requireContext('../packages/stories', true, /\.stories\.(ts|tsx)$/),
-];
+const context = [requireContext('../packages/stories', true, /\.stories\.(ts|tsx)$/)];
 configure(context, module);
