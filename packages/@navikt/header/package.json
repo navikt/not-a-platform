@@ -1,9 +1,9 @@
 {
     "name": "@navikt/nap-header",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
-    "module": "src/index.tsx",
+    "module": "dist/index.js",
     "scripts": {
         "build": "npm run clean && npm run lessc && npm run tsc",
         "clean": "rm -rf ./dist",
@@ -14,8 +14,8 @@
     "author": "NAV",
     "license": "MIT",
     "dependencies": {
-        "@navikt/nap-bem-utils": "1.0.0",
-        "@navikt/nap-popover": "1.0.0",
+        "@navikt/nap-bem-utils": "1.0.1",
+        "@navikt/nap-popover": "1.0.1",
         "classnames": "^2.2.6",
         "lodash.throttle": "^4.1.1",
         "nav-frontend-chevron": "^1.0.10",
