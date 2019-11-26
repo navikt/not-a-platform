@@ -6,9 +6,36 @@
     justify-content: center;
     height: 100%;
     background-color: transparent;
-    border: none;
-    border-left: 1px solid rgb(89, 81, 75);
-    padding: 0 0 0 16px;
+    border: 3px solid transparent;
+    // border-left: 1px solid rgb(89, 81, 75);
+    padding: 0 16px;
+
+    &:hover {
+        background-color: #59514b;
+    }
+
+    &[aria-expanded='true']:hover {
+        background-color: #59514b;
+        color: white;
+
+        .user__chevron {
+            color: white;
+        }
+    }
+
+    &:focus {
+        border: 3px solid #ffa733;
+        outline: none;
+    }
+
+    &[aria-expanded='true'] {
+        background-color: white;
+        color: #3e3832;
+
+        .user__chevron {
+            color: #3e3832;
+        }
+    }
 }
 
 .user[type='button'] {
