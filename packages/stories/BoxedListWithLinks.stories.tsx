@@ -1,5 +1,5 @@
 import * as React from 'react';
-import BoxedListWithLinks from './BoxedListWithLinks';
+import BoxedListWithLinks from '../@navikt/boxed-list-with-links/src/BoxedListWithLinks';
 
 export default { title: '@navikt/boxed-list-with-links' };
 
