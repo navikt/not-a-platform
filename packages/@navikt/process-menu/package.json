@@ -4,7 +4,6 @@
     "author": "NAV",
     "license": "SEE LICENSE IN LICENSE",
     "main": "dist/index.js",
-    "module": "src/index.tsx",
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "npm run clean && npm run lessc && npm run tsc",
