@@ -1,10 +1,10 @@
 {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "@navikt/nap-bem-utils",
     "author": "NAV",
     "license": "MIT",
     "main": "dist/bemUtils.js",
-    "module": "src/bemUtils.ts",
+    "module": "dist/bemUtils.js",
     "types": "dist/bemUtils.d.ts",
     "scripts": {
         "build": "npm run clean && npm run tsc",

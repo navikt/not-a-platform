@@ -1,5 +1,5 @@
 import * as React from 'react';
-import BoxedListWithSelection from './BoxedListWithSelection';
+import BoxedListWithSelection from '../@navikt/boxed-list-with-selection/src/BoxedListWithSelection';
 
 export default { title: '@navikt/boxed-list-with-selection' };
 

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Header from './index';
+import Header from '../@navikt/header/src/index';
 
 export default { title: '@navikt/nap-header' };
 

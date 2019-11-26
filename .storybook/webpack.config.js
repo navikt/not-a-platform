@@ -26,7 +26,6 @@ module.exports = async ({ config, mode }) => {
         {
             test: /\.(ts|tsx)$/,
             include: [/(packages)/],
-            exclude: [/(node_modules)/],
             use: [
                 {
                     loader: require.resolve('babel-loader'),

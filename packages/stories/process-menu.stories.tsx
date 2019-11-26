@@ -1,7 +1,7 @@
 import * as React from 'react';
-import ProcessMenu from './index';
-import { StepType } from './Step';
-import StatefulProcessMenu from './StatefulProcessMenu';
+import ProcessMenu from '../@navikt/process-menu/src/index';
+import { StepType } from '../@navikt/process-menu/src/Step';
+import StatefulProcessMenu from '../@navikt/process-menu/src/StatefulProcessMenu';
 
 export default { title: '@navikt/nap-process-menu' };
 
