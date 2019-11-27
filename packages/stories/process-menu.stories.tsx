@@ -93,24 +93,24 @@ export const manySteps = (): React.ReactNode => (
                 label: 'Vedtak',
             },
             {
-                label: 'Inngangsvilkår',
+                label: 'Inngangsvilkår2',
             },
             {
-                label: 'Beregning',
+                label: 'Beregning2',
             },
             {
-                label: 'Uttak',
+                label: 'Uttak2',
                 type: StepType.warning,
             },
             {
-                label: 'Tilkjent ytelse',
+                label: 'Tilkjent ytelse2',
             },
             {
-                label: 'Simulering',
+                label: 'Simulering2',
                 type: StepType.danger,
             },
             {
-                label: 'Vedtak',
+                label: 'Vedtak2',
             },
         ]}
         onClick={(index: number): void => console.log(index)}
