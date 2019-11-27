@@ -13,9 +13,6 @@
         "nav-frontend-typografi": "^2.0.16",
         "nav-frontend-typografi-style": "^1.0.17"
     },
-    "devDependencies": {
-        "less": "^3.10.3"
-    },
     "peerDependencies": {
         "react": "^16.11.0"
     },
