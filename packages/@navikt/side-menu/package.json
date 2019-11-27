@@ -16,7 +16,7 @@
         "url": "https://github.com/navikt/not-a-platform/issues"
     },
     "dependencies": {
-        "@navikt/nap-bem-utils": "1.0.0",
+        "@navikt/nap-bem-utils": "1.0.1",
         "classnames": "^2.2.6",
         "nav-frontend-typografi": "^2.0.16",
         "nav-frontend-typografi-style": "^1.0.17"

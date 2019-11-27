@@ -1,8 +1,12 @@
 import * as React from 'react';
-import SideMenu from './index';
-import StatefulSideMenu from './StatefulSideMenu';
+import SideMenu from '../@navikt/side-menu/src/index';
+import StatefulSideMenu from '../@navikt/side-menu/src/StatefulSideMenu';
 
 export default { title: '@navikt/nap-side-menu' };
+
+/* eslint-disable global-require */
+const advarselImgPath = require('../@navikt/side-menu/src/assets/images/advarsel.svg') as string;
+/* eslint-enable global-require */
 
 export const propsControlled = (): React.ReactNode => (
     <SideMenu
@@ -49,6 +53,41 @@ export const stateful = (): React.ReactNode => (
             },
             {
                 label: 'Inngangsvilkår',
+            },
+            {
+                label: 'Inntektskilder',
+            },
+            {
+                label: 'Sykepengegrunnlag',
+            },
+            {
+                label: 'Fordeling',
+            },
+            {
+                label: 'Utbetalingsoversikt',
+            },
+            {
+                label: 'Oppsummering',
+            },
+        ]}
+        onClick={() => null}
+    />
+);
+
+export const statefulWithIcons = (): React.ReactNode => (
+    <StatefulSideMenu
+        heading="Fakta om"
+        links={[
+            {
+                label: 'Sykmeldingsperiode',
+            },
+            {
+                label: 'Sykdomsvilkår',
+            },
+            {
+                label: 'Inngangsvilkår',
+                iconSrc: advarselImgPath,
+                iconAltText: 'Advarsel',
             },
             {
                 label: 'Inntektskilder',
