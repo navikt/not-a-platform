@@ -44,7 +44,7 @@ export const Header: React.FunctionComponent<HeaderProps> = ({
         <header className={headerCls.block}>
             <div className={headerCls.element('column')}>
                 <PageTitle className={headerCls.element('title')}>
-                    NAV
+                    NAVasdf
                     <span className={headerCls.element('subtitle')}>{title}</span>
                 </PageTitle>
             </div>

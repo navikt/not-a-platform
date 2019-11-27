@@ -8,22 +8,21 @@
     "author": "NAV",
     "license": "MIT",
     "dependencies": {
-        "@navikt/nap-bem-utils": "1.0.0",
+        "@navikt/nap-bem-utils": "1.0.1",
         "@navikt/boxed-list": "1.0.0",
         "nav-frontend-typografi": "^2.0.16",
         "nav-frontend-typografi-style": "^1.0.17"
     },
     "devDependencies": {
-        "less": "^3.10.3",
-        "less-watch-compiler": "^1.14.1"
+        "less": "^3.10.3"
     },
     "peerDependencies": {
         "react": "^16.11.0"
     },
     "scripts": {
-        "build": "npm run clean && npm run lessc && npm run tsc",
+        "build": "npm run clean && npm run copy-less && npm run tsc",
         "tsc": "tsc -p tsconfig.json",
         "clean": "rm -rf ./dist",
-        "lessc": "lessc src/list.less dist/list.css"
+        "copy-less": "copyfiles -u 1 src/*.less dist"
     }
 }
