@@ -6,18 +6,17 @@
     "module": "src/index.tsx",
     "types": "dist/index.d.ts",
     "scripts": {
-        "build": "npm run clean && npm run lessc && npm run tsc",
+        "build": "npm run clean && npm run copy-less && npm run tsc",
         "tsc": "tsc -p tsconfig.json",
         "clean": "rm -rf ./dist",
-        "lessc": "lessc src/boxedList.less dist/boxedList.css"
+        "copy-less": "copyfiles -u 1 src/*.less dist"
     },
     "author": "NAV",
     "license": "MIT",
     "dependencies": {
-        "@navikt/nap-bem-utils": "1.0.0"
+        "@navikt/nap-bem-utils": "1.0.1"
     },
     "devDependencies": {
-        "less": "^3.10.3",
         "react-test-renderer": "^16.11.0"
     },
     "peerDependencies": {
