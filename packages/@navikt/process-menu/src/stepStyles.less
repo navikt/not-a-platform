@@ -24,6 +24,24 @@
 
         &:hover {
             background-color: #e7e9e9;
+
+            .step__indicator--default {
+                border: solid 1px #78706a;
+                background-color: #78706a;
+            }
+
+            .step__indicator--success {
+                border: solid 1px #1c6937;
+                background-color: #1c6937;
+            }
+            .step__indicator--warning {
+                border: solid 1px #b26d14;
+                background-color: #ffa733;
+            }
+            .step__indicator--danger {
+                border: solid 1px #88392b;
+                background-color: #a13a28;
+            }
         }
 
         &:focus {
@@ -35,6 +53,12 @@
         &--active {
             .typo-normal {
                 font-weight: 600;
+            }
+
+            &:hover {
+                .typo-normal {
+                    font-weight: 400;
+                }
             }
         }
     }
@@ -98,6 +122,7 @@
             width: 14px;
             height: 14px;
             padding: 3px;
+            margin-right: 5px;
         }
     }
 
