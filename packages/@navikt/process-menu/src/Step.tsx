@@ -48,7 +48,7 @@ export const Step = React.memo(
         return (
             <li key={label.split(' ').join('')} className={stepCls.block} aria-current={isActive ? 'step' : undefined}>
                 <button
-                    className={stepCls.elementWithModifier('button', isActive ? 'active' : undefined)}
+                    className={isActive ? stepCls.elementWithModifier('button', 'active') : stepCls.element('button')}
                     type="button"
                     onClick={handleButtonClick}
                 >
