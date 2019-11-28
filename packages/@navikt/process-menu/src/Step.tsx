@@ -56,6 +56,11 @@ export const Step = React.memo(
                     <Normaltekst tag="span">{label}</Normaltekst>
                     <span className={stepIndicatorCls} />
                 </button>
+                {isActive && (
+                    <div className={stepCls.element('arrow-container')}>
+                        <div className={stepCls.element('arrow')} />
+                    </div>
+                )}
             </li>
         );
     }
