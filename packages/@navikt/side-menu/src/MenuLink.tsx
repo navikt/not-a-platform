@@ -37,7 +37,7 @@ const MenuLink = ({ label, active, onClick, index, iconSrc, iconAltText }: MenuL
             >
                 <Normaltekst tag="span" className={labelCls}>
                     {label}
-                    {iconSrc && <img src={iconSrc} alt={iconAltText} className={menuLinkCls.element('icon')} />}
+                    {iconSrc && <img src={iconSrc} alt={iconAltText || ''} className={menuLinkCls.element('icon')} />}
                 </Normaltekst>
             </button>
         </li>

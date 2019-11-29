@@ -20,21 +20,24 @@ interface SideMenuProps {
 }
 
 const SideMenu = ({ links, heading, onClick }: SideMenuProps): JSX.Element => (
-    <nav className={SideMenuCls.block}>
-        <Normaltekst className={SideMenuCls.element('heading')}>{heading}</Normaltekst>
-        <ul className={SideMenuCls.element('link-list')}>
-            {links.map(({ label, active, iconSrc }, index) => (
-                <MenuLink
-                    key={label.split(' ').join('')}
-                    label={label}
-                    active={active}
-                    onClick={onClick}
-                    index={index}
-                    iconSrc={iconSrc}
-                />
-            ))}
-        </ul>
-    </nav>
+    <div className={SideMenuCls.block}>
+        <nav className={SideMenuCls.element('container')}>
+            <Normaltekst className={SideMenuCls.element('heading')}>{heading}</Normaltekst>
+            <ul className={SideMenuCls.element('link-list')}>
+                {links.map(({ label, active, iconSrc, iconAltText }, index) => (
+                    <MenuLink
+                        key={label.split(' ').join('')}
+                        label={label}
+                        active={active}
+                        onClick={onClick}
+                        index={index}
+                        iconSrc={iconSrc}
+                        iconAltText={iconAltText}
+                    />
+                ))}
+            </ul>
+        </nav>
+    </div>
 );
 
 export default SideMenu;
