@@ -5,7 +5,7 @@ import StatefulSideMenu from '../@navikt/side-menu/src/StatefulSideMenu';
 export default { title: '@navikt/nap-side-menu' };
 
 /* eslint-disable global-require */
-const advarselImgPath = require('../@navikt/side-menu/src/assets/images/advarsel.svg') as string;
+const advarselImgPath = require('./assets/images/advarsel.svg') as string;
 /* eslint-enable global-require */
 
 export const propsControlled = (): React.ReactNode => (
