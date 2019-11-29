@@ -8,7 +8,7 @@
         width: 100%;
         padding: 0;
         cursor: pointer;
-        height: 32px;
+        height: 2rem;
         border: 3px solid transparent;
 
         &:hover {
@@ -24,16 +24,16 @@
             background: #e7e9e9;
             border: 3px solid #e7e9e9;
             border-left: transparent;
-            padding-left: 3px;
+            padding-left: 0.1875rem;
 
             &:before {
                 content: '';
                 position: absolute;
                 background: #0067c5;
-                height: calc(100% + 6px);
-                width: 4px;
+                height: calc(100% + 0.375rem);
+                width: 0.25rem;
                 left: 0;
-                top: -3px;
+                top: -0.1875rem;
                 z-index: 1;
             }
 
@@ -49,13 +49,13 @@
     }
 
     &__label {
-        padding: 0 28px;
+        padding: 0 1.75rem;
         display: flex;
         align-items: center;
         justify-content: space-between;
         color: #3e3832;
         position: relative;
-        height: 26px;
+        height: 1.625rem;
 
         &--active {
             font-weight: 600;
@@ -63,11 +63,11 @@
         }
 
         &--with-icon {
-            padding-right: 13px;
+            padding-right: 0.8125rem;
         }
     }
 
     &__icon {
-        margin-left: 16px;
+        margin-left: 1rem;
     }
 }
