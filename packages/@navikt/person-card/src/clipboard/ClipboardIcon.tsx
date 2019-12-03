@@ -9,8 +9,6 @@ interface ClipboardIconProps {
 
 const defaultIconProps = {
     stroke: '#000',
-    'stroke-linecap': 'round',
-    'stroke-linejoin': 'round',
     strokeMiterlimit: '10',
     fill: 'none',
 };
@@ -18,10 +16,19 @@ const defaultIconProps = {
 const svgForType = (type): JSX.Element => {
     switch (type) {
         case 'check':
-            return <path {...defaultIconProps} d="M23.5.5l-16.5 23-6.5-6.5" strokeWidth="2" stroke="#38a161" />;
+            return (
+                <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    {...defaultIconProps}
+                    d="M23.5.5l-16.5 23-6.5-6.5"
+                    strokeWidth="2"
+                    stroke="#38a161"
+                />
+            );
         case 'copy':
             return (
-                <g {...defaultIconProps}>
+                <g strokeLinecap="round" strokeLinejoin="round" {...defaultIconProps}>
                     <g strokeWidth="2">
                         <g transform="translate(4, 4)">
                             <polygon points="4.4408921e-14 19.1729323 4.4408921e-14 4.5112782 10.1503759 4.5112782 10.1503759 19.1729323" />

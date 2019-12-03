@@ -3,7 +3,7 @@ import PersonCard from '../@navikt/person-card/src/index';
 
 export default { title: '@navikt/nap-person-card' };
 
-const StateFromProps = (): JSX.Element => {
+export const StateFromProps = (): JSX.Element => {
     const [activeIndex, setActiveIndex] = React.useState(0);
 
     return (
@@ -27,4 +27,3 @@ const StateFromProps = (): JSX.Element => {
         />
     );
 };
-export const stateFromProps = (): React.ReactNode => <StateFromProps />;
