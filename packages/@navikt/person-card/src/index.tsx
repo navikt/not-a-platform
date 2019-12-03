@@ -11,7 +11,6 @@ interface PersonCardData {
     name: string;
     fodselsnummer: string;
     gender: Gender;
-    isActive?: boolean;
 }
 
 interface PersonCardProps {
