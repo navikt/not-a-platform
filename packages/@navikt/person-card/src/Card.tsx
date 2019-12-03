@@ -30,7 +30,12 @@ const Card = ({ name, gender, fodselsnummer, isActive, index, onClick }: CardPro
     return (
         <div className={isActive ? `${cardCls.block} ${cardCls.modifier('active')} ` : cardCls.block}>
             <div className={cardCls.element('container')}>
-                <button className={cardCls.element('selector')} type="button" onClick={handleButtonClick}>
+                <button
+                    className={cardCls.element('selector')}
+                    type="button"
+                    onClick={handleButtonClick}
+                    aria-pressed={isActive}
+                >
                     <img
                         className={cardCls.element('gender-icon')}
                         src={gender === 'male' ? maleImgPath : femaleImgPath}
@@ -46,7 +51,7 @@ const Card = ({ name, gender, fodselsnummer, isActive, index, onClick }: CardPro
             </div>
             <Normaltekst tag="span">/</Normaltekst>
             <div className={cardCls.element('container')}>
-                <Clipboard>
+                <Clipboard buttonLabel={`Kopier fødselsnummeret til ${name} (${fodselsnummer})`}>
                     <Normaltekst>{fodselsnummer}</Normaltekst>
                 </Clipboard>
             </div>

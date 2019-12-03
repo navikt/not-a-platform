@@ -14,7 +14,12 @@ const animation = {
     },
 };
 
-const Clipboard = ({ children }): JSX.Element => {
+interface ClipboardProps {
+    children: React.ReactNode;
+    buttonLabel?: string;
+}
+
+const Clipboard = ({ children, buttonLabel = 'Kopier' }: ClipboardProps): JSX.Element => {
     const [didCopy, setDidCopy] = React.useState(false);
     const ref = React.useRef<HTMLDivElement>();
 
@@ -42,6 +47,7 @@ const Clipboard = ({ children }): JSX.Element => {
                 onClick={copy}
                 data-class="typo-undertekst"
                 type="button"
+                aria-label={buttonLabel}
             >
                 <AnimatePresence initial={false} exitBeforeEnter>
                     <motion.div {...animation} key={didCopy ? 'check' : 'copy'}>
@@ -49,6 +55,11 @@ const Clipboard = ({ children }): JSX.Element => {
                     </motion.div>
                 </AnimatePresence>
             </button>
+            {didCopy && (
+                <span className="Clipboard_kopiert" aria-live="assertive">
+                    Kopiert!
+                </span>
+            )}
         </div>
     );
 };
