@@ -1,0 +1,24 @@
+.Clipboard {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    > button {
+        border: none;
+        border-radius: 0.625rem;
+        background: none;
+        cursor: pointer;
+        padding: 0.25rem;
+        margin-left: 0.25rem;
+
+        &:focus,
+        &:hover {
+            outline: none;
+            border-radius: 1px;
+            background-color: #e7e9e9;
+        }
+        &[data-tip-disable='false'] {
+            background-color: transparent;
+        }
+    }
+}

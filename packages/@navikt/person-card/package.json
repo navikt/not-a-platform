@@ -1,0 +1,27 @@
+{
+    "version": "1.0.0",
+    "name": "@navikt/nap-person-card",
+    "author": "NAV",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "module": "src/index.tsx",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "npm run clean && npm run lessc && npm run tsc",
+        "tsc": "tsc -p tsconfig.json",
+        "clean": "rm -rf ./dist"
+    },
+    "bugs": {
+        "url": "https://github.com/navikt/not-a-platform/issues"
+    },
+    "dependencies": {
+        "@navikt/nap-bem-utils": "1.0.1",
+        "framer-motion": "^1.6.17",
+        "nav-frontend-typografi": "^2.0.16",
+        "nav-frontend-typografi-style": "^1.0.17",
+        "react-tooltip": "^3.11.1"
+    },
+    "peerDependencies": {
+        "react": "^16.11.0"
+    }
+}

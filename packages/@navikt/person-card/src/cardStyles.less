@@ -1,0 +1,53 @@
+.card {
+    display: flex;
+    align-items: center;
+    padding: 10px 32px 6px;
+    border-bottom: 4px solid transparent;
+
+    &--active {
+        border-bottom: 4px solid #0067c5;
+    }
+
+    &__container {
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+    }
+
+    &__name {
+        &.typo-normal {
+            font-weight: 400;
+            padding: 0 1.5px;
+            text-decoration: underline;
+            color: #0067c5;
+        }
+
+        &--active {
+            &.typo-normal {
+                font-weight: 600;
+                text-decoration: none;
+                color: black;
+                padding: 0;
+            }
+        }
+    }
+
+    &__gender-icon {
+        width: 24px;
+        height: 24px;
+        margin-right: 0.5rem;
+    }
+
+    &__selector {
+        background: transparent;
+        border: none;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 0;
+
+        &:hover {
+            background-color: #e7e9e9;
+        }
+    }
+}
