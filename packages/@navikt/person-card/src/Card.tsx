@@ -51,7 +51,7 @@ const Card = ({ name, gender, fodselsnummer, isActive, index, onClick }: CardPro
             </div>
             <Normaltekst tag="span">/</Normaltekst>
             <div className={cardCls.element('container')}>
-                <Clipboard buttonLabel={`Kopier fødselsnummeret til ${name} (${fodselsnummer})`}>
+                <Clipboard buttonLabel={`Kopier ${name}s fødselsnummer til utklippstavlen`}>
                     <Normaltekst>{fodselsnummer}</Normaltekst>
                 </Clipboard>
             </div>
