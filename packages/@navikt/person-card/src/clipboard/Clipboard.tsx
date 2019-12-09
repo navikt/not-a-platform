@@ -1,6 +1,5 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import * as React from 'react';
-import ReactTooltip from 'react-tooltip';
 import './Clipboard.less';
 import ClipboardIcon from './ClipboardIcon';
 import copyContentsToClipboard from './util';
@@ -40,18 +39,18 @@ const Clipboard = ({ children, buttonLabel = 'Kopier' }: ClipboardProps): JSX.El
             <div className="Clipboard__children" ref={ref}>
                 {children}
             </div>
-            <ReactTooltip place="bottom" disable={!didCopy} />
             <button
-                data-tip="Kopiert!"
+                data-tooltip="Kopiert!"
                 data-tip-disable={!didCopy}
                 onClick={copy}
                 data-class="typo-undertekst"
                 type="button"
                 aria-label={buttonLabel}
+                className="Clipboard__button"
             >
                 <AnimatePresence initial={false} exitBeforeEnter>
                     <motion.div {...animation} key={didCopy ? 'check' : 'copy'}>
-                        <ClipboardIcon type={didCopy ? 'check' : 'copy'} size={didCopy ? 20 : 24} />
+                        <ClipboardIcon type={didCopy ? 'check' : 'copy'} size={24} />
                     </motion.div>
                 </AnimatePresence>
             </button>
