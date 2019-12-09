@@ -1,10 +1,10 @@
 {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "@navikt/nap-side-menu",
     "author": "NAV",
     "license": "MIT",
     "main": "dist/index.js",
-    "module": "src/index.tsx",
+    "module": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "npm run clean && npm run lessc && npm run tsc",
