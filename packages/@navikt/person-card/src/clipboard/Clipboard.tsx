@@ -1,7 +1,8 @@
+import bem from '@navikt/nap-bem-utils';
 import { AnimatePresence, motion } from 'framer-motion';
 import * as React from 'react';
-import './Clipboard.less';
 import ClipboardIcon from './ClipboardIcon';
+import './ClipboardStyles';
 import copyContentsToClipboard from './util';
 
 const animation = {
@@ -17,6 +18,8 @@ interface ClipboardProps {
     children: React.ReactNode;
     buttonLabel?: string;
 }
+
+const clipboardCls = bem('clipboard');
 
 const Clipboard = ({ children, buttonLabel = 'Kopier' }: ClipboardProps): JSX.Element => {
     const [didCopy, setDidCopy] = React.useState(false);
@@ -35,10 +38,8 @@ const Clipboard = ({ children, buttonLabel = 'Kopier' }: ClipboardProps): JSX.El
     }, [didCopy]);
 
     return (
-        <div className="Clipboard">
-            <div className="Clipboard__children" ref={ref}>
-                {children}
-            </div>
+        <div className={clipboardCls.block}>
+            <div ref={ref}>{children}</div>
             <button
                 data-tooltip={didCopy ? 'Kopiert!' : 'Kopier'}
                 data-tip-disable={!didCopy}
@@ -46,7 +47,7 @@ const Clipboard = ({ children, buttonLabel = 'Kopier' }: ClipboardProps): JSX.El
                 data-class="typo-undertekst"
                 type="button"
                 aria-label={buttonLabel}
-                className="Clipboard__button"
+                className={clipboardCls.element('button')}
             >
                 <AnimatePresence initial={false} exitBeforeEnter>
                     <motion.div {...animation} key={didCopy ? 'check' : 'copy'}>
@@ -55,7 +56,7 @@ const Clipboard = ({ children, buttonLabel = 'Kopier' }: ClipboardProps): JSX.El
                 </AnimatePresence>
             </button>
             {didCopy && (
-                <span className="Clipboard_kopiert" aria-live="assertive">
+                <span className={clipboardCls.element('kopiert')} aria-live="assertive">
                     Kopiert!
                 </span>
             )}
