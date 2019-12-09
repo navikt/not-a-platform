@@ -1,5 +1,5 @@
 {
-    "version": "1.0.1",
+    "version": "1.0.2",
     "name": "@navikt/nap-side-menu",
     "author": "NAV",
     "license": "MIT",
@@ -7,10 +7,11 @@
     "module": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "build": "npm run clean && npm run lessc && npm run tsc",
+        "build": "npm run clean && npm run copy-less && npm run copy-svg && npm run tsc",
         "tsc": "tsc -p tsconfig.json",
         "clean": "rm -rf ./dist",
-        "lessc": "less-watch-compiler --run-once src dist"
+        "copy-less": "copyfiles -u 1 src/*.less dist",
+        "copy-svg": "copyfiles -u 1 src/**/*.svg dist"
     },
     "bugs": {
         "url": "https://github.com/navikt/not-a-platform/issues"
