@@ -40,7 +40,7 @@ const Clipboard = ({ children, buttonLabel = 'Kopier' }: ClipboardProps): JSX.El
                 {children}
             </div>
             <button
-                data-tooltip="Kopiert!"
+                data-tooltip={didCopy ? 'Kopiert!' : 'Kopier'}
                 data-tip-disable={!didCopy}
                 onClick={copy}
                 data-class="typo-undertekst"
