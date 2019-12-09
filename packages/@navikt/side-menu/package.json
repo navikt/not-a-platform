@@ -1,9 +1,10 @@
 {
-    "version": "1.0.6",
-    "name": "@navikt/nap-process-menu",
+    "version": "1.0.3",
+    "name": "@navikt/nap-side-menu",
     "author": "NAV",
-    "license": "SEE LICENSE IN LICENSE",
+    "license": "MIT",
     "main": "dist/index.js",
+    "module": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "npm run clean && npm run copy-less && npm run copy-svg && npm run tsc",
@@ -20,6 +21,10 @@
         "classnames": "^2.2.6",
         "nav-frontend-typografi": "^2.0.16",
         "nav-frontend-typografi-style": "^1.0.17"
+    },
+    "devDependencies": {
+        "less": "^3.10.3",
+        "less-watch-compiler": "^1.14.1"
     },
     "peerDependencies": {
         "react": "^16.11.0"

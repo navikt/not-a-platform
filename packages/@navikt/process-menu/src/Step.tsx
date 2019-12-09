@@ -51,9 +51,12 @@ export const Step = React.memo(
                     className={isActive ? stepCls.elementWithModifier('button', 'active') : stepCls.element('button')}
                     type="button"
                     onClick={handleButtonClick}
+                    data-tooltip={label}
                 >
-                    <StepIcon type={type} isFinished={isFinished} iconAltText={iconAltText} />
-                    <Normaltekst tag="span">{label}</Normaltekst>
+                    <span className={stepCls.element('text-icon-container')}>
+                        <StepIcon type={type} isFinished={isFinished} iconAltText={iconAltText} />
+                        <Normaltekst tag="span">{label}</Normaltekst>
+                    </span>
                     <span className={stepIndicatorCls} />
                 </button>
                 {isActive && (
