@@ -1,5 +1,4 @@
 import bem from '@navikt/nap-bem-utils';
-import { AnimatePresence, motion } from 'framer-motion';
 import * as React from 'react';
 import ClipboardIcon from './ClipboardIcon';
 import './ClipboardStyles';
@@ -23,11 +22,13 @@ const clipboardCls = bem('clipboard');
 
 const Clipboard = ({ children, buttonLabel = 'Kopier' }: ClipboardProps): JSX.Element => {
     const [didCopy, setDidCopy] = React.useState(false);
+    const [shouldAnimate, setShouldAnimate] = React.useState(false);
     const ref = React.useRef<HTMLDivElement>();
 
     const copy = (): void => {
         if (!didCopy) {
             setDidCopy(copyContentsToClipboard(ref.current.firstChild));
+            setShouldAnimate(true);
         }
     };
 
@@ -49,11 +50,9 @@ const Clipboard = ({ children, buttonLabel = 'Kopier' }: ClipboardProps): JSX.El
                 aria-label={buttonLabel}
                 className={clipboardCls.element('button')}
             >
-                <AnimatePresence initial={false} exitBeforeEnter>
-                    <motion.div {...animation} key={didCopy ? 'check' : 'copy'}>
-                        <ClipboardIcon type={didCopy ? 'check' : 'copy'} size={24} />
-                    </motion.div>
-                </AnimatePresence>
+                <span className={shouldAnimate ? clipboardCls.element('animate') : ''} key={didCopy ? 'check' : 'copy'}>
+                    <ClipboardIcon type={didCopy ? 'check' : 'copy'} size={24} />
+                </span>
             </button>
             {didCopy && (
                 <span className={clipboardCls.element('kopiert')} aria-live="assertive">
