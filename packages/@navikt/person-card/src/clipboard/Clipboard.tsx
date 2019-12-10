@@ -4,15 +4,6 @@ import ClipboardIcon from './ClipboardIcon';
 import './ClipboardStyles';
 import copyContentsToClipboard from './util';
 
-const animation = {
-    initial: { y: 5, opacity: 0 },
-    animate: { y: 0, opacity: 1 },
-    exit: { y: 5, opacity: 0 },
-    transition: {
-        duration: 0.1,
-    },
-};
-
 interface ClipboardProps {
     children: React.ReactNode;
     buttonLabel?: string;
