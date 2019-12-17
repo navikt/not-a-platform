@@ -8,7 +8,7 @@ import { themes } from '@storybook/theming';
 
 addDecorator(withA11y);
 addDecorator(withInfo);
-addDecorator(storyFn => <div style={{ maxWidth: '1920px', width: '100%' }}>{storyFn()}</div>);
+addDecorator(storyFn => <div style={{ maxWidth: '1920px', width: '100%', backgroundColor: 'white' }}>{storyFn()}</div>);
 addParameters({ info: { inline: true } });
 addParameters({
     docs: {
@@ -16,7 +16,7 @@ addParameters({
         page: DocsPage,
     },
     options: {
-        theme: themes.normal,
+        theme: themes.dark,
     },
 });
 const context = [requireContext('../packages/stories', true, /\.stories\.(ts|tsx)$/)];
