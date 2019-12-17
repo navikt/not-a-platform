@@ -1,59 +1,60 @@
 import bem from '@navikt/nap-bem-utils';
+import Popover from '@navikt/nap-popover';
 import { Normaltekst } from 'nav-frontend-typografi';
 import * as React from 'react';
-import Clipboard from './clipboard';
 import './cardStyles';
-
-/* eslint-disable global-require */
-const maleImgPath = require('./assets/images/mann.svg') as string;
-const femaleImgPath = require('./assets/images/kvinne.svg') as string;
-/* eslint-enable global-require */
+import Clipboard from './clipboard';
+import GenderIcon from './GenderIcon';
+import { PersonCardData } from './index';
+import Menu from './Menu';
 
 const cardCls = bem('card');
 
-type Gender = 'male' | 'female';
+const Card = ({ name, gender, fodselsnummer, isActive, url, renderMenuContent }: PersonCardData): JSX.Element => {
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
 
-interface CardProps {
-    name: string;
-    fodselsnummer: string;
-    gender: Gender;
-    isActive?: boolean;
-    index: number;
-    onClick: (index: number) => void;
-}
-
-const Card = ({ name, gender, fodselsnummer, isActive, index, onClick }: CardProps): JSX.Element => {
-    const handleButtonClick = (event: React.FormEvent<HTMLButtonElement>): void => {
-        event.preventDefault();
-        onClick(index);
+    const onClick = (): void => {
+        setIsMenuOpen(!isMenuOpen);
     };
     return (
         <div className={isActive ? `${cardCls.block} ${cardCls.modifier('active')} ` : cardCls.block}>
             <div className={cardCls.element('container')}>
-                <button
-                    className={cardCls.element('selector')}
-                    type="button"
-                    onClick={handleButtonClick}
-                    aria-pressed={isActive}
-                >
-                    <img
-                        className={cardCls.element('gender-icon')}
-                        src={gender === 'male' ? maleImgPath : femaleImgPath}
-                        alt={gender === 'male' ? 'mann' : 'kvinne'}
-                    />
+                <a className={cardCls.element('selector')} aria-current={isActive} href={url}>
+                    <GenderIcon gender={gender} />
                     <Normaltekst
                         tag="span"
                         className={isActive ? cardCls.elementWithModifier('name', 'active') : cardCls.element('name')}
                     >
                         {name}
                     </Normaltekst>
-                </button>
+                </a>
             </div>
             <Normaltekst tag="span">/</Normaltekst>
             <div className={cardCls.element('container')}>
                 <Clipboard buttonLabel={`Kopier ${name}s fødselsnummer til utklippstavlen`}>
                     <Normaltekst>{fodselsnummer}</Normaltekst>
                 </Clipboard>
+
+                <Popover
+                    popperIsVisible={isMenuOpen}
+                    renderArrowElement
+                    customPopperStyles={{ top: '6px', left: '-1px' }}
+                    popperProps={{
+                        children: (): React.ReactNode =>
+                            renderMenuContent && (
+                                <div className={cardCls.element('menu-container')}>{renderMenuContent()}</div>
+                            ),
+                        placement: 'bottom-start',
+                        positionFixed: true,
+                    }}
+                    referenceProps={{
+                        children: ({ ref }): React.ReactNode => (
+                            <div ref={ref}>
+                                <Menu onClick={onClick} isOpen={isMenuOpen} />
+                            </div>
+                        ),
+                    }}
+                />
             </div>
         </div>
     );

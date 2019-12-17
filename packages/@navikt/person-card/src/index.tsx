@@ -5,31 +5,26 @@ import Card from './Card';
 
 const personCardCls = bem('person-card');
 
-type Gender = 'male' | 'female';
+export type Gender = 'male' | 'female' | 'unknown';
 
-interface PersonCardData {
+export interface PersonCardData {
     name: string;
     fodselsnummer: string;
     gender: Gender;
+    url: string;
+    isActive?: boolean;
+    renderMenuContent: () => React.ReactNode;
 }
 
 interface PersonCardProps {
     personCardData: PersonCardData[];
-    onClick: (index: number) => void;
-    activeIndex?: number;
 }
 
-const PersonCard = ({ personCardData, onClick, activeIndex }: PersonCardProps): JSX.Element => {
+const PersonCard = ({ personCardData }: PersonCardProps): JSX.Element => {
     return (
         <div className={personCardCls.block}>
-            {personCardData.map((personCard, index) => (
-                <Card
-                    key={personCard.fodselsnummer}
-                    index={index}
-                    onClick={onClick}
-                    isActive={activeIndex === index}
-                    {...personCard}
-                />
+            {personCardData.map(personCard => (
+                <Card key={personCard.fodselsnummer} {...personCard} />
             ))}
         </div>
     );

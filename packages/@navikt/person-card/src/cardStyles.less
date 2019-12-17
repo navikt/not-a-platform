@@ -18,14 +18,13 @@
         &.typo-normal {
             font-weight: 400;
             padding: 0 1.5px;
-            text-decoration: underline;
             color: #0067c5;
         }
 
         &--active {
+            text-decoration: none;
             &.typo-normal {
                 font-weight: 600;
-                text-decoration: none;
                 color: black;
                 padding: 0;
             }
@@ -35,7 +34,12 @@
     &__gender-icon {
         width: 24px;
         height: 24px;
-        margin-right: 0.5rem;
+        margin-right: 1rem;
+
+        &--unknown {
+            width: 26px;
+            height: 26px;
+        }
     }
 
     &__selector {
@@ -45,9 +49,37 @@
         align-items: center;
         cursor: pointer;
         padding: 0;
+        text-decoration: underline;
+        color: #0067c5;
+
+        &[aria-current='true'] {
+            text-decoration: none;
+        }
 
         &:hover {
-            background-color: #e7e9e9;
+            text-decoration: none;
         }
+    }
+    .arrow {
+        position: absolute;
+        background-color: white;
+        transform: rotate(45deg);
+        width: 1em;
+        height: 1em;
+
+        &[data-placement*='bottom-start'] {
+            border-top: 1px solid #b7b1a9;
+            border-left: 1px solid #b7b1a9;
+            top: -8px;
+            z-index: 1;
+        }
+    }
+
+    &__menu-container {
+        border: 1px solid #b7b1a9;
+        position: absolute;
+        background-color: white;
+        left: -10px;
+        padding: 16px;
     }
 }
