@@ -4,6 +4,7 @@ exports[`Storyshots @navikt/boxed-list-with-selection Normal 1`] = `
 <div
   style={
     Object {
+      "backgroundColor": "white",
       "maxWidth": "1920px",
       "width": "100%",
     }

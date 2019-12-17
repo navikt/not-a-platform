@@ -4,6 +4,7 @@ exports[`Storyshots @navikt/nap-person-card State From Props 1`] = `
 <div
   style={
     Object {
+      "backgroundColor": "white",
       "maxWidth": "1920px",
       "width": "100%",
     }
@@ -64,201 +65,270 @@ exports[`Storyshots @navikt/nap-person-card State From Props 1`] = `
     style={Object {}}
   >
     <div
-      className="person-card"
+      style={
+        Object {
+          "marginBottom": "50px",
+        }
+      }
     >
       <div
-        className="card card--active "
+        className="person-card"
       >
         <div
-          className="card__container"
-        >
-          <button
-            aria-pressed={true}
-            className="card__selector"
-            onClick={[Function]}
-            type="button"
-          >
-            <img
-              alt="kvinne"
-              className="card__gender-icon"
-              src=""
-            />
-            <span
-              className="typo-normal card__name card__name--active"
-            >
-              Test Personsen
-            </span>
-          </button>
-        </div>
-        <span
-          className="typo-normal"
-        >
-          /
-        </span>
-        <div
-          className="card__container"
+          className="card card--active "
         >
           <div
-            className="Clipboard"
+            className="card__container"
+          >
+            <a
+              aria-current={true}
+              className="card__selector"
+              href="#"
+            >
+              <img
+                alt="Kvinne"
+                className="card__gender-icon card__gender-icon--unknown"
+                src=""
+              />
+              <span
+                className="typo-normal card__name card__name--active"
+              >
+                Test Personsen
+              </span>
+            </a>
+          </div>
+          <span
+            className="typo-normal"
+          >
+            /
+          </span>
+          <div
+            className="card__container"
           >
             <div
-              className="Clipboard__children"
+              className="clipboard"
             >
-              <p
-                className="typo-normal"
-              >
-                12345612345
-              </p>
-            </div>
-            <div
-              className="__react_component_tooltip place-bottom type-dark "
-              data-id="tooltip"
-            />
-            <button
-              aria-label="Kopier Test Personsens fødselsnummer til utklippstavlen"
-              data-class="typo-undertekst"
-              data-tip="Kopiert!"
-              data-tip-disable={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <div
-                style={
-                  Object {
-                    "opacity": 1,
-                    "transform": "none",
-                  }
-                }
-              >
-                <svg
-                  height={24}
-                  viewBox="-2 0 26 26"
-                  width={24}
-                  xmlns="http://www.w3.org/2000/svg"
+              <div>
+                <p
+                  className="typo-normal"
                 >
-                  <g
-                    fill="none"
-                    stroke="#000"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeMiterlimit="10"
+                  12345612345
+                </p>
+              </div>
+              <button
+                aria-label="Kopier Test Personsens fødselsnummer til utklippstavlen"
+                className="clipboard__button"
+                data-class="typo-undertekst"
+                data-tip-disable={true}
+                data-tooltip="Kopier"
+                onClick={[Function]}
+                type="button"
+              >
+                <span
+                  className=""
+                >
+                  <svg
+                    height={24}
+                    viewBox="-2 0 26 26"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <g
-                      strokeWidth="2"
+                      fill="none"
+                      stroke="#000"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeMiterlimit="10"
                     >
                       <g
-                        transform="translate(4, 4)"
+                        strokeWidth="2"
                       >
-                        <polygon
-                          points="4.4408921e-14 19.1729323 4.4408921e-14 4.5112782 10.1503759 4.5112782 10.1503759 19.1729323"
-                        />
-                        <polyline
-                          points="5.63909774 2.19924812 5.63909774 -2.69118061e-13 15.7894737 -2.69118061e-13 15.7894737 14.6616541 13.2518797 14.6616541"
-                        />
+                        <g
+                          transform="translate(4, 4)"
+                        >
+                          <polygon
+                            points="4.4408921e-14 19.1729323 4.4408921e-14 4.5112782 10.1503759 4.5112782 10.1503759 19.1729323"
+                          />
+                          <polyline
+                            points="5.63909774 2.19924812 5.63909774 -2.69118061e-13 15.7894737 -2.69118061e-13 15.7894737 14.6616541 13.2518797 14.6616541"
+                          />
+                        </g>
                       </g>
                     </g>
-                  </g>
-                </svg>
+                  </svg>
+                </span>
+              </button>
+            </div>
+            <div>
+              <button
+                aria-expanded={false}
+                aria-haspopup="dialog"
+                aria-label="Meny"
+                className="menu"
+                onClick={[Function]}
+                type="button"
+              >
+                <img
+                  alt=""
+                  className="menu__icon"
+                  src=""
+                />
+              </button>
+            </div>
+            <div
+              style={
+                Object {
+                  "left": "-1px",
+                  "opacity": 0,
+                  "pointerEvents": "none",
+                  "position": "absolute",
+                  "top": "6px",
+                  "visibility": "hidden",
+                }
+              }
+            >
+              <div
+                className="arrow"
+                style={Object {}}
+              />
+              <div
+                className="card__menu-container"
+              >
+                <div>
+                  <p>
+                    Hei
+                  </p>
+                </div>
               </div>
-            </button>
+            </div>
           </div>
         </div>
-      </div>
-      <div
-        className="card"
-      >
         <div
-          className="card__container"
-        >
-          <button
-            aria-pressed={false}
-            className="card__selector"
-            onClick={[Function]}
-            type="button"
-          >
-            <img
-              alt="mann"
-              className="card__gender-icon"
-              src=""
-            />
-            <span
-              className="typo-normal card__name"
-            >
-              Pest Tersonsen
-            </span>
-          </button>
-        </div>
-        <span
-          className="typo-normal"
-        >
-          /
-        </span>
-        <div
-          className="card__container"
+          className="card"
         >
           <div
-            className="Clipboard"
+            className="card__container"
+          >
+            <a
+              className="card__selector"
+              href="#"
+            >
+              <img
+                alt=""
+                className="card__gender-icon card__gender-icon--unknown"
+                src=""
+              />
+              <span
+                className="typo-normal card__name"
+              >
+                Pest Tersonsen
+              </span>
+            </a>
+          </div>
+          <span
+            className="typo-normal"
+          >
+            /
+          </span>
+          <div
+            className="card__container"
           >
             <div
-              className="Clipboard__children"
+              className="clipboard"
             >
-              <p
-                className="typo-normal"
-              >
-                12345612346
-              </p>
-            </div>
-            <div
-              className="__react_component_tooltip place-bottom type-dark "
-              data-id="tooltip"
-            />
-            <button
-              aria-label="Kopier Pest Tersonsens fødselsnummer til utklippstavlen"
-              data-class="typo-undertekst"
-              data-tip="Kopiert!"
-              data-tip-disable={true}
-              onClick={[Function]}
-              type="button"
-            >
-              <div
-                style={
-                  Object {
-                    "opacity": 1,
-                    "transform": "none",
-                  }
-                }
-              >
-                <svg
-                  height={24}
-                  viewBox="-2 0 26 26"
-                  width={24}
-                  xmlns="http://www.w3.org/2000/svg"
+              <div>
+                <p
+                  className="typo-normal"
                 >
-                  <g
-                    fill="none"
-                    stroke="#000"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeMiterlimit="10"
+                  12345612346
+                </p>
+              </div>
+              <button
+                aria-label="Kopier Pest Tersonsens fødselsnummer til utklippstavlen"
+                className="clipboard__button"
+                data-class="typo-undertekst"
+                data-tip-disable={true}
+                data-tooltip="Kopier"
+                onClick={[Function]}
+                type="button"
+              >
+                <span
+                  className=""
+                >
+                  <svg
+                    height={24}
+                    viewBox="-2 0 26 26"
+                    width={24}
+                    xmlns="http://www.w3.org/2000/svg"
                   >
                     <g
-                      strokeWidth="2"
+                      fill="none"
+                      stroke="#000"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeMiterlimit="10"
                     >
                       <g
-                        transform="translate(4, 4)"
+                        strokeWidth="2"
                       >
-                        <polygon
-                          points="4.4408921e-14 19.1729323 4.4408921e-14 4.5112782 10.1503759 4.5112782 10.1503759 19.1729323"
-                        />
-                        <polyline
-                          points="5.63909774 2.19924812 5.63909774 -2.69118061e-13 15.7894737 -2.69118061e-13 15.7894737 14.6616541 13.2518797 14.6616541"
-                        />
+                        <g
+                          transform="translate(4, 4)"
+                        >
+                          <polygon
+                            points="4.4408921e-14 19.1729323 4.4408921e-14 4.5112782 10.1503759 4.5112782 10.1503759 19.1729323"
+                          />
+                          <polyline
+                            points="5.63909774 2.19924812 5.63909774 -2.69118061e-13 15.7894737 -2.69118061e-13 15.7894737 14.6616541 13.2518797 14.6616541"
+                          />
+                        </g>
                       </g>
                     </g>
-                  </g>
-                </svg>
+                  </svg>
+                </span>
+              </button>
+            </div>
+            <div>
+              <button
+                aria-expanded={false}
+                aria-haspopup="dialog"
+                aria-label="Meny"
+                className="menu"
+                onClick={[Function]}
+                type="button"
+              >
+                <img
+                  alt=""
+                  className="menu__icon"
+                  src=""
+                />
+              </button>
+            </div>
+            <div
+              style={
+                Object {
+                  "left": "-1px",
+                  "opacity": 0,
+                  "pointerEvents": "none",
+                  "position": "absolute",
+                  "top": "6px",
+                  "visibility": "hidden",
+                }
+              }
+            >
+              <div
+                className="arrow"
+                style={Object {}}
+              />
+              <div
+                className="card__menu-container"
+              >
+                <div>
+                  <p>
+                    Hallo
+                  </p>
+                </div>
               </div>
-            </button>
+            </div>
           </div>
         </div>
       </div>

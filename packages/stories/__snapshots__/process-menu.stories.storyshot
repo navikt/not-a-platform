@@ -4,6 +4,7 @@ exports[`Storyshots @navikt/nap-process-menu Many Steps 1`] = `
 <div
   style={
     Object {
+      "backgroundColor": "white",
       "maxWidth": "1920px",
       "width": "100%",
     }
@@ -72,37 +73,54 @@ exports[`Storyshots @navikt/nap-process-menu Many Steps 1`] = `
       >
         <button
           className="step__button step__button--active"
+          data-tooltip="Inngangsvilkår"
           onClick={[Function]}
           type="button"
         >
           <span
-            className="step__icon-placeholder"
-          />
-          <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Inngangsvilkår
+            <span
+              className="step__icon-placeholder"
+            />
+            <span
+              className="typo-normal"
+            >
+              Inngangsvilkår
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--default step__indicator step__indicator--active"
           />
         </button>
+        <div
+          className="step__arrow-container"
+        >
+          <div
+            className="step__arrow"
+          />
+        </div>
       </li>
       <li
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Beregning"
           onClick={[Function]}
           type="button"
         >
           <span
-            className="step__icon-placeholder"
-          />
-          <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Beregning
+            <span
+              className="step__icon-placeholder"
+            />
+            <span
+              className="typo-normal"
+            >
+              Beregning
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--default"
@@ -113,19 +131,24 @@ exports[`Storyshots @navikt/nap-process-menu Many Steps 1`] = `
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Uttak"
           onClick={[Function]}
           type="button"
         >
-          <img
-            alt="Behandlet - Manuell oppgave"
-            className="step__icon step__icon--warning"
-            src=""
-          />
           <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Uttak
+            <img
+              alt="Behandlet - Manuell oppgave"
+              className="step__icon step__icon--warning"
+              src=""
+            />
+            <span
+              className="typo-normal"
+            >
+              Uttak
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--warning"
@@ -136,17 +159,22 @@ exports[`Storyshots @navikt/nap-process-menu Many Steps 1`] = `
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Tilkjent ytelse"
           onClick={[Function]}
           type="button"
         >
           <span
-            className="step__icon-placeholder"
-          />
-          <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Tilkjent ytelse
+            <span
+              className="step__icon-placeholder"
+            />
+            <span
+              className="typo-normal"
+            >
+              Tilkjent ytelse
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--default"
@@ -157,19 +185,24 @@ exports[`Storyshots @navikt/nap-process-menu Many Steps 1`] = `
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Simulering"
           onClick={[Function]}
           type="button"
         >
-          <img
-            alt="Oppgave løst/avslått"
-            className="step__icon step__icon--danger"
-            src=""
-          />
           <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Simulering
+            <img
+              alt="Oppgave løst/avslått"
+              className="step__icon step__icon--danger"
+              src=""
+            />
+            <span
+              className="typo-normal"
+            >
+              Simulering
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--danger"
@@ -180,17 +213,22 @@ exports[`Storyshots @navikt/nap-process-menu Many Steps 1`] = `
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Vedtak"
           onClick={[Function]}
           type="button"
         >
           <span
-            className="step__icon-placeholder"
-          />
-          <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Vedtak
+            <span
+              className="step__icon-placeholder"
+            />
+            <span
+              className="typo-normal"
+            >
+              Vedtak
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--default"
@@ -201,17 +239,22 @@ exports[`Storyshots @navikt/nap-process-menu Many Steps 1`] = `
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Inngangsvilkår2"
           onClick={[Function]}
           type="button"
         >
           <span
-            className="step__icon-placeholder"
-          />
-          <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Inngangsvilkår2
+            <span
+              className="step__icon-placeholder"
+            />
+            <span
+              className="typo-normal"
+            >
+              Inngangsvilkår2
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--default"
@@ -222,17 +265,22 @@ exports[`Storyshots @navikt/nap-process-menu Many Steps 1`] = `
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Beregning2"
           onClick={[Function]}
           type="button"
         >
           <span
-            className="step__icon-placeholder"
-          />
-          <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Beregning2
+            <span
+              className="step__icon-placeholder"
+            />
+            <span
+              className="typo-normal"
+            >
+              Beregning2
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--default"
@@ -243,19 +291,24 @@ exports[`Storyshots @navikt/nap-process-menu Many Steps 1`] = `
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Uttak2"
           onClick={[Function]}
           type="button"
         >
-          <img
-            alt="Behandlet - Manuell oppgave"
-            className="step__icon step__icon--warning"
-            src=""
-          />
           <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Uttak2
+            <img
+              alt="Behandlet - Manuell oppgave"
+              className="step__icon step__icon--warning"
+              src=""
+            />
+            <span
+              className="typo-normal"
+            >
+              Uttak2
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--warning"
@@ -266,17 +319,22 @@ exports[`Storyshots @navikt/nap-process-menu Many Steps 1`] = `
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Tilkjent ytelse2"
           onClick={[Function]}
           type="button"
         >
           <span
-            className="step__icon-placeholder"
-          />
-          <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Tilkjent ytelse2
+            <span
+              className="step__icon-placeholder"
+            />
+            <span
+              className="typo-normal"
+            >
+              Tilkjent ytelse2
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--default"
@@ -287,19 +345,24 @@ exports[`Storyshots @navikt/nap-process-menu Many Steps 1`] = `
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Simulering2"
           onClick={[Function]}
           type="button"
         >
-          <img
-            alt="Oppgave løst/avslått"
-            className="step__icon step__icon--danger"
-            src=""
-          />
           <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Simulering2
+            <img
+              alt="Oppgave løst/avslått"
+              className="step__icon step__icon--danger"
+              src=""
+            />
+            <span
+              className="typo-normal"
+            >
+              Simulering2
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--danger"
@@ -310,17 +373,22 @@ exports[`Storyshots @navikt/nap-process-menu Many Steps 1`] = `
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Vedtak2"
           onClick={[Function]}
           type="button"
         >
           <span
-            className="step__icon-placeholder"
-          />
-          <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Vedtak2
+            <span
+              className="step__icon-placeholder"
+            />
+            <span
+              className="typo-normal"
+            >
+              Vedtak2
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--default"
@@ -1037,6 +1105,7 @@ exports[`Storyshots @navikt/nap-process-menu State From Props 1`] = `
 <div
   style={
     Object {
+      "backgroundColor": "white",
       "maxWidth": "1920px",
       "width": "100%",
     }
@@ -1103,19 +1172,24 @@ exports[`Storyshots @navikt/nap-process-menu State From Props 1`] = `
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Inngangsvilkår"
           onClick={[Function]}
           type="button"
         >
-          <img
-            alt="Behandlet - Oppgave løst/godkjent"
-            className="step__icon step__icon--success"
-            src=""
-          />
           <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Inngangsvilkår
+            <img
+              alt="Behandlet - Oppgave løst/godkjent"
+              className="step__icon step__icon--success"
+              src=""
+            />
+            <span
+              className="typo-normal"
+            >
+              Inngangsvilkår
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--success"
@@ -1128,41 +1202,58 @@ exports[`Storyshots @navikt/nap-process-menu State From Props 1`] = `
       >
         <button
           className="step__button step__button--active"
+          data-tooltip="Beregning"
           onClick={[Function]}
           type="button"
         >
-          <img
-            alt="Behandlet - Oppgave løst/godkjent"
-            className="step__icon step__icon--success"
-            src=""
-          />
           <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Beregning
+            <img
+              alt="Behandlet - Oppgave løst/godkjent"
+              className="step__icon step__icon--success"
+              src=""
+            />
+            <span
+              className="typo-normal"
+            >
+              Beregning
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--success step__indicator step__indicator--active"
           />
         </button>
+        <div
+          className="step__arrow-container"
+        >
+          <div
+            className="step__arrow"
+          />
+        </div>
       </li>
       <li
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Uttak"
           onClick={[Function]}
           type="button"
         >
-          <img
-            alt="Behandlet - Manuell oppgave"
-            className="step__icon step__icon--warning"
-            src=""
-          />
           <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Uttak
+            <img
+              alt="Behandlet - Manuell oppgave"
+              className="step__icon step__icon--warning"
+              src=""
+            />
+            <span
+              className="typo-normal"
+            >
+              Uttak
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--warning"
@@ -1173,19 +1264,24 @@ exports[`Storyshots @navikt/nap-process-menu State From Props 1`] = `
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Tilkjent ytelse"
           onClick={[Function]}
           type="button"
         >
-          <img
-            alt="Oppgave løst/avslått"
-            className="step__icon step__icon--danger"
-            src=""
-          />
           <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Tilkjent ytelse
+            <img
+              alt="Oppgave løst/avslått"
+              className="step__icon step__icon--danger"
+              src=""
+            />
+            <span
+              className="typo-normal"
+            >
+              Tilkjent ytelse
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--danger"
@@ -1196,17 +1292,22 @@ exports[`Storyshots @navikt/nap-process-menu State From Props 1`] = `
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Simulering"
           onClick={[Function]}
           type="button"
         >
           <span
-            className="step__icon-placeholder"
-          />
-          <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Simulering
+            <span
+              className="step__icon-placeholder"
+            />
+            <span
+              className="typo-normal"
+            >
+              Simulering
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--default"
@@ -1217,17 +1318,22 @@ exports[`Storyshots @navikt/nap-process-menu State From Props 1`] = `
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Vedtak"
           onClick={[Function]}
           type="button"
         >
           <span
-            className="step__icon-placeholder"
-          />
-          <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Vedtak
+            <span
+              className="step__icon-placeholder"
+            />
+            <span
+              className="typo-normal"
+            >
+              Vedtak
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--default"
@@ -1860,6 +1966,7 @@ exports[`Storyshots @navikt/nap-process-menu Stateful 1`] = `
 <div
   style={
     Object {
+      "backgroundColor": "white",
       "maxWidth": "1920px",
       "width": "100%",
     }
@@ -1928,37 +2035,54 @@ exports[`Storyshots @navikt/nap-process-menu Stateful 1`] = `
       >
         <button
           className="step__button step__button--active"
+          data-tooltip="Inngangsvilkår"
           onClick={[Function]}
           type="button"
         >
           <span
-            className="step__icon-placeholder"
-          />
-          <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Inngangsvilkår
+            <span
+              className="step__icon-placeholder"
+            />
+            <span
+              className="typo-normal"
+            >
+              Inngangsvilkår
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--default step__indicator step__indicator--active"
           />
         </button>
+        <div
+          className="step__arrow-container"
+        >
+          <div
+            className="step__arrow"
+          />
+        </div>
       </li>
       <li
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Beregning"
           onClick={[Function]}
           type="button"
         >
           <span
-            className="step__icon-placeholder"
-          />
-          <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Beregning
+            <span
+              className="step__icon-placeholder"
+            />
+            <span
+              className="typo-normal"
+            >
+              Beregning
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--default"
@@ -1969,19 +2093,24 @@ exports[`Storyshots @navikt/nap-process-menu Stateful 1`] = `
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Uttak"
           onClick={[Function]}
           type="button"
         >
-          <img
-            alt="Behandlet - Manuell oppgave"
-            className="step__icon step__icon--warning"
-            src=""
-          />
           <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Uttak
+            <img
+              alt="Behandlet - Manuell oppgave"
+              className="step__icon step__icon--warning"
+              src=""
+            />
+            <span
+              className="typo-normal"
+            >
+              Uttak
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--warning"
@@ -1992,17 +2121,22 @@ exports[`Storyshots @navikt/nap-process-menu Stateful 1`] = `
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Tilkjent ytelse"
           onClick={[Function]}
           type="button"
         >
           <span
-            className="step__icon-placeholder"
-          />
-          <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Tilkjent ytelse
+            <span
+              className="step__icon-placeholder"
+            />
+            <span
+              className="typo-normal"
+            >
+              Tilkjent ytelse
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--default"
@@ -2013,19 +2147,24 @@ exports[`Storyshots @navikt/nap-process-menu Stateful 1`] = `
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Simulering"
           onClick={[Function]}
           type="button"
         >
-          <img
-            alt="Oppgave løst/avslått"
-            className="step__icon step__icon--danger"
-            src=""
-          />
           <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Simulering
+            <img
+              alt="Oppgave løst/avslått"
+              className="step__icon step__icon--danger"
+              src=""
+            />
+            <span
+              className="typo-normal"
+            >
+              Simulering
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--danger"
@@ -2036,17 +2175,22 @@ exports[`Storyshots @navikt/nap-process-menu Stateful 1`] = `
         className="step"
       >
         <button
-          className="step__button step__button--undefined"
+          className="step__button"
+          data-tooltip="Vedtak"
           onClick={[Function]}
           type="button"
         >
           <span
-            className="step__icon-placeholder"
-          />
-          <span
-            className="typo-normal"
+            className="step__text-icon-container"
           >
-            Vedtak
+            <span
+              className="step__icon-placeholder"
+            />
+            <span
+              className="typo-normal"
+            >
+              Vedtak
+            </span>
           </span>
           <span
             className="step__indicator step__indicator--default"

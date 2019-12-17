@@ -4,6 +4,7 @@ exports[`Storyshots @navikt/nap-popover Closed 1`] = `
 <div
   style={
     Object {
+      "backgroundColor": "white",
       "maxWidth": "1920px",
       "width": "100%",
     }
@@ -513,6 +514,7 @@ exports[`Storyshots @navikt/nap-popover Open 1`] = `
 <div
   style={
     Object {
+      "backgroundColor": "white",
       "maxWidth": "1920px",
       "width": "100%",
     }

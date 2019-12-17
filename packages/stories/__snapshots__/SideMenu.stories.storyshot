@@ -4,6 +4,7 @@ exports[`Storyshots @navikt/nap-side-menu Props Controlled 1`] = `
 <div
   style={
     Object {
+      "backgroundColor": "white",
       "maxWidth": "1920px",
       "width": "100%",
     }
@@ -736,6 +737,7 @@ exports[`Storyshots @navikt/nap-side-menu Stateful 1`] = `
 <div
   style={
     Object {
+      "backgroundColor": "white",
       "maxWidth": "1920px",
       "width": "100%",
     }
@@ -1469,6 +1471,7 @@ exports[`Storyshots @navikt/nap-side-menu Stateful With Icons 1`] = `
 <div
   style={
     Object {
+      "backgroundColor": "white",
       "maxWidth": "1920px",
       "width": "100%",
     }
