@@ -13,7 +13,7 @@
         &:focus,
         &:hover {
             outline: none;
-            border-radius: 1px;
+            border-radius: 0.0625rem;
             background-color: #e7e9e9;
         }
 
@@ -23,7 +23,7 @@
 
         &[data-tooltip]:before {
             position: absolute;
-            bottom: -30px;
+            bottom: -1.875rem;
             right: 0;
             content: attr(data-tooltip);
             opacity: 0;
@@ -32,9 +32,9 @@
             font-size: 0.875rem;
             color: #3e3832;
             background-color: #fff2e0;
-            border-radius: 4px;
-            box-shadow: 0 1px 2px 0 #b7b1a9;
-            padding: 2px 8px;
+            border-radius: 0.25rem;
+            box-shadow: 0 0.0625rem 0.125rem 0 #b7b1a9;
+            padding: 0.125rem 0.5rem;
             pointer-events: none;
             z-index: 1;
         }
@@ -53,11 +53,11 @@
 
     &__kopiert {
         position: absolute !important;
-        height: 1px;
-        width: 1px;
+        height: 0.0625rem;
+        width: 0.0625rem;
         overflow: hidden;
-        clip: rect(1px 1px 1px 1px);
-        clip: rect(1px, 1px, 1px, 1px);
+        clip: rect(0.0625rem 0.0625rem 0.0625rem 0.0625rem);
+        clip: rect(0.0625rem, 0.0625rem, 0.0625rem, 0.0625rem);
         white-space: nowrap;
     }
 }
@@ -87,7 +87,7 @@
 
     10% {
         opacity: 0;
-        transform: translateY(5px);
+        transform: translateY(0.3125rem);
     }
 
     20%,
