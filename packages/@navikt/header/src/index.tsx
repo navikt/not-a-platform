@@ -52,7 +52,7 @@ export const Header: React.FunctionComponent<HeaderProps> = ({
                 <Popover
                     popperIsVisible={linksPopperIsVisible}
                     renderArrowElement
-                    customPopperStyles={{ top: '8px' }}
+                    customPopperStyles={{ top: '8px', zIndex: 1 }}
                     popperProps={{
                         children: (): React.ReactNode => renderLinksPopoverContent && renderLinksPopoverContent(),
                         placement: 'bottom-start',
@@ -69,7 +69,7 @@ export const Header: React.FunctionComponent<HeaderProps> = ({
                 <Popover
                     popperIsVisible={userInfoPopperIsVisible}
                     renderArrowElement
-                    customPopperStyles={{ top: '8px' }}
+                    customPopperStyles={{ top: '8px', zIndex: 1 }}
                     popperProps={{
                         children: (): React.ReactNode => renderUserPopoverContent && renderUserPopoverContent(),
                         placement: 'bottom-start',
