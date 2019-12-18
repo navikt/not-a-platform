@@ -11,5 +11,6 @@ export const withUserPopover = () => (
         userName="Navn Brukersen"
         userUnit="NFP Drammen"
         renderUserPopoverContent={(): React.ReactNode => <div>Test</div>}
+        titleHref="https://nav.no"
     />
 );

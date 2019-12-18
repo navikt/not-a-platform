@@ -21,19 +21,27 @@
     &__column {
         display: flex;
     }
-}
 
-.arrow {
-    position: absolute;
-    background-color: white;
-    transform: rotate(45deg);
-    width: 1em;
-    height: 1em;
+    &__title-anchor {
+        text-decoration: none;
 
-    &[data-placement*='bottom-start'] {
-        border-top: 1px solid #b7b1a9;
-        border-left: 1px solid #b7b1a9;
-        top: -8px;
+        &:focus {
+            outline: 3px solid #ffa733;
+        }
+    }
+
+    .arrow {
+        position: absolute;
+        background-color: white;
+        transform: rotate(45deg);
+        width: 1em;
+        height: 1em;
+
+        &[data-placement*='bottom-start'] {
+            border-top: 1px solid #b7b1a9;
+            border-left: 1px solid #b7b1a9;
+            top: -8px;
+        }
     }
 }
 

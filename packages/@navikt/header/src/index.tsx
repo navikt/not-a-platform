@@ -13,6 +13,7 @@ interface HeaderProps {
     renderUserPopoverContent?: () => React.ReactNode;
     renderLinksPopoverContent?: () => React.ReactNode;
     loading?: boolean;
+    titleHref?: string;
 }
 
 const headerCls = bem('header');
@@ -22,6 +23,7 @@ export const Header: React.FunctionComponent<HeaderProps> = ({
     userUnit,
     renderUserPopoverContent,
     renderLinksPopoverContent,
+    titleHref,
 }) => {
     const [userInfoPopperIsVisible, setUserInfoPopperIsVisible] = React.useState(false);
     const [linksPopperIsVisible, setLinksPopperIsVisible] = React.useState(false);
@@ -43,10 +45,19 @@ export const Header: React.FunctionComponent<HeaderProps> = ({
     return (
         <header className={headerCls.block}>
             <div className={headerCls.element('column')}>
-                <PageTitle className={headerCls.element('title')}>
-                    NAV
-                    <span className={headerCls.element('subtitle')}>{title}</span>
-                </PageTitle>
+                {titleHref ? (
+                    <a href={titleHref} className={headerCls.element('title-anchor')}>
+                        <PageTitle className={headerCls.element('title')}>
+                            NAV
+                            <span className={headerCls.element('subtitle')}>{title}</span>
+                        </PageTitle>
+                    </a>
+                ) : (
+                    <PageTitle className={headerCls.element('title')}>
+                        NAV
+                        <span className={headerCls.element('subtitle')}>{title}</span>
+                    </PageTitle>
+                )}
             </div>
             <div className={headerCls.element('column')}>
                 <Popover
