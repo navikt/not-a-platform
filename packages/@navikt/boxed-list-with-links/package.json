@@ -1,6 +1,6 @@
 {
     "name": "@navikt/boxed-list-with-links",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "",
     "main": "dist/BoxedListWithLinks.js",
     "module": "dist/BoxedListWithLinks.js",
@@ -9,7 +9,7 @@
     "license": "MIT",
     "dependencies": {
         "@navikt/nap-bem-utils": "1.0.1",
-        "@navikt/boxed-list": "1.0.1",
+        "@navikt/boxed-list": "1.0.2",
         "nav-frontend-typografi": "^2.0.16",
         "nav-frontend-typografi-style": "^1.0.17"
     },
