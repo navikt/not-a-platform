@@ -1,9 +1,9 @@
 {
     "name": "@navikt/boxed-list",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "",
     "main": "dist/index.js",
-    "module": "src/index.tsx",
+    "module": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "npm run clean && npm run copy-less && npm run tsc",
