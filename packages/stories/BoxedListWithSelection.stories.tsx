@@ -8,6 +8,8 @@ export const normal = (): JSX.Element => (
         items={[
             { name: 'Test 1', href: 'nav.no', selected: true },
             { name: 'Test 2', href: 'localhost:1234' },
+            { name: 'Test 2' },
         ]}
+        onClick={(index: number) => console.log(index)}
     />
 );
