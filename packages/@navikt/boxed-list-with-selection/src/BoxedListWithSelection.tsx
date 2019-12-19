@@ -1,37 +1,35 @@
-import * as React from 'react';
 import BoxedList from '@navikt/boxed-list';
-import bem from '@navikt/nap-bem-utils';
-import { Normaltekst } from 'nav-frontend-typografi';
-import './list';
+import * as React from 'react';
+import SelectionItem from './SelectionItem';
 
-interface ListItemProps {
+export interface ListItemProps {
     name: string;
-    href: string;
+    href?: string;
     selected?: boolean;
+    callback?: (index: number) => void;
 }
 
 interface BoxedListWithSelectionProps {
     items: ListItemProps[];
 }
 
-const boxedListWithSelectionItemCls = bem('boxedList__selectItem');
-
 const BoxedListWithSelection: React.FunctionComponent<BoxedListWithSelectionProps> = ({ items }) => (
     <BoxedList>
-        {items.map(({ name, href, selected }) => (
-            <li
-                className={
-                    selected
-                        ? `${boxedListWithSelectionItemCls.block} ${boxedListWithSelectionItemCls.modifier('selected')}`
-                        : boxedListWithSelectionItemCls.block
-                }
-                key={href}
-            >
-                <a href={href} className={boxedListWithSelectionItemCls.element('anchor')} aria-current={selected}>
-                    <Normaltekst>{name}</Normaltekst>
-                </a>
-            </li>
-        ))}
+        {items.map(({ name, href, selected, callback }, index) => {
+            if (!href && !callback) {
+                return null;
+            }
+            return (
+                <SelectionItem
+                    key={`${name}_${index}`}
+                    name={name}
+                    href={href}
+                    selected={selected}
+                    callback={callback}
+                    index={index}
+                />
+            );
+        })}
     </BoxedList>
 );
 

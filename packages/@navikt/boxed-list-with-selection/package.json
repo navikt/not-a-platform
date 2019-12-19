@@ -3,13 +3,13 @@
     "version": "1.0.0",
     "description": "",
     "main": "dist/BoxedListWithSelection.js",
-    "module": "src/BoxedListWithSelection.tsx",
+    "module": "dist/BoxedListWithSelection.js",
     "types": "dist/BoxedListWithSelection.d.ts",
     "author": "NAV",
     "license": "MIT",
     "dependencies": {
         "@navikt/nap-bem-utils": "1.0.1",
-        "@navikt/boxed-list": "1.0.0",
+        "@navikt/boxed-list": "1.0.2",
         "nav-frontend-typografi": "^2.0.16",
         "nav-frontend-typografi-style": "^1.0.17"
     },

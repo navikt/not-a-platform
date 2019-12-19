@@ -4,24 +4,35 @@
     height: 32px;
     padding: 0 8px;
     border-left: 8px solid white;
-}
 
-.boxedList__selectItem:hover {
-    background-color: #e7e9e9;
-    border-left: 8px solid #e7e9e9;
-}
+    &:hover {
+        background-color: #e7e9e9;
+        border-left: 8px solid #e7e9e9;
+    }
 
-.boxedList__selectItem--selected {
-    border-left: 8px solid rgb(0, 103, 197);
-    background-color: #e7e9e9;
-}
+    &--selected {
+        border-left: 8px solid rgb(0, 103, 197);
+        background-color: #e7e9e9;
 
-.boxedList__selectItem--selected:hover {
-    border-left: 8px solid rgb(0, 103, 197);
-}
+        &:hover {
+            border-left: 8px solid rgb(0, 103, 197);
+        }
+    }
 
-.boxedList__selectItem__anchor {
-    text-decoration: none;
-    color: rgb(62, 56, 50);
-    width: 100%;
+    &__anchor {
+        text-decoration: none;
+        color: rgb(62, 56, 50);
+        width: 100%;
+    }
+
+    &__button {
+        text-decoration: none;
+        color: rgb(62, 56, 50);
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        text-align: left;
+        padding: 0;
+        cursor: pointer;
+    }
 }
