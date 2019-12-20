@@ -1,16 +1,15 @@
 import * as React from 'react';
 import bem from '@navikt/nap-bem-utils';
+import { Gender } from './index';
 
-/* eslint-disable global-require */
 const maleImgPath = require('./assets/images/mann.svg') as string;
 const femaleImgPath = require('./assets/images/kvinne.svg') as string;
 const unknownGenderImagePath = require('./assets/images/ukjent.svg') as string;
-/* eslint-enable global-require */
 
-const cardCls = bem('card');
+const cardCls = bem('person-card');
 
 interface GenderIconProps {
-    gender?: string;
+    gender?: Gender;
 }
 
 const GenderIcon = ({ gender }: GenderIconProps): JSX.Element => {

@@ -4,7 +4,7 @@
     "author": "NAV",
     "license": "MIT",
     "main": "dist/index.js",
-    "module": "src/index.tsx",
+    "module": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "npm run clean && npm run copy-less && npm run copy-svg && npm run tsc",
@@ -19,7 +19,7 @@
     "dependencies": {
         "@navikt/nap-bem-utils": "1.0.1",
         "@navikt/nap-clipboard": "1.0.0",
-        "@navikt/nap-popover": "1.0.1",
+        "@navikt/nap-popover": "1.0.3",
         "nav-frontend-typografi": "^2.0.16",
         "nav-frontend-typografi-style": "^1.0.17"
     },
