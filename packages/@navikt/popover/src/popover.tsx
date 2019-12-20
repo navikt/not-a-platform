@@ -17,12 +17,24 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     customPopperStyles,
 }) => {
     const { children, ...otherPopperProps } = popperProps;
+    const [shouldRepaint, setShouldRepaint] = React.useState(false);
+
+    React.useEffect(() => setShouldRepaint(true), [popperIsVisible]);
+
+    const repaint = (scheduleUpdate: () => void): void => {
+        if (shouldRepaint) {
+            scheduleUpdate();
+            setShouldRepaint(false);
+        }
+    };
+
     return (
         <Manager>
             <Reference {...referenceProps} />
             <Popper {...otherPopperProps}>
                 {(popperChildrenProps): React.ReactNode => {
-                    const { placement, ref, style, arrowProps } = popperChildrenProps;
+                    const { placement, ref, style, arrowProps, scheduleUpdate } = popperChildrenProps;
+                    repaint(scheduleUpdate);
                     return (
                         <div
                             data-placement={placement}
