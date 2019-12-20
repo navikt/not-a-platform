@@ -1,9 +1,9 @@
 import bem from '@navikt/nap-bem-utils';
+import Clipboard from '@navikt/nap-clipboard';
 import Popover from '@navikt/nap-popover';
 import { Normaltekst } from 'nav-frontend-typografi';
 import * as React from 'react';
 import './cardStyles';
-import Clipboard from './clipboard';
 import GenderIcon from './GenderIcon';
 import { PersonCardData } from './index';
 import Menu from './Menu';

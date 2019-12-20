@@ -1,10 +1,10 @@
 {
     "version": "1.0.0",
-    "name": "@navikt/nap-person-card",
+    "name": "@navikt/nap-clipboard",
     "author": "NAV",
     "license": "MIT",
     "main": "dist/index.js",
-    "module": "src/index.tsx",
+    "module": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
         "build": "npm run clean && npm run copy-less && npm run copy-svg && npm run tsc",
@@ -17,11 +17,7 @@
         "url": "https://github.com/navikt/not-a-platform/issues"
     },
     "dependencies": {
-        "@navikt/nap-bem-utils": "1.0.1",
-        "@navikt/nap-clipboard": "1.0.0",
-        "@navikt/nap-popover": "1.0.1",
-        "nav-frontend-typografi": "^2.0.16",
-        "nav-frontend-typografi-style": "^1.0.17"
+        "@navikt/nap-bem-utils": "1.0.1"
     },
     "peerDependencies": {
         "react": "^16.11.0"
