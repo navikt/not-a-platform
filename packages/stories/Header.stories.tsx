@@ -16,6 +16,7 @@ export const standard: React.FunctionComponent = () => {
             <Popover
                 popperIsVisible={linkWindowOpen}
                 renderArrowElement
+                customPopperStyles={{ top: '8px', zIndex: 1 }}
                 popperProps={{
                     children: () => (
                         <BoxedListWithSelection
@@ -23,6 +24,9 @@ export const standard: React.FunctionComponent = () => {
                                 { name: 'Test 1', href: 'nav.no' },
                                 { name: 'Test 2', href: 'localhost:1234' },
                             ]}
+                            onClick={() => {
+                                setLinkWindowOpen(false);
+                            }}
                         />
                     ),
                     placement: 'bottom-start',
@@ -32,7 +36,12 @@ export const standard: React.FunctionComponent = () => {
                     children: ({ ref }) => (
                         <div ref={ref}>
                             <SystemButton
-                                onClick={() => setLinkWindowOpen(!linkWindowOpen)}
+                                onClick={() => {
+                                    if (unitWindowOpen) {
+                                        setUnitWindowOpen(false);
+                                    }
+                                    setLinkWindowOpen(!linkWindowOpen);
+                                }}
                                 isToggled={linkWindowOpen}
                             />
                         </div>
@@ -41,6 +50,7 @@ export const standard: React.FunctionComponent = () => {
             />
             <Popover
                 popperIsVisible={unitWindowOpen}
+                customPopperStyles={{ top: '8px', zIndex: 1 }}
                 renderArrowElement
                 popperProps={{
                     children: () => (
@@ -53,9 +63,12 @@ export const standard: React.FunctionComponent = () => {
                                 },
                                 { name: 'Test 2', href: 'localhost:1234' },
                             ]}
+                            onClick={() => {
+                                setUnitWindowOpen(false);
+                            }}
                         />
                     ),
-                    placement: 'bottom-end',
+                    placement: 'bottom-start',
                     positionFixed: true,
                 }}
                 referenceProps={{
@@ -65,6 +78,9 @@ export const standard: React.FunctionComponent = () => {
                                 name="Bruk Brukersen"
                                 unit="Enhet1"
                                 onClick={() => {
+                                    if (linkWindowOpen) {
+                                        setLinkWindowOpen(false);
+                                    }
                                     setUnitWindowOpen(!unitWindowOpen);
                                 }}
                             />

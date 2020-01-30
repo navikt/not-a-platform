@@ -15,7 +15,6 @@
     "license": "MIT",
     "dependencies": {
         "@navikt/nap-bem-utils": "1.0.1",
-        "@navikt/nap-popover": "1.0.3",
         "classnames": "^2.2.6",
         "nav-frontend-core": "^4.0.11",
         "nav-frontend-ikoner-assets": "^1.0.3",
