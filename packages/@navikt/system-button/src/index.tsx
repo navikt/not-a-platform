@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { Systemerknapp } from 'nav-frontend-ikonknapper';
 import bem from '@navikt/nap-bem-utils';
-import './systemsStyles';
+import './systemButtonStyles';
 
 const systemsCls = bem('systems');
 
-interface SystemsInterface {
+interface SystemButtonProps {
     onClick: (e: React.FormEvent<HTMLButtonElement>) => void;
     isToggled?: boolean;
 }
 
-const Systems: React.FunctionComponent<SystemsInterface> = ({ onClick, isToggled }) => {
+const SystemButton: React.FunctionComponent<SystemButtonProps> = ({ onClick, isToggled }) => {
     return (
         <div className={systemsCls.block}>
             <Systemerknapp
@@ -23,4 +23,4 @@ const Systems: React.FunctionComponent<SystemsInterface> = ({ onClick, isToggled
     );
 };
 
-export default Systems;
+export default SystemButton;

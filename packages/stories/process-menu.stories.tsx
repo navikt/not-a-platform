@@ -37,6 +37,7 @@ export const stateFromProps = (): React.ReactNode => (
                 isDisabled: true,
             },
         ]}
+        // eslint-disable-next-line no-console
         onClick={(index: number): void => console.log(index)}
     />
 );
@@ -65,6 +66,7 @@ export const stateful = (): React.ReactNode => (
                 label: 'Vedtak',
             },
         ]}
+        // eslint-disable-next-line no-console
         onClick={(index: number): void => console.log(index)}
     />
 );
@@ -113,6 +115,7 @@ export const manySteps = (): React.ReactNode => (
                 label: 'Vedtak2',
             },
         ]}
+        // eslint-disable-next-line no-console
         onClick={(index: number): void => console.log(index)}
     />
 );
