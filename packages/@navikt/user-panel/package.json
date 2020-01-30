@@ -1,5 +1,5 @@
 {
-    "name": "@navikt/nap-user-info",
+    "name": "@navikt/nap-user-panel",
     "version": "1.0.0",
     "main": "dist/index.js",
     "types": "dist/index.d.ts",

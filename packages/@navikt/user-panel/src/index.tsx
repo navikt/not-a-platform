@@ -2,18 +2,18 @@ import * as React from 'react';
 import bem from '@navikt/nap-bem-utils';
 import { NedChevron, OppChevron } from 'nav-frontend-chevron';
 import { Normaltekst as Text } from 'nav-frontend-typografi';
-import './userInfoStyles';
+import './userPanelStyles';
 
 const userCls = bem('user');
 
-interface CurrentUserInfoProps {
+interface UserPanelProps {
     name: string;
     unit?: string;
     onClick?: (e: React.FormEvent<HTMLButtonElement>) => void;
     isToggled?: boolean;
 }
 
-const UserInfo: React.FunctionComponent<CurrentUserInfoProps> = ({ name, unit, onClick, isToggled }) => {
+const UserPanel: React.FunctionComponent<UserPanelProps> = ({ name, unit, onClick, isToggled }) => {
     return (
         <>
             {onClick ? (
@@ -50,4 +50,4 @@ const UserInfo: React.FunctionComponent<CurrentUserInfoProps> = ({ name, unit, o
     );
 };
 
-export default UserInfo;
+export default UserPanel;

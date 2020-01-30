@@ -3,7 +3,7 @@ import Header from '../@navikt/header/src/index';
 import Popover from '../@navikt/popover/src/popover';
 import SystemButton from '../@navikt/system-button/src';
 import BoxedListWithSelection from '../@navikt/boxed-list-with-selection/src/BoxedListWithSelection';
-import UserInfo from '../@navikt/user-info/src';
+import UserPanel from '../@navikt/user-panel/src';
 
 export default { title: '@navikt/nap-header' };
 
@@ -74,7 +74,7 @@ export const standard: React.FunctionComponent = () => {
                 referenceProps={{
                     children: ({ ref }) => (
                         <div ref={ref}>
-                            <UserInfo
+                            <UserPanel
                                 name="Bruk Brukersen"
                                 unit="Enhet1"
                                 onClick={() => {
