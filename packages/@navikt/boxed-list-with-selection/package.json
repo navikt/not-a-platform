@@ -1,6 +1,6 @@
 {
     "name": "@navikt/boxed-list-with-selection",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "",
     "main": "dist/BoxedListWithSelection.js",
     "module": "dist/BoxedListWithSelection.js",
