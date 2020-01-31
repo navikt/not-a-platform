@@ -3,6 +3,7 @@ import Header from '../@navikt/header/src/index';
 import Popover from '../@navikt/popover/src/popover';
 import SystemButton from '../@navikt/system-button/src';
 import BoxedListWithSelection from '../@navikt/boxed-list-with-selection/src/BoxedListWithSelection';
+import BoxedListWithLinks from '../@navikt/boxed-list-with-links/src/BoxedListWithLinks';
 import UserPanel from '../@navikt/user-panel/src';
 
 export default { title: '@navikt/nap-header' };
@@ -16,13 +17,13 @@ export const standard: React.FunctionComponent = () => {
             <Popover
                 popperIsVisible={linkWindowOpen}
                 renderArrowElement
-                customPopperStyles={{ top: '8px', zIndex: 1 }}
+                customPopperStyles={{ top: '12px', zIndex: 1 }}
                 popperProps={{
                     children: () => (
-                        <BoxedListWithSelection
+                        <BoxedListWithLinks
                             items={[
-                                { name: 'Test 1', href: 'nav.no' },
-                                { name: 'Test 2', href: 'localhost:1234' },
+                                { name: 'Test 1', href: 'https://www.nav.no', isExternal: true },
+                                { name: 'Test 2', href: 'https://github.com/navikt/not-a-platform' },
                             ]}
                             onClick={() => {
                                 setLinkWindowOpen(false);
@@ -50,19 +51,12 @@ export const standard: React.FunctionComponent = () => {
             />
             <Popover
                 popperIsVisible={unitWindowOpen}
-                customPopperStyles={{ top: '8px', zIndex: 1 }}
+                customPopperStyles={{ top: '12px', zIndex: 1 }}
                 renderArrowElement
                 popperProps={{
                     children: () => (
                         <BoxedListWithSelection
-                            items={[
-                                {
-                                    name: 'Test 1',
-                                    href: 'nav.no',
-                                    selected: true,
-                                },
-                                { name: 'Test 2', href: 'localhost:1234' },
-                            ]}
+                            items={[{ name: 'Test 1', selected: true }, { name: 'Test 2' }]}
                             onClick={() => {
                                 setUnitWindowOpen(false);
                             }}
@@ -87,6 +81,7 @@ export const standard: React.FunctionComponent = () => {
                         </div>
                     ),
                 }}
+                arrowProps={{ style: { left: '140px' } }}
             />
         </Header>
     );

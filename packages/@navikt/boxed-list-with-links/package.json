@@ -1,6 +1,6 @@
 {
     "name": "@navikt/boxed-list-with-links",
-    "version": "1.0.3",
+    "version": "1.0.4",
     "description": "",
     "main": "dist/BoxedListWithLinks.js",
     "module": "dist/BoxedListWithLinks.js",
