@@ -6,20 +6,19 @@ import './list';
 
 interface ListItemProps {
     name: string;
-    href?: string;
     selected?: boolean;
 }
 
 interface BoxedListWithSelectionProps {
     items: ListItemProps[];
-    onClick?: (index: number) => void;
+    onClick?: (index: number, e: React.SyntheticEvent) => void;
 }
 
 const boxedListWithSelectionItemCls = bem('boxedList__selectItem');
 
 const BoxedListWithSelection: React.FunctionComponent<BoxedListWithSelectionProps> = ({ items, onClick }) => (
     <BoxedList>
-        {items.map(({ name, href, selected }, index) => (
+        {items.map(({ name, selected }, index) => (
             <li
                 className={
                     selected
@@ -28,25 +27,14 @@ const BoxedListWithSelection: React.FunctionComponent<BoxedListWithSelectionProp
                 }
                 key={`${name}_${index}`}
             >
-                {href ? (
-                    <a
-                        href={href}
-                        className={boxedListWithSelectionItemCls.element('anchor')}
-                        aria-current={selected}
-                        onClick={onClick ? (): void => onClick(index) : undefined}
-                    >
-                        <Normaltekst>{name}</Normaltekst>
-                    </a>
-                ) : (
-                    <button
-                        className={boxedListWithSelectionItemCls.element('button')}
-                        aria-current={selected}
-                        type="button"
-                        onClick={(): void => onClick(index)}
-                    >
-                        <Normaltekst tag="span">{name}</Normaltekst>
-                    </button>
-                )}
+                <button
+                    className={boxedListWithSelectionItemCls.element('button')}
+                    aria-current={selected}
+                    type="button"
+                    onClick={e => onClick(index, e)}
+                >
+                    <Normaltekst tag="span">{name}</Normaltekst>
+                </button>
             </li>
         ))}
     </BoxedList>

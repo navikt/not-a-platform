@@ -4,6 +4,7 @@
     "author": "NAV",
     "license": "SEE LICENSE IN LICENSE",
     "scripts": {
+        "clean": "lerna clean && lerna run clean",
         "deploy-storybook": "storybook-to-ghpages -o docs",
         "build": "lerna run build",
         "less": "lerna run lessc",
