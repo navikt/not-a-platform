@@ -1,8 +1,9 @@
 import * as React from 'react';
-import { Manager, Popper, PopperProps, Reference, ReferenceProps } from 'react-popper';
+import { Manager, Popper, PopperProps, Reference, ReferenceProps, PopperArrowProps as ArrowProps } from 'react-popper';
 
 interface PopoverProps {
     popperProps: PopperProps;
+    arrowProps?: Partial<ArrowProps>;
     referenceProps: ReferenceProps;
     popperIsVisible: boolean;
     renderArrowElement?: boolean;
@@ -15,6 +16,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     popperIsVisible,
     renderArrowElement,
     customPopperStyles,
+    arrowProps,
 }) => {
     const { children, ...otherPopperProps } = popperProps;
     const [shouldRepaint, setShouldRepaint] = React.useState(false);
@@ -33,7 +35,8 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
             <Reference {...referenceProps} />
             <Popper {...otherPopperProps}>
                 {(popperChildrenProps): React.ReactNode => {
-                    const { placement, ref, style, arrowProps, scheduleUpdate } = popperChildrenProps;
+                    const { placement, ref, style, scheduleUpdate } = popperChildrenProps;
+                    const allArrowProps = { ...popperChildrenProps.arrowProps, ...arrowProps };
                     repaint(scheduleUpdate);
                     return (
                         <div
@@ -45,7 +48,9 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
                                 visibility: popperIsVisible ? 'visible' : 'hidden',
                             }}
                         >
-                            {renderArrowElement && <div {...arrowProps} className="arrow" data-placement={placement} />}
+                            {renderArrowElement && (
+                                <div {...allArrowProps} className="arrow" data-placement={placement} />
+                            )}
                             {children(popperChildrenProps)}
                         </div>
                     );
