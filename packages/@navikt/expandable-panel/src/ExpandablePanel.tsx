@@ -1,6 +1,6 @@
+import bem from '@navikt/nap-bem-utils';
 import * as React from 'react';
 import { Collapse } from 'react-collapse';
-import bem from '../../bem-utils';
 import './expandablePanelStyles';
 
 const expandablePanelCls = bem('expandablePanel');
@@ -13,11 +13,15 @@ interface ExpandablePanelProps {
     renderHeader: () => React.ReactNode;
 }
 
-const ExpandablePanel: React.FunctionComponent<ExpandablePanelProps> = ({ renderHeader, children, theme }) => {
+const ExpandablePanel: React.FunctionComponent<ExpandablePanelProps> = ({
+    renderHeader,
+    children,
+    theme = 'neutral',
+}) => {
     const [isOpen, setIsOpen] = React.useState(false);
     return (
         <div className={expandablePanelCls.block}>
-            <div className={theme ? expandablePanelCls.elementWithModifier('themeBorder', theme) : ''} />
+            <div className={expandablePanelCls.elementWithModifier('themeBorder', theme)} />
             <div className={expandablePanelCls.element('contentWrapper')}>
                 <button
                     className={expandablePanelCls.element('button')}

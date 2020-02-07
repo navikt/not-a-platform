@@ -16,5 +16,10 @@ export const propsControlled = (): React.ReactNode => (
                 <p>Hei du</p>
             </ExpandablePanel>
         </div>
+        <div style={{ margin: '1rem 0' }}>
+            <ExpandablePanel renderHeader={() => <p>Noe tekst her</p>} theme="neutral">
+                <p>Hei du</p>
+            </ExpandablePanel>
+        </div>
     </div>
 );
