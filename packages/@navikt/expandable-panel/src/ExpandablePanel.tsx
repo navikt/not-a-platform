@@ -11,23 +11,22 @@ interface ExpandablePanelProps {
     theme?: ExpandablePanelTheme;
     children: React.ReactChild | React.ReactChildren;
     renderHeader: () => React.ReactNode;
+    isOpen: boolean;
+    onClick: () => void;
 }
 
 const ExpandablePanel: React.FunctionComponent<ExpandablePanelProps> = ({
     renderHeader,
     children,
     theme = 'neutral',
+    isOpen,
+    onClick,
 }) => {
-    const [isOpen, setIsOpen] = React.useState(false);
     return (
         <div className={expandablePanelCls.block}>
             <div className={expandablePanelCls.elementWithModifier('themeBorder', theme)} />
             <div className={expandablePanelCls.element('contentWrapper')}>
-                <button
-                    className={expandablePanelCls.element('button')}
-                    type="button"
-                    onClick={() => setIsOpen(!isOpen)}
-                >
+                <button className={expandablePanelCls.element('button')} type="button" onClick={onClick}>
                     {renderHeader()}
                 </button>
                 <Collapse isOpened={isOpen}>
