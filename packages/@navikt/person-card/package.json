@@ -19,9 +19,9 @@
     "dependencies": {
         "@navikt/nap-bem-utils": "1.0.1",
         "@navikt/nap-clipboard": "1.0.0",
-        "@navikt/nap-popover": "1.0.3",
-        "nav-frontend-typografi": "^2.0.16",
-        "nav-frontend-typografi-style": "^1.0.17"
+        "@navikt/nap-popover": "1.0.4",
+        "nav-frontend-typografi": "^2.0.17",
+        "nav-frontend-typografi-style": "^1.0.18"
     },
     "peerDependencies": {
         "react": "^16.11.0"
