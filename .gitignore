@@ -14,3 +14,4 @@ storybook-static
 coverage
 __tests__/__image_snapshots__/__diff_output__
 packages/**/*.stories.storyshot
+yarn.lock

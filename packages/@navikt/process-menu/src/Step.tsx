@@ -17,7 +17,6 @@ interface StepProps {
     index: number;
     isFinished?: boolean;
     isActive?: boolean;
-    isDisabled?: boolean;
     type?: StepType;
     onClick?: (index: number) => void;
     iconAltText?: string;
@@ -26,16 +25,7 @@ interface StepProps {
 const stepCls = bem('step');
 
 export const Step = React.memo(
-    ({
-        label,
-        index,
-        isActive,
-        onClick,
-        isDisabled,
-        isFinished,
-        type = StepType.default,
-        iconAltText,
-    }: StepProps): JSX.Element => {
+    ({ label, index, isActive, onClick, isFinished, type = StepType.default, iconAltText }: StepProps): JSX.Element => {
         const handleButtonClick = (event: React.FormEvent<HTMLButtonElement>): void => {
             event.preventDefault();
             onClick(index);

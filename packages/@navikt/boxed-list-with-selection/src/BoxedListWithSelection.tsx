@@ -6,30 +6,35 @@ import './list';
 
 interface ListItemProps {
     name: string;
-    href: string;
     selected?: boolean;
 }
 
 interface BoxedListWithSelectionProps {
     items: ListItemProps[];
+    onClick?: (index: number, e: React.SyntheticEvent) => void;
 }
 
 const boxedListWithSelectionItemCls = bem('boxedList__selectItem');
 
-const BoxedListWithSelection: React.FunctionComponent<BoxedListWithSelectionProps> = ({ items }) => (
+const BoxedListWithSelection: React.FunctionComponent<BoxedListWithSelectionProps> = ({ items, onClick }) => (
     <BoxedList>
-        {items.map(({ name, href, selected }) => (
+        {items.map(({ name, selected }, index) => (
             <li
                 className={
                     selected
                         ? `${boxedListWithSelectionItemCls.block} ${boxedListWithSelectionItemCls.modifier('selected')}`
                         : boxedListWithSelectionItemCls.block
                 }
-                key={href}
+                key={`${name}_${index}`}
             >
-                <a href={href} className={boxedListWithSelectionItemCls.element('anchor')} aria-current={selected}>
-                    <Normaltekst>{name}</Normaltekst>
-                </a>
+                <button
+                    className={boxedListWithSelectionItemCls.element('button')}
+                    aria-current={selected}
+                    type="button"
+                    onClick={e => onClick(index, e)}
+                >
+                    <Normaltekst tag="span">{name}</Normaltekst>
+                </button>
             </li>
         ))}
     </BoxedList>
