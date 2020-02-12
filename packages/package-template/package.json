@@ -4,12 +4,13 @@
     "author": "NAV",
     "license": "MIT",
     "main": "dist/index.js",
-    "module": "src/index.tsx",
+    "module": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-        "build": "npm run clean && npm run lessc && npm run tsc",
-        "tsc": "tsc -p tsconfig.json",
-        "clean": "rm -rf ./dist"
+        "build": "npm run clean && npm run copy-less && npm run tsc",
+        "clean": "rm -rf ./dist",
+        "copy-less": "copyfiles -u 1 src/**/*.less dist",
+        "tsc": "tsc -p tsconfig.json"
     },
     "bugs": {
         "url": "https://github.com/navikt/not-a-platform/issues"
