@@ -1,7 +1,10 @@
 {
     "version": "1.0.0",
-    "name": "@navikt/package-name",
+    "name": "@navikt/nap-navautocomplete",
     "author": "NAV",
+    "contributors": [
+        "Thomas Flemming <thomas.flemming@gmail.com>"
+    ],
     "license": "MIT",
     "main": "dist/index.js",
     "module": "dist/index.js",
