@@ -27,13 +27,87 @@ enum KEY {
 }
 
 const NavAutocomplete: React.FC<Props> = ({ placeholder, suggestions, ariaLabel, id, onSelect, onReset, feil }) => {
-    const [value, setValue] = React.useState<string>('');
+    const [inputValue, setInputValue] = React.useState<string>('');
     const [activeSuggestionIndex, setActiveSuggestionIndex] = React.useState(-1);
-    const [blurDelay, setBlurDelay] = React.useState<any | undefined>(null);
+    const [blurDelay, setBlurDelay] = React.useState<NodeJS.Timeout | undefined>(null);
     const [shouldBlur, setShouldBlur] = React.useState<boolean | undefined>(true);
     const [hasFocus, setHasFocus] = React.useState<boolean | undefined>(false);
     const [ariaActiveDescendant, setAriaActiveDescendant] = React.useState<boolean | undefined>(false);
     const [shouldShowSuggestions, setShouldShowSuggestions] = React.useState<boolean | undefined>(true);
+
+    /**
+     * Vil skje hver gang man legger til eller fjerner en bokstav fra inputfeltet
+     */
+    const onChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const { value } = event.target;
+        setInputValue(value);
+        setShouldShowSuggestions(true);
+        if (value.length === 0 && onReset) {
+            onReset();
+        }
+        const filteredSuggestions: Suggestion[] = searchSuggestions(suggestions, value);
+        const activeFilteredSuggestion = filteredSuggestions.filter((item: Suggestion) => {
+            if (item.key === (suggestions[activeSuggestionIndex] && suggestions[activeSuggestionIndex].key)) {
+                return item;
+            }
+            return false;
+        });
+        if (activeFilteredSuggestion.length === 0) {
+            setActiveSuggestionIndex(-1);
+        }
+    };
+
+    const avoidBlur = (): void => {
+        setShouldBlur(false);
+    };
+
+    const clearBlurDelay = (): void => {
+        if (blurDelay) {
+            clearTimeout(blurDelay);
+            setBlurDelay(null);
+        }
+        setShouldBlur(true);
+    };
+
+    const setSuggestionIndex = (index: number): void => {
+        setActiveSuggestionIndex(index);
+        clearBlurDelay();
+    };
+
+    const onBlur = (): void => {
+        const currentBlurDelay = setTimeout(() => {
+            if (shouldBlur) {
+                setHasFocus(false);
+            }
+        }, 10);
+        setBlurDelay(currentBlurDelay);
+    };
+
+    const onFocus = (): void => {
+        setHasFocus(true);
+        setActiveSuggestionIndex(-1);
+    };
+
+    /**
+     * Setter valgt forslag, og skjuler forslagslisten.
+     * @param suggestionValue
+     */
+    const onClick = (suggestion: Suggestion | undefined): void => {
+        if (suggestion) {
+            setInputValue(suggestion.value);
+            setShouldShowSuggestions(false);
+            setActiveSuggestionIndex(-1);
+            clearBlurDelay();
+            onSelect(suggestion);
+        }
+    };
+
+    const displayedSuggestions: Suggestion[] = searchSuggestions(suggestions, inputValue);
+
+    const showSuggestions = hasFocus === true && shouldShowSuggestions && displayedSuggestions.length > 0;
+
+    const activeDescendant =
+        ariaActiveDescendant && activeSuggestionIndex > -1 ? `${id}-item-${activeSuggestionIndex}` : undefined;
 
     /**
      * Behandler tastaturnavigasjon i forslagslisten.
@@ -56,21 +130,21 @@ const NavAutocomplete: React.FC<Props> = ({ placeholder, suggestions, ariaLabel,
         switch (event.keyCode) {
             case KEY.TAB:
                 if (hasSelectedSuggestion && shouldShowSuggestions) {
-                    setValue(displayedSuggestions[activeSuggestionIndex].value);
+                    setInputValue(displayedSuggestions[activeSuggestionIndex].value);
                     onClick(displayedSuggestions[activeSuggestionIndex]);
                 }
                 break;
             case KEY.ENTER:
                 if (displayedSuggestions.length === 1) {
-                    const displayedSuggestions: Suggestion[] = searchSuggestions(suggestions, value);
+                    const updatedDisplayedSuggestions: Suggestion[] = searchSuggestions(suggestions, inputValue);
                     event.preventDefault(); // Unngå form submit når bruker velger et av forslagene
-                    setValue(displayedSuggestions[0].value);
-                    onClick(displayedSuggestions[0]);
+                    setInputValue(updatedDisplayedSuggestions[0].value);
+                    onClick(updatedDisplayedSuggestions[0]);
                 } else if (hasSelectedSuggestion && shouldShowSuggestions) {
-                    const displayedSuggestions: Suggestion[] = searchSuggestions(suggestions, value);
+                    const updatedDisplayedSuggestions: Suggestion[] = searchSuggestions(suggestions, inputValue);
                     event.preventDefault(); // Unngå form submit når bruker velger et av forslagene
-                    setValue(displayedSuggestions[activeSuggestionIndex].value);
-                    onClick(displayedSuggestions[activeSuggestionIndex]);
+                    setInputValue(updatedDisplayedSuggestions[activeSuggestionIndex].value);
+                    onClick(updatedDisplayedSuggestions[activeSuggestionIndex]);
                 } else {
                     setShouldShowSuggestions(false);
                 }
@@ -110,80 +184,6 @@ const NavAutocomplete: React.FC<Props> = ({ placeholder, suggestions, ariaLabel,
         }
     };
 
-    /**
-     * Vil skje hver gang man legger til eller fjerner en bokstav fra inputfeltet
-     */
-    const onChange = (event: any) => {
-        const { value } = event.target;
-        setValue(value);
-        setShouldShowSuggestions(true);
-        if (value.length === 0 && onReset) {
-            onReset();
-        }
-        const filteredSuggestions: Suggestion[] = searchSuggestions(suggestions, value);
-        const activeFilteredSuggestion = filteredSuggestions.filter((item: Suggestion) => {
-            if (item.key === (suggestions[activeSuggestionIndex] && suggestions[activeSuggestionIndex].key)) {
-                return item;
-            }
-            return false;
-        });
-        if (activeFilteredSuggestion.length === 0) {
-            setActiveSuggestionIndex(-1);
-        }
-    };
-
-    const setSuggestionIndex = (index: number): void => {
-        setActiveSuggestionIndex(index);
-        clearBlurDelay();
-    };
-
-    const avoidBlur = (): void => {
-        setShouldBlur(false);
-    };
-
-    const clearBlurDelay = (): void => {
-        if (blurDelay) {
-            clearTimeout(blurDelay);
-            setBlurDelay(null);
-        }
-        setShouldBlur(true);
-    };
-
-    const onBlur = (): void => {
-        const currentBlurDelay = setTimeout(() => {
-            if (shouldBlur) {
-                setHasFocus(false);
-            }
-        }, 10);
-        setBlurDelay(currentBlurDelay);
-    };
-
-    const onFocus = (): void => {
-        setHasFocus(true);
-        setActiveSuggestionIndex(-1);
-    };
-
-    /**
-     * Setter valgt forslag, og skjuler forslagslisten.
-     * @param suggestionValue
-     */
-    const onClick = (suggestion: Suggestion | undefined): void => {
-        if (suggestion) {
-            setValue(suggestion.value);
-            setShouldShowSuggestions(false);
-            setActiveSuggestionIndex(-1);
-            clearBlurDelay();
-            onSelect(suggestion);
-        }
-    };
-
-    const displayedSuggestions: Suggestion[] = searchSuggestions(suggestions, value);
-
-    const showSuggestions = hasFocus === true && shouldShowSuggestions && displayedSuggestions.length > 0;
-
-    const activeDescendant =
-        ariaActiveDescendant && activeSuggestionIndex > -1 ? `${id}-item-${activeSuggestionIndex}` : undefined;
-
     return (
         <div
             className={`navAutocomplete ${isIe() && 'navAutocomplete__ie'}`}
@@ -201,11 +201,11 @@ const NavAutocomplete: React.FC<Props> = ({ placeholder, suggestions, ariaLabel,
                 aria-expanded={showSuggestions}
                 aria-activedescendant={activeDescendant}
                 placeholder={placeholder || ''}
-                value={value}
+                value={inputValue}
                 autoComplete="off"
-                onChange={(event: any) => onChange(event)}
+                onChange={(event: React.ChangeEvent<HTMLInputElement>) => onChange(event)}
                 onBlur={() => onBlur()}
-                onKeyDown={(event: any) => onKeyDown(event)}
+                onKeyDown={(event: React.KeyboardEvent<HTMLInputElement>) => onKeyDown(event)}
                 onFocus={() => onFocus()}
             />
             <ul
@@ -220,7 +220,7 @@ const NavAutocomplete: React.FC<Props> = ({ placeholder, suggestions, ariaLabel,
                             id={id}
                             index={index}
                             suggestion={suggestion}
-                            setSuggestionIndex={(index: number) => setSuggestionIndex(index)}
+                            setSuggestionIndex={(idx: number) => setSuggestionIndex(idx)}
                             active={index === activeSuggestionIndex}
                             avoidBlur={() => avoidBlur()}
                             onClick={(value: Suggestion | undefined) => onClick(value)}
