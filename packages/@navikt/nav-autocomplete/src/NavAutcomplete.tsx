@@ -26,7 +26,15 @@ enum KEY {
     ARROW_DOWN = 40,
 }
 
-const NavAutocomplete: React.FC<Props> = ({ placeholder, suggestions, ariaLabel, id, onSelect, onReset, feil }) => {
+export const NavAutocomplete: React.FC<Props> = ({
+    placeholder,
+    suggestions,
+    ariaLabel,
+    id,
+    onSelect,
+    onReset,
+    feil,
+}) => {
     const [inputValue, setInputValue] = React.useState<string>('');
     const [activeSuggestionIndex, setActiveSuggestionIndex] = React.useState(-1);
     const [blurDelay, setBlurDelay] = React.useState<NodeJS.Timeout | undefined>(null);
