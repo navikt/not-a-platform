@@ -1,6 +1,6 @@
 {
     "version": "1.0.0",
-    "name": "@navikt/nap-typeahead",
+    "name": "@navikt/nap-navautocomplete",
     "author": "NAV",
     "contributors": [
         "Thomas Flemming <thomas.flemming@gmail.com>"
@@ -19,8 +19,7 @@
         "url": "https://github.com/navikt/not-a-platform/issues"
     },
     "dependencies": {
-        "@navikt/nap-bem-utils": "1.0.1",
-        "nav-frontend-core": "^4.0.11"
+        "@navikt/nap-bem-utils": "1.0.1"
     },
     "peerDependencies": {
         "react": "^16.11.0"
