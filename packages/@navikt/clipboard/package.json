@@ -2,6 +2,9 @@
     "version": "1.0.0",
     "name": "@navikt/nap-clipboard",
     "author": "NAV",
+    "contributors": [
+        "Stephen Ramthun <stephenramthun@gmail.com>"
+    ],
     "license": "MIT",
     "main": "dist/index.js",
     "module": "dist/index.js",
