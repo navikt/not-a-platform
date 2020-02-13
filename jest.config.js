@@ -15,4 +15,5 @@ module.exports = {
     transformIgnorePatterns: ['<rootDir>.*(node_modules)(?!.*nav.*).*$'],
     collectCoverage: true,
     collectCoverageFrom: ['packages/**/src/*.(ts|tsx|js)'],
+    coveragePathIgnorePatterns: ['application-wrapper'],
 };

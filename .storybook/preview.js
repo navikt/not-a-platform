@@ -6,7 +6,7 @@ import React from 'react';
 
 addDecorator(withA11y);
 addDecorator(withInfo);
-addDecorator(storyFn => <div style={{ maxWidth: '1920px', width: '100%' }}>{storyFn()}</div>);
+addDecorator(storyFn => <div style={{ maxWidth: '1920px', width: '100%', backgroundColor: 'white' }}>{storyFn()}</div>);
 addParameters({ info: { inline: true } });
 addParameters({
     docs: {

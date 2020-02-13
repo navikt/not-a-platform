@@ -4,6 +4,7 @@ exports[`Storyshots @navikt/nap-header Normal 1`] = `
 <div
   style={
     Object {
+      "backgroundColor": "white",
       "maxWidth": "1920px",
       "width": "100%",
     }
@@ -377,6 +378,7 @@ exports[`Storyshots @navikt/nap-header With Unit 1`] = `
 <div
   style={
     Object {
+      "backgroundColor": "white",
       "maxWidth": "1920px",
       "width": "100%",
     }
@@ -782,6 +784,7 @@ exports[`Storyshots @navikt/nap-header With User Popover 1`] = `
 <div
   style={
     Object {
+      "backgroundColor": "white",
       "maxWidth": "1920px",
       "width": "100%",
     }
