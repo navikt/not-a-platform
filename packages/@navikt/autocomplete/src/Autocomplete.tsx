@@ -11,6 +11,7 @@ export interface AutocompleteProps {
     value: string;
     ariaLabel: string;
     id: string;
+    name?: string;
 }
 
 interface State {
@@ -185,7 +186,7 @@ class Autocomplete extends React.Component<AutocompleteProps, State> {
     }
 
     render() {
-        const { suggestions, id, ariaLabel, placeholder, value } = this.props;
+        const { suggestions, id, ariaLabel, placeholder, value, name } = this.props;
         const { activeSuggestionIndex, setAriaActiveDescendant, hasFocus, shouldShowSuggestions } = this.state;
 
         const showSuggestions = hasFocus && shouldShowSuggestions && suggestions.length > 0;
@@ -201,6 +202,7 @@ class Autocomplete extends React.Component<AutocompleteProps, State> {
             >
                 <input
                     id={id}
+                    name={name}
                     type="search"
                     aria-label={ariaLabel}
                     aria-autocomplete="list"

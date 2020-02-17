@@ -1,6 +1,6 @@
 {
     "name": "@navikt/nap-autocomplete",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "",
     "main": "dist/index.js",
     "module": "dist/index.js",
@@ -17,6 +17,7 @@
         "react": "^16.11.0"
     },
     "contributors": [
-        "Thomas Flemming <thomas.flemming@gmail.com>"
+        "Thomas Flemming <thomas.flemming@gmail.com>",
+        "Erlend Edvardsen Vige <erlend.edvardsen.vige@nav.no>"
     ]
 }
