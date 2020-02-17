@@ -1,5 +1,6 @@
 import * as React from 'react';
 import PersonCard from '../@navikt/person-card/src/index';
+import EmptyPersonCard from '../@navikt/person-card/src/EmptyPersonCard';
 
 export default { title: '@navikt/nap-person-card' };
 
@@ -43,5 +44,6 @@ export const stateFromProps = (): JSX.Element => (
                 </div>
             )}
         />
+        <EmptyPersonCard namePlaceholder="Ukjent navn, mangler norsk id-nr" />
     </div>
 );
