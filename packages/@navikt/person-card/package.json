@@ -1,5 +1,5 @@
 {
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "@navikt/nap-person-card",
     "author": "NAV",
     "license": "MIT",
@@ -18,7 +18,7 @@
     },
     "dependencies": {
         "@navikt/nap-bem-utils": "1.0.1",
-        "@navikt/nap-clipboard": "1.0.0",
+        "@navikt/nap-clipboard": "1.0.1",
         "@navikt/nap-popover": "1.0.4",
         "nav-frontend-typografi": "^2.0.17",
         "nav-frontend-typografi-style": "^1.0.18"
