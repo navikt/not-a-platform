@@ -1,0 +1,22 @@
+{
+    "name": "@navikt/nap-autocomplete",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "scripts": {
+        "build": "npm run clean && npm run copy-less && npm run tsc",
+        "tsc": "tsc -p tsconfig.json",
+        "clean": "rm -rf ./dist",
+        "copy-less": "copyfiles -u 1 src/*.less dist"
+    },
+    "author": "NAV",
+    "license": "MIT",
+    "peerDependencies": {
+        "react": "^16.11.0"
+    },
+    "contributors": [
+        "Thomas Flemming <thomas.flemming@gmail.com>"
+    ]
+}
