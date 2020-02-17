@@ -3,7 +3,7 @@ import { Suggestion } from './types/Suggestion';
 import AutocompleteSuggestion from './AutocompleteSuggestion';
 import './autocomplete.less';
 
-interface Props {
+export interface AutocompleteProps {
     onSelect: (value: Suggestion) => void;
     onChange: (value: string) => void;
     placeholder: string;
@@ -23,13 +23,13 @@ interface State {
     blurDelay: any;
 }
 
-class Autocomplete extends React.Component<Props, State> {
+class Autocomplete extends React.Component<AutocompleteProps, State> {
     input: HTMLInputElement;
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     inputRef: any;
 
-    constructor(props: Props) {
+    constructor(props: AutocompleteProps) {
         super(props);
         this.state = {
             activeSuggestionIndex: -1,
