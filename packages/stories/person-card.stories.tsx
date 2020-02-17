@@ -22,9 +22,24 @@ export const stateFromProps = (): JSX.Element => (
             gender={'unknown' as const}
             fodselsnummer="12345612346"
             url="#"
-            renderMenuContent={(): JSX.Element => (
-                <div>
-                    <p>Hallo</p>
+            renderLabelContent={() => (
+                <div
+                    style={{
+                        width: '70px',
+                        height: '24px',
+                        background: 'rgb(198, 194, 191)',
+                        borderRadius: '4px',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        color: 'rgb(62, 56, 50)',
+                        fontFamily: 'SourceSansPro-Regular',
+                        fontSize: '14px',
+                        fontWeight: 'normal',
+                        lineHeight: '24px',
+                    }}
+                >
+                    Under 18
                 </div>
             )}
         />

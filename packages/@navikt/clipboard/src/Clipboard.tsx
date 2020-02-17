@@ -29,6 +29,10 @@ const Clipboard = ({ children, buttonLabel = 'Kopier' }: ClipboardProps): JSX.El
         }
     }, [didCopy]);
 
+    const animationContainer = `${clipboardCls.element('animationContainer')} ${
+        shouldAnimate ? clipboardCls.element('animate') : ''
+    }`;
+
     return (
         <div className={clipboardCls.block}>
             <div ref={ref}>{children}</div>
@@ -41,7 +45,7 @@ const Clipboard = ({ children, buttonLabel = 'Kopier' }: ClipboardProps): JSX.El
                 aria-label={buttonLabel}
                 className={clipboardCls.element('button')}
             >
-                <span className={shouldAnimate ? clipboardCls.element('animate') : ''} key={didCopy ? 'check' : 'copy'}>
+                <span className={animationContainer} key={didCopy ? 'check' : 'copy'}>
                     <ClipboardIcon type={didCopy ? 'check' : 'copy'} size={24} />
                 </span>
             </button>

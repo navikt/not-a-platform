@@ -16,13 +16,34 @@ export interface PersonCardData {
     gender: Gender;
     url: string;
     isActive?: boolean;
-    renderMenuContent: () => React.ReactNode;
+    renderMenuContent?: () => React.ReactNode;
+    renderLabelContent?: () => React.ReactNode;
 }
 
 const personCardCls = bem('person-card');
 
-const PersonCard = ({ name, gender, fodselsnummer, isActive, url, renderMenuContent }: PersonCardData): JSX.Element => {
+const PersonCard = ({
+    name,
+    gender,
+    fodselsnummer,
+    isActive,
+    url,
+    renderMenuContent,
+    renderLabelContent,
+}: PersonCardData): JSX.Element => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const menuRef = React.useRef(null);
+    const handleClickOutside = event => {
+        if (menuRef.current && !menuRef.current.contains(event.target)) {
+            setIsMenuOpen(false);
+        }
+    };
+    React.useEffect(() => {
+        document.addEventListener('mousedown', handleClickOutside);
+        return () => {
+            document.removeEventListener('mousedown', handleClickOutside);
+        };
+    });
 
     const onClick = (): void => {
         setIsMenuOpen(!isMenuOpen);
@@ -50,26 +71,35 @@ const PersonCard = ({ name, gender, fodselsnummer, isActive, url, renderMenuCont
                     <Normaltekst>{fodselsnummer}</Normaltekst>
                 </Clipboard>
 
-                <Popover
-                    popperIsVisible={isMenuOpen}
-                    renderArrowElement
-                    customPopperStyles={{ top: '6px', left: '-1px' }}
-                    popperProps={{
-                        children: (): React.ReactNode =>
-                            renderMenuContent && (
-                                <div className={personCardCls.element('menu-container')}>{renderMenuContent()}</div>
-                            ),
-                        placement: 'bottom-start',
-                        positionFixed: true,
-                    }}
-                    referenceProps={{
-                        children: ({ ref }): React.ReactNode => (
-                            <div ref={ref}>
-                                <Menu onClick={onClick} isOpen={isMenuOpen} />
-                            </div>
-                        ),
-                    }}
-                />
+                {renderMenuContent && (
+                    <div ref={menuRef}>
+                        <Popover
+                            popperIsVisible={isMenuOpen}
+                            renderArrowElement
+                            customPopperStyles={{ top: '6px', left: '-1px' }}
+                            popperProps={{
+                                children: (): React.ReactNode =>
+                                    renderMenuContent && (
+                                        <div className={personCardCls.element('menu-container')}>
+                                            {renderMenuContent()}
+                                        </div>
+                                    ),
+                                placement: 'bottom-start',
+                                positionFixed: true,
+                            }}
+                            referenceProps={{
+                                children: ({ ref }): React.ReactNode => (
+                                    <div ref={ref}>
+                                        <Menu onClick={onClick} isOpen={isMenuOpen} />
+                                    </div>
+                                ),
+                            }}
+                        />
+                    </div>
+                )}
+                {renderLabelContent && (
+                    <div className={personCardCls.element('labelContainer')}>{renderLabelContent()}</div>
+                )}
             </div>
         </Card>
     );
