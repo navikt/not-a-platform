@@ -60,10 +60,14 @@
         clip: rect(0.0625rem, 0.0625rem, 0.0625rem, 0.0625rem);
         white-space: nowrap;
     }
+
+    &__animationContainer {
+        display: flex;
+    }
 }
 
 .clipboard__animate {
-    display: block;
+    display: flex;
     animation-name: fadeInOut;
     animation-duration: 1s;
     animation-timing-function: linear;
