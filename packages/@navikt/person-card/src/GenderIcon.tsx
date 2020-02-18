@@ -1,6 +1,6 @@
 import * as React from 'react';
 import bem from '@navikt/nap-bem-utils';
-import { Gender } from './index';
+import { Gender } from './PersonCard';
 
 const maleImgPath = require('./assets/images/mann.svg') as string;
 const femaleImgPath = require('./assets/images/kvinne.svg') as string;
