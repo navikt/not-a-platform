@@ -6,7 +6,7 @@ import * as React from 'react';
 import Card from './Card';
 import GenderIcon from './GenderIcon';
 import Menu from './Menu';
-import './indexStyles';
+import './PersonCardStyles';
 
 export type GenderType = 'male' | 'female' | 'unknown';
 export enum Gender {
