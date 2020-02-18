@@ -1,6 +1,6 @@
 import * as React from 'react';
 import bem from '@navikt/nap-bem-utils';
-import { Gender } from './PersonCard';
+import { GenderType } from './PersonCard';
 
 const maleImgPath = require('./assets/images/mann.svg') as string;
 const femaleImgPath = require('./assets/images/kvinne.svg') as string;
@@ -9,7 +9,7 @@ const unknownGenderImagePath = require('./assets/images/ukjent.svg') as string;
 const cardCls = bem('person-card');
 
 interface GenderIconProps {
-    gender?: Gender;
+    gender?: GenderType;
 }
 
 const GenderIcon = ({ gender }: GenderIconProps): JSX.Element => {

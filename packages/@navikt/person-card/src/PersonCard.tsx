@@ -8,12 +8,17 @@ import GenderIcon from './GenderIcon';
 import Menu from './Menu';
 import './indexStyles';
 
-export type Gender = 'male' | 'female' | 'unknown';
+export type GenderType = 'male' | 'female' | 'unknown';
+export enum Gender {
+    male = 'male',
+    female = 'female',
+    unknown = 'unknown',
+}
 
 export interface PersonCardData {
     name: string;
     fodselsnummer: string;
-    gender: Gender;
+    gender: GenderType;
     url: string;
     isActive?: boolean;
     renderMenuContent?: () => React.ReactNode;
