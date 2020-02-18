@@ -1,6 +1,5 @@
 import * as React from 'react';
-import PersonCard from '../@navikt/person-card/src/index';
-import EmptyPersonCard from '../@navikt/person-card/src/EmptyPersonCard';
+import { PersonCard, EmptyPersonCard } from '../@navikt/person-card/src/index';
 
 export default { title: '@navikt/nap-person-card' };
 
