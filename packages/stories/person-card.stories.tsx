@@ -21,7 +21,6 @@ export const stateFromProps = (): JSX.Element => (
             name="Pest Tersonsen"
             gender={'unknown' as const}
             fodselsnummer="12345612346"
-            url="#"
             renderLabelContent={() => (
                 <div
                     style={{

@@ -19,7 +19,7 @@ export interface PersonCardData {
     name: string;
     fodselsnummer: string;
     gender: GenderType;
-    url: string;
+    url?: string;
     isActive?: boolean;
     renderMenuContent?: () => React.ReactNode;
     renderLabelContent?: () => React.ReactNode;
@@ -53,22 +53,30 @@ const PersonCard = ({
     const onClick = (): void => {
         setIsMenuOpen(!isMenuOpen);
     };
+    const userDetails = (
+        <>
+            <GenderIcon gender={gender} />
+            <Normaltekst
+                tag="span"
+                className={
+                    isActive ? personCardCls.elementWithModifier('name', 'active') : personCardCls.element('name')
+                }
+            >
+                {name}
+            </Normaltekst>
+        </>
+    );
+
     return (
         <Card active={isActive}>
             <div className={personCardCls.element('container')}>
-                <a className={personCardCls.element('selector')} aria-current={isActive} href={url}>
-                    <GenderIcon gender={gender} />
-                    <Normaltekst
-                        tag="span"
-                        className={
-                            isActive
-                                ? personCardCls.elementWithModifier('name', 'active')
-                                : personCardCls.element('name')
-                        }
-                    >
-                        {name}
-                    </Normaltekst>
-                </a>
+                {url ? (
+                    <a className={personCardCls.element('selector')} aria-current={isActive} href={url}>
+                        {userDetails}
+                    </a>
+                ) : (
+                    <p className={personCardCls.elementWithModifier('selector', 'inactive')}>{userDetails}</p>
+                )}
             </div>
             <Normaltekst tag="span">/</Normaltekst>
             <div className={personCardCls.element('container')}>
