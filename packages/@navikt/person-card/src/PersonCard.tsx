@@ -69,7 +69,7 @@ const PersonCard = ({
 
     return (
         <Card active={isActive}>
-            <div className={personCardCls.element('container')}>
+            <div className={personCardCls.element('name-gender-container')}>
                 {url ? (
                     <a className={personCardCls.element('selector')} aria-current={isActive} href={url}>
                         {userDetails}
