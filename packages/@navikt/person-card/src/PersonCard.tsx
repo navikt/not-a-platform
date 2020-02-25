@@ -71,7 +71,13 @@ const PersonCard = ({
         <Card active={isActive}>
             <div className={personCardCls.element('name-gender-container')}>
                 {url ? (
-                    <a className={personCardCls.element('selector')} aria-current={isActive} href={url}>
+                    <a
+                        className={personCardCls.element('selector')}
+                        aria-current={isActive}
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
                         {userDetails}
                     </a>
                 ) : (
