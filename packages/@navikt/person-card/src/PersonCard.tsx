@@ -55,7 +55,6 @@ const PersonCard = ({
     };
     const userDetails = (
         <>
-            <GenderIcon gender={gender} />
             <Normaltekst
                 tag="span"
                 className={
@@ -70,6 +69,7 @@ const PersonCard = ({
     return (
         <Card active={isActive}>
             <div className={personCardCls.element('name-gender-container')}>
+                <GenderIcon gender={gender} />
                 {url ? (
                     <a
                         className={personCardCls.element('selector')}
