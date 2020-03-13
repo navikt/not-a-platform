@@ -24,7 +24,7 @@ export interface PersonCardData {
     renderMenuContent?: () => React.ReactNode;
     renderLabelContent?: () => React.ReactNode;
     isChild?: boolean;
-    childAge?: string;
+    childAge?: string | React.ReactNode;
 }
 
 const personCardCls = bem('person-card');
