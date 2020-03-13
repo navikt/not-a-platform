@@ -48,3 +48,9 @@ export const stateFromProps = (): JSX.Element => {
         </div>
     );
 };
+
+export const childVersion = () => (
+    <div style={{ marginBottom: '50px', display: 'flex' }}>
+        <PersonCard name="Lille Ola" gender={'male' as const} fodselsnummer="10032012345" isChild childAge="2 uker" />
+    </div>
+);

@@ -23,6 +23,8 @@ export interface PersonCardData {
     isActive?: boolean;
     renderMenuContent?: () => React.ReactNode;
     renderLabelContent?: () => React.ReactNode;
+    isChild?: boolean;
+    childAge?: string;
 }
 
 const personCardCls = bem('person-card');
@@ -35,6 +37,8 @@ const PersonCard = ({
     url,
     renderMenuContent,
     renderLabelContent,
+    isChild,
+    childAge,
 }: PersonCardData): JSX.Element => {
     const [isMenuOpen, setIsMenuOpen] = React.useState(false);
     const menuRef = React.useRef(null);
@@ -69,7 +73,7 @@ const PersonCard = ({
     return (
         <Card active={isActive}>
             <div className={personCardCls.element('name-gender-container')}>
-                <GenderIcon gender={gender} />
+                <GenderIcon gender={gender} isChild={isChild} />
                 {url ? (
                     <a
                         className={personCardCls.element('selector')}
@@ -84,42 +88,54 @@ const PersonCard = ({
                     <p className={personCardCls.elementWithModifier('selector', 'inactive')}>{userDetails}</p>
                 )}
             </div>
-            <Normaltekst tag="span">/</Normaltekst>
-            <div className={personCardCls.element('container')}>
-                <Clipboard buttonLabel={`Kopier ${name}s fødselsnummer til utklippstavlen`}>
-                    <Normaltekst>{fodselsnummer}</Normaltekst>
-                </Clipboard>
+            {isChild ? (
+                <div>
+                    {childAge && (
+                        <div className={personCardCls.element('child-age')}>
+                            <Normaltekst tag="span">({childAge})</Normaltekst>
+                        </div>
+                    )}
+                </div>
+            ) : (
+                <>
+                    <Normaltekst tag="span">/</Normaltekst>
+                    <div className={personCardCls.element('container')}>
+                        <Clipboard buttonLabel={`Kopier ${name}s fødselsnummer til utklippstavlen`}>
+                            <Normaltekst>{fodselsnummer}</Normaltekst>
+                        </Clipboard>
 
-                {renderMenuContent && (
-                    <div ref={menuRef}>
-                        <Popover
-                            popperIsVisible={isMenuOpen}
-                            renderArrowElement
-                            customPopperStyles={{ top: '6px', left: '-1px', zIndex: 1 }}
-                            popperProps={{
-                                children: (): React.ReactNode =>
-                                    renderMenuContent && (
-                                        <div className={personCardCls.element('menu-container')}>
-                                            {renderMenuContent()}
-                                        </div>
-                                    ),
-                                placement: 'bottom-start',
-                                positionFixed: true,
-                            }}
-                            referenceProps={{
-                                children: ({ ref }): React.ReactNode => (
-                                    <div ref={ref}>
-                                        <Menu onClick={onClick} isOpen={isMenuOpen} />
-                                    </div>
-                                ),
-                            }}
-                        />
+                        {renderMenuContent && (
+                            <div ref={menuRef}>
+                                <Popover
+                                    popperIsVisible={isMenuOpen}
+                                    renderArrowElement
+                                    customPopperStyles={{ top: '6px', left: '-1px', zIndex: 1 }}
+                                    popperProps={{
+                                        children: (): React.ReactNode =>
+                                            renderMenuContent && (
+                                                <div className={personCardCls.element('menu-container')}>
+                                                    {renderMenuContent()}
+                                                </div>
+                                            ),
+                                        placement: 'bottom-start',
+                                        positionFixed: true,
+                                    }}
+                                    referenceProps={{
+                                        children: ({ ref }): React.ReactNode => (
+                                            <div ref={ref}>
+                                                <Menu onClick={onClick} isOpen={isMenuOpen} />
+                                            </div>
+                                        ),
+                                    }}
+                                />
+                            </div>
+                        )}
+                        {renderLabelContent && (
+                            <div className={personCardCls.element('labelContainer')}>{renderLabelContent()}</div>
+                        )}
                     </div>
-                )}
-                {renderLabelContent && (
-                    <div className={personCardCls.element('labelContainer')}>{renderLabelContent()}</div>
-                )}
-            </div>
+                </>
+            )}
         </Card>
     );
 };
