@@ -16,9 +16,11 @@
     "dependencies": {
         "@navikt/nap-bem-utils": "1.0.1",
         "classnames": "^2.2.6",
+        "nav-frontend-chevron": "^1.0.10",
+        "nav-frontend-chevron-style": "^0.3.5",
         "nav-frontend-core": "^4.0.11",
         "nav-frontend-ikoner-assets": "^1.0.3",
-        "nav-frontend-ikonknapper": "0.0.10",
+        "nav-frontend-ikonknapper": "0.0.18",
         "nav-frontend-js-utils": "^1.0.8",
         "nav-frontend-knapper": "^1.0.37",
         "nav-frontend-knapper-style": "^0.3.32",
