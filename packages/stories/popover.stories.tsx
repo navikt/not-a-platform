@@ -13,7 +13,7 @@ const PopoverWithState = () => {
             popperProps={{
                 children: () => <div>Content</div>,
                 placement: 'bottom-start',
-                positionFixed: true,
+                strategy: 'fixed',
             }}
             referenceProps={{
                 children: ({ ref }) => (

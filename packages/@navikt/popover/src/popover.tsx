@@ -1,5 +1,11 @@
 import * as React from 'react';
-import { Manager, Popper, PopperProps, Reference, ReferenceProps, PopperArrowProps as ArrowProps } from 'react-popper';
+import {
+    PopperArrowProps as ArrowProps,
+    PopperChildrenProps,
+    PopperProps,
+    ReferenceProps,
+    usePopper,
+} from 'react-popper';
 
 interface PopoverProps {
     popperProps: PopperProps;
@@ -8,6 +14,7 @@ interface PopoverProps {
     popperIsVisible: boolean;
     renderArrowElement?: boolean;
     customPopperStyles?: React.CSSProperties;
+    popperChildrenProps?: PopperChildrenProps;
 }
 
 export const Popover: React.FunctionComponent<PopoverProps> = ({
@@ -17,46 +24,53 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
     renderArrowElement,
     customPopperStyles,
     arrowProps,
+    popperChildrenProps,
 }) => {
-    const { children, ...otherPopperProps } = popperProps;
+    const { placement, strategy } = popperProps;
+    const [referenceElement, setReferenceElement] = React.useState(null);
+    const [popperElement, setPopperElement] = React.useState(null);
+    const [arrowElement, setArrowElement] = React.useState(null);
+    const { styles, attributes, update } = usePopper(referenceElement, popperElement, {
+        placement,
+        strategy,
+        modifiers: [{ name: 'arrow', options: { element: arrowElement } }],
+    });
     const [shouldRepaint, setShouldRepaint] = React.useState(false);
 
     React.useEffect(() => setShouldRepaint(true), [popperIsVisible]);
 
-    const repaint = (scheduleUpdate: () => void): void => {
-        if (shouldRepaint) {
-            scheduleUpdate();
+    const repaint = (): void => {
+        if (shouldRepaint && update) {
+            update();
             setShouldRepaint(false);
         }
     };
-
+    repaint();
     return (
-        <Manager>
-            <Reference {...referenceProps} />
-            <Popper {...otherPopperProps}>
-                {(popperChildrenProps): React.ReactNode => {
-                    const { placement, ref, style, scheduleUpdate } = popperChildrenProps;
-                    const allArrowProps = { ...popperChildrenProps.arrowProps, ...arrowProps };
-                    repaint(scheduleUpdate);
-                    return (
-                        <div
-                            data-placement={placement}
-                            ref={ref}
-                            style={{
-                                ...style,
-                                ...customPopperStyles,
-                                visibility: popperIsVisible ? 'visible' : 'hidden',
-                            }}
-                        >
-                            {renderArrowElement && (
-                                <div {...allArrowProps} className="arrow" data-placement={placement} />
-                            )}
-                            {children(popperChildrenProps)}
-                        </div>
-                    );
+        <React.StrictMode>
+            {referenceProps.children({ ref: setReferenceElement })}
+            <div
+                {...attributes.popper}
+                ref={setPopperElement}
+                style={{
+                    ...styles.popper,
+                    ...customPopperStyles,
+                    visibility: popperIsVisible ? 'visible' : 'hidden',
                 }}
-            </Popper>
-        </Manager>
+            >
+                {renderArrowElement && (
+                    <div
+                        {...arrowProps}
+                        ref={setArrowElement}
+                        className="arrow"
+                        style={arrowProps?.style ?? styles.arrow}
+                        data-popper-placement={placement}
+                        data-popper-arrow
+                    />
+                )}
+                {popperProps.children(popperChildrenProps)}
+            </div>
+        </React.StrictMode>
     );
 };
 

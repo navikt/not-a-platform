@@ -31,7 +31,7 @@ export const standard: React.FunctionComponent = () => {
                         />
                     ),
                     placement: 'bottom-start',
-                    positionFixed: true,
+                    strategy: 'fixed',
                 }}
                 referenceProps={{
                     children: ({ ref }) => (
@@ -63,7 +63,7 @@ export const standard: React.FunctionComponent = () => {
                         />
                     ),
                     placement: 'bottom-start',
-                    positionFixed: true,
+                    strategy: 'fixed',
                 }}
                 referenceProps={{
                     children: ({ ref }) => (
