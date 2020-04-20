@@ -4,7 +4,8 @@
         "sourceMap": true,
         "module": "commonjs",
         "declaration": true,
-        "watch": false
+        "watch": false,
+        "skipLibCheck": true
     },
     "exclude": ["**/*.stories.tsx", "node_modules", "dist"]
 }

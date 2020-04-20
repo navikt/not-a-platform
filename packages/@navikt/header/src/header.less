@@ -31,15 +31,19 @@
 
     .arrow {
         position: absolute;
-        background-color: white;
-        transform: rotate(45deg);
-        width: 1em;
         height: 1em;
+        width: 1em;
 
-        &[data-placement*='bottom-start'] {
-            border-top: 1px solid #b7b1a9;
+        &[data-popper-placement*='bottom-start']:before {
+            background-color: white;
             border-left: 1px solid #b7b1a9;
+            border-top: 1px solid #b7b1a9;
+            content: '';
+            height: 1em;
+            position: absolute;
             top: -8px;
+            transform: rotate(45deg);
+            width: 1em;
         }
     }
 }

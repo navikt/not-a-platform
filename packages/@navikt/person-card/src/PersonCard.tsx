@@ -118,7 +118,7 @@ const PersonCard = ({
                                                 </div>
                                             ),
                                         placement: 'bottom-start',
-                                        positionFixed: true,
+                                        strategy: 'fixed',
                                     }}
                                     referenceProps={{
                                         children: ({ ref }): React.ReactNode => (
