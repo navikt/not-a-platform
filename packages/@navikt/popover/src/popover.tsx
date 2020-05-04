@@ -46,6 +46,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
         }
     };
     repaint();
+    const arrowStyles = { ...styles.arrow, ...arrowProps?.style };
     return (
         <React.StrictMode>
             {referenceProps.children({ ref: setReferenceElement })}
@@ -63,7 +64,7 @@ export const Popover: React.FunctionComponent<PopoverProps> = ({
                         {...arrowProps}
                         ref={setArrowElement}
                         className="arrow"
-                        style={arrowProps?.style ?? styles.arrow}
+                        style={arrowStyles}
                         data-popper-placement={placement}
                         data-popper-arrow
                     />

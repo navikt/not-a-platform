@@ -122,11 +122,12 @@ const PersonCard = ({
                                     }}
                                     referenceProps={{
                                         children: ({ ref }): React.ReactNode => (
-                                            <div ref={ref}>
+                                            <div className={personCardCls.element('menu-button-container')} ref={ref}>
                                                 <Menu onClick={onClick} isOpen={isMenuOpen} />
                                             </div>
                                         ),
                                     }}
+                                    arrowProps={{ style: { left: '8px' } }}
                                 />
                             </div>
                         )}

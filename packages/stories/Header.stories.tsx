@@ -81,7 +81,7 @@ export const standard: React.FunctionComponent = () => {
                         </div>
                     ),
                 }}
-                arrowProps={{ style: { left: '140px' } }}
+                arrowProps={{ style: { left: '140px', transform: '' } }}
             />
         </Header>
     );
