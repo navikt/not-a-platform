@@ -109,7 +109,7 @@ const PersonCard = ({
                                 <Popover
                                     popperIsVisible={isMenuOpen}
                                     renderArrowElement
-                                    customPopperStyles={{ top: '6px', left: '-1px', zIndex: 1 }}
+                                    customPopperStyles={{ top: '6px', left: '-1px', zIndex: 2 }}
                                     popperProps={{
                                         children: (): React.ReactNode =>
                                             renderMenuContent && (
