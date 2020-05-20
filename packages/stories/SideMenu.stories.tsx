@@ -140,6 +140,7 @@ export const arrowTheme = (): React.ReactNode => (
             active: index === 3,
             label: link.label,
         }))}
+        heading="Perioder"
         onClick={() => null}
         arrowTheme
     />
