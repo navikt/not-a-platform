@@ -1,5 +1,5 @@
 import bem from '@navikt/nap-bem-utils';
-import { Normaltekst } from 'nav-frontend-typografi';
+import { Normaltekst, Element } from 'nav-frontend-typografi';
 import * as React from 'react';
 import './MenuLinkStyles';
 import classnames from 'classnames';
@@ -11,11 +11,12 @@ interface MenuLinkProps {
     active?: boolean;
     iconSrc?: string;
     iconAltText?: string;
+    arrowTheme?: boolean;
 }
 
 const menuLinkCls = bem('menu-link');
 
-const MenuLink = ({ label, active, onClick, index, iconSrc, iconAltText }: MenuLinkProps): JSX.Element => {
+const MenuLink = ({ label, active, onClick, index, iconSrc, iconAltText, arrowTheme }: MenuLinkProps): JSX.Element => {
     const handleOnClick = (event: React.FormEvent<HTMLButtonElement>): void => {
         event.preventDefault();
         onClick(index);
@@ -28,17 +29,42 @@ const MenuLink = ({ label, active, onClick, index, iconSrc, iconAltText }: MenuL
         }
     );
 
+    const containerClassnames = classnames(menuLinkCls.block, {
+        [menuLinkCls.element('arrow-theme')]: arrowTheme,
+    });
+
+    const getLabel = () => {
+        const content = (
+            <>
+                {label}
+                {iconSrc && <img src={iconSrc} alt={iconAltText || ''} className={menuLinkCls.element('icon')} />}
+            </>
+        );
+
+        if (arrowTheme && active) {
+            return (
+                <Element tag="span" className={labelCls}>
+                    {content}
+                </Element>
+            );
+        }
+
+        return (
+            <Normaltekst tag="span" className={labelCls}>
+                {content}
+            </Normaltekst>
+        );
+    };
+
     return (
-        <li className={menuLinkCls.block} aria-current={active ? true : undefined}>
+        <li className={containerClassnames} aria-current={active ? true : undefined}>
             <button
                 className={active ? menuLinkCls.elementWithModifier('button', 'active') : menuLinkCls.element('button')}
                 onClick={handleOnClick}
                 type="button"
             >
-                <Normaltekst tag="span" className={labelCls}>
-                    {label}
-                    {iconSrc && <img src={iconSrc} alt={iconAltText || ''} className={menuLinkCls.element('icon')} />}
-                </Normaltekst>
+                {getLabel()}
+                {arrowTheme && active && <span className={menuLinkCls.element('arrow-right')} />}
             </button>
         </li>
     );
