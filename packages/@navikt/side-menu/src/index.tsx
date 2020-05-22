@@ -2,9 +2,10 @@ import bem from '@navikt/nap-bem-utils';
 import { Normaltekst } from 'nav-frontend-typografi';
 import * as React from 'react';
 import './indexStyles';
+import classnames from 'classnames';
 import MenuLink from './MenuLink';
 
-const SideMenuCls = bem('side-menu');
+const sideMenuCls = bem('side-menu');
 
 export interface Link {
     label: string;
@@ -13,31 +14,39 @@ export interface Link {
     iconAltText?: string;
 }
 
+export type ThemeProp = 'arrow';
+
 interface SideMenuProps {
     heading: string;
     links: Link[];
     onClick: (index: number) => void;
+    theme?: ThemeProp;
 }
 
-const SideMenu = ({ links, heading, onClick }: SideMenuProps): JSX.Element => (
-    <div className={SideMenuCls.block}>
-        <nav className={SideMenuCls.element('container')}>
-            <Normaltekst className={SideMenuCls.element('heading')}>{heading}</Normaltekst>
-            <ul className={SideMenuCls.element('link-list')}>
-                {links.map(({ label, active, iconSrc, iconAltText }, index) => (
-                    <MenuLink
-                        key={label.split(' ').join('')}
-                        label={label}
-                        active={active}
-                        onClick={onClick}
-                        index={index}
-                        iconSrc={iconSrc}
-                        iconAltText={iconAltText}
-                    />
-                ))}
-            </ul>
-        </nav>
-    </div>
-);
+const SideMenu = ({ links, heading, onClick, theme }: SideMenuProps): JSX.Element => {
+    const containerClassnames = classnames(sideMenuCls.element('container'), {
+        [sideMenuCls.modifier(theme)]: theme,
+    });
+    return (
+        <div className={sideMenuCls.block}>
+            <nav className={containerClassnames}>
+                <Normaltekst className={sideMenuCls.element('heading')}>{heading}</Normaltekst>
+                <ul className={sideMenuCls.element('link-list')}>
+                    {links.map(({ label, active, iconSrc, iconAltText }, index) => (
+                        <MenuLink
+                            key={label.split(' ').join('')}
+                            label={label}
+                            active={active}
+                            onClick={() => onClick(index)}
+                            iconSrc={iconSrc}
+                            iconAltText={iconAltText}
+                            theme={theme}
+                        />
+                    ))}
+                </ul>
+            </nav>
+        </div>
+    );
+};
 
 export default SideMenu;

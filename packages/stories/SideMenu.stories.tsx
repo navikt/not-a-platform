@@ -108,3 +108,40 @@ export const statefulWithIcons = (): React.ReactNode => (
         onClick={() => null}
     />
 );
+
+export const arrowTheme = (): React.ReactNode => (
+    <SideMenu
+        links={[
+            {
+                label: 'Sykmeldingsperiode',
+            },
+            {
+                label: 'Sykdomsvilkår',
+            },
+            {
+                label: 'Inngangsvilkår',
+            },
+            {
+                label: 'Inntektskilder',
+            },
+            {
+                label: 'Sykepengegrunnlag',
+            },
+            {
+                label: 'Fordeling',
+            },
+            {
+                label: 'Utbetalingsoversikt',
+            },
+            {
+                label: 'Oppsummering',
+            },
+        ].map((link, index) => ({
+            active: index === 3,
+            label: link.label,
+        }))}
+        heading="Perioder"
+        onClick={() => null}
+        theme="arrow"
+    />
+);

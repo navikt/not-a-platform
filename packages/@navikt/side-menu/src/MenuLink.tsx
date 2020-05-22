@@ -1,24 +1,25 @@
 import bem from '@navikt/nap-bem-utils';
-import { Normaltekst } from 'nav-frontend-typografi';
+import classnames from 'classnames';
+import TypografiBase from 'nav-frontend-typografi';
 import * as React from 'react';
 import './MenuLinkStyles';
-import classnames from 'classnames';
 
 interface MenuLinkProps {
     label: string;
-    onClick: (index: number) => void;
-    index: number;
+    onClick: () => void;
     active?: boolean;
     iconSrc?: string;
     iconAltText?: string;
+    theme?: string;
 }
 
 const menuLinkCls = bem('menu-link');
 
-const MenuLink = ({ label, active, onClick, index, iconSrc, iconAltText }: MenuLinkProps): JSX.Element => {
+const MenuLink = ({ label, active, onClick, iconSrc, iconAltText, theme }: MenuLinkProps): JSX.Element => {
+    const arrowTheme = theme === 'arrow';
     const handleOnClick = (event: React.FormEvent<HTMLButtonElement>): void => {
         event.preventDefault();
-        onClick(index);
+        onClick();
     };
 
     const labelCls = classnames(
@@ -28,17 +29,24 @@ const MenuLink = ({ label, active, onClick, index, iconSrc, iconAltText }: MenuL
         }
     );
 
+    const containerClassnames = classnames(menuLinkCls.block, {
+        [menuLinkCls.modifier('withArrows')]: arrowTheme,
+    });
+
+    const labeltype = arrowTheme && active ? 'element' : 'normaltekst';
+
     return (
-        <li className={menuLinkCls.block} aria-current={active ? true : undefined}>
+        <li className={containerClassnames} aria-current={active ? true : undefined}>
             <button
                 className={active ? menuLinkCls.elementWithModifier('button', 'active') : menuLinkCls.element('button')}
                 onClick={handleOnClick}
                 type="button"
             >
-                <Normaltekst tag="span" className={labelCls}>
+                <TypografiBase type={labeltype} tag="span" className={labelCls}>
                     {label}
                     {iconSrc && <img src={iconSrc} alt={iconAltText || ''} className={menuLinkCls.element('icon')} />}
-                </Normaltekst>
+                </TypografiBase>
+                {arrowTheme && active && <span className={menuLinkCls.element('arrow-right')} />}
             </button>
         </li>
     );
