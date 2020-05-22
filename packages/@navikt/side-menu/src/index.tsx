@@ -17,7 +17,7 @@ export interface Link {
 export type ThemeProp = 'arrow';
 
 interface SideMenuProps {
-    heading: string;
+    heading?: string;
     links: Link[];
     onClick: (index: number) => void;
     theme?: ThemeProp;
@@ -30,7 +30,7 @@ const SideMenu = ({ links, heading, onClick, theme }: SideMenuProps): JSX.Elemen
     return (
         <div className={sideMenuCls.block}>
             <nav className={containerClassnames}>
-                <Normaltekst className={sideMenuCls.element('heading')}>{heading}</Normaltekst>
+                {heading && <Normaltekst className={sideMenuCls.element('heading')}>{heading}</Normaltekst>}
                 <ul className={sideMenuCls.element('link-list')}>
                     {links.map(({ label, active, iconSrc, iconAltText }, index) => (
                         <MenuLink
