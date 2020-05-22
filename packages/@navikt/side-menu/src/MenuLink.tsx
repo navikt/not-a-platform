@@ -10,12 +10,13 @@ interface MenuLinkProps {
     active?: boolean;
     iconSrc?: string;
     iconAltText?: string;
-    arrowTheme?: boolean;
+    theme?: string;
 }
 
 const menuLinkCls = bem('menu-link');
 
-const MenuLink = ({ label, active, onClick, iconSrc, iconAltText, arrowTheme }: MenuLinkProps): JSX.Element => {
+const MenuLink = ({ label, active, onClick, iconSrc, iconAltText, theme }: MenuLinkProps): JSX.Element => {
+    const arrowTheme = theme === 'arrow';
     const handleOnClick = (event: React.FormEvent<HTMLButtonElement>): void => {
         event.preventDefault();
         onClick();

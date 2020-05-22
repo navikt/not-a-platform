@@ -14,9 +14,7 @@ export interface Link {
     iconAltText?: string;
 }
 
-const arrowTheme = 'arrow';
-
-export type ThemeProp = typeof arrowTheme;
+export type ThemeProp = 'arrow';
 
 interface SideMenuProps {
     heading: string;
@@ -26,9 +24,8 @@ interface SideMenuProps {
 }
 
 const SideMenu = ({ links, heading, onClick, theme }: SideMenuProps): JSX.Element => {
-    const hasArrowTheme = theme === arrowTheme;
     const containerClassnames = classnames(sideMenuCls.element('container'), {
-        [sideMenuCls.modifier('arrow-theme')]: hasArrowTheme,
+        [sideMenuCls.modifier(theme)]: theme,
     });
     return (
         <div className={sideMenuCls.block}>
@@ -43,7 +40,7 @@ const SideMenu = ({ links, heading, onClick, theme }: SideMenuProps): JSX.Elemen
                             onClick={() => onClick(index)}
                             iconSrc={iconSrc}
                             iconAltText={iconAltText}
-                            arrowTheme={hasArrowTheme}
+                            theme={theme}
                         />
                     ))}
                 </ul>
