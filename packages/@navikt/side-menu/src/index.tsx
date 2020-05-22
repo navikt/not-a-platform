@@ -41,8 +41,7 @@ const SideMenu = ({ links, heading, onClick, theme }: SideMenuProps): JSX.Elemen
                             key={label.split(' ').join('')}
                             label={label}
                             active={active}
-                            onClick={onClick}
-                            index={index}
+                            onClick={() => onClick(index)}
                             iconSrc={iconSrc}
                             iconAltText={iconAltText}
                             arrowTheme={hasArrowTheme}

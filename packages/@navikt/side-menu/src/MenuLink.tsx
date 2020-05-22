@@ -6,8 +6,7 @@ import './MenuLinkStyles';
 
 interface MenuLinkProps {
     label: string;
-    onClick: (index: number) => void;
-    index: number;
+    onClick: () => void;
     active?: boolean;
     iconSrc?: string;
     iconAltText?: string;
@@ -16,10 +15,10 @@ interface MenuLinkProps {
 
 const menuLinkCls = bem('menu-link');
 
-const MenuLink = ({ label, active, onClick, index, iconSrc, iconAltText, arrowTheme }: MenuLinkProps): JSX.Element => {
+const MenuLink = ({ label, active, onClick, iconSrc, iconAltText, arrowTheme }: MenuLinkProps): JSX.Element => {
     const handleOnClick = (event: React.FormEvent<HTMLButtonElement>): void => {
         event.preventDefault();
-        onClick(index);
+        onClick();
     };
 
     const labelCls = classnames(
