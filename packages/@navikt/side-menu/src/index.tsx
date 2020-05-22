@@ -14,7 +14,7 @@ export interface Link {
     iconAltText?: string;
 }
 
-type ThemeProp = 'arrow';
+export type ThemeProp = 'arrow';
 enum Themes {
     arrow = 'arrow',
 }

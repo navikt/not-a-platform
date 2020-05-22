@@ -1,14 +1,14 @@
 import * as React from 'react';
-import SideMenu, { Link } from './index';
+import SideMenu, { Link, ThemeProp } from './index';
 
 interface StatefulSideMenuProps {
     heading: string;
     links: Link[];
     onClick: (index: number) => void;
-    arrowTheme?: boolean;
+    theme?: ThemeProp;
 }
 
-const StatefulSideMenu = ({ heading, links, onClick, arrowTheme }: StatefulSideMenuProps): JSX.Element => {
+const StatefulSideMenu = ({ heading, links, onClick, theme }: StatefulSideMenuProps): JSX.Element => {
     const [currentIndex, setCurrentIndex] = React.useState(0);
     const handleOnClick = (index: number): void => {
         setCurrentIndex(index);
@@ -21,9 +21,7 @@ const StatefulSideMenu = ({ heading, links, onClick, arrowTheme }: StatefulSideM
             active: currentIndex === index,
         }));
 
-    return (
-        <SideMenu heading={heading} links={getLinksWithActiveState()} onClick={handleOnClick} arrowTheme={arrowTheme} />
-    );
+    return <SideMenu heading={heading} links={getLinksWithActiveState()} onClick={handleOnClick} theme={theme} />;
 };
 
 export default StatefulSideMenu;
