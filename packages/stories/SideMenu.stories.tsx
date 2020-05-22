@@ -142,6 +142,6 @@ export const arrowTheme = (): React.ReactNode => (
         }))}
         heading="Perioder"
         onClick={() => null}
-        arrowTheme
+        theme="arrow"
     />
 );

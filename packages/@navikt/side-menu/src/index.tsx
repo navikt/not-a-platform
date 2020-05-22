@@ -5,7 +5,7 @@ import './indexStyles';
 import classnames from 'classnames';
 import MenuLink from './MenuLink';
 
-const SideMenuCls = bem('side-menu');
+const sideMenuCls = bem('side-menu');
 
 export interface Link {
     label: string;
@@ -14,22 +14,28 @@ export interface Link {
     iconAltText?: string;
 }
 
-interface SideMenuProps {
-    heading?: string;
-    links: Link[];
-    onClick: (index: number) => void;
-    arrowTheme?: boolean;
+type ThemeProp = 'arrow';
+enum Themes {
+    arrow = 'arrow',
 }
 
-const SideMenu = ({ links, heading, onClick, arrowTheme }: SideMenuProps): JSX.Element => {
-    const containerClassnames = classnames(SideMenuCls.element('container'), {
-        [SideMenuCls.element('arrow-theme')]: arrowTheme,
+interface SideMenuProps {
+    heading: string;
+    links: Link[];
+    onClick: (index: number) => void;
+    theme?: ThemeProp;
+}
+
+const SideMenu = ({ links, heading, onClick, theme }: SideMenuProps): JSX.Element => {
+    const hasArrowTheme = theme === Themes.arrow;
+    const containerClassnames = classnames(sideMenuCls.element('container'), {
+        [sideMenuCls.modifier('arrow-theme')]: hasArrowTheme,
     });
     return (
-        <div className={SideMenuCls.block}>
+        <div className={sideMenuCls.block}>
             <nav className={containerClassnames}>
-                {heading && <Normaltekst className={SideMenuCls.element('heading')}>{heading}</Normaltekst>}
-                <ul className={SideMenuCls.element('link-list')}>
+                <Normaltekst className={sideMenuCls.element('heading')}>{heading}</Normaltekst>
+                <ul className={sideMenuCls.element('link-list')}>
                     {links.map(({ label, active, iconSrc, iconAltText }, index) => (
                         <MenuLink
                             key={label.split(' ').join('')}
@@ -39,7 +45,7 @@ const SideMenu = ({ links, heading, onClick, arrowTheme }: SideMenuProps): JSX.E
                             index={index}
                             iconSrc={iconSrc}
                             iconAltText={iconAltText}
-                            arrowTheme={arrowTheme}
+                            arrowTheme={hasArrowTheme}
                         />
                     ))}
                 </ul>

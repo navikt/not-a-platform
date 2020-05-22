@@ -71,7 +71,7 @@
         margin-left: 1rem;
     }
 
-    &__arrow-theme {
+    &--withArrows {
         .menu-link__button {
             &--active {
                 &:before {
@@ -88,17 +88,16 @@
                 }
             }
         }
-
-        .menu-link__arrow-right {
-            width: 0;
-            height: 0;
-            border-top: 16px solid transparent;
-            border-bottom: 16px solid transparent;
-            border-left: 17px solid #e7e9e9;
-            position: absolute;
-            right: -3px;
-            top: -3px;
-            background-color: white;
-        }
+    }
+    &__arrow-right {
+        width: 0;
+        height: 0;
+        border-top: 16px solid transparent;
+        border-bottom: 16px solid transparent;
+        border-left: 17px solid #e7e9e9;
+        position: absolute;
+        right: -3px;
+        top: -3px;
+        background-color: white;
     }
 }
