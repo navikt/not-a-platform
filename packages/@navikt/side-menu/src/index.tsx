@@ -24,12 +24,12 @@ interface SideMenuProps {
 }
 
 const SideMenu = ({ links, heading, onClick, theme }: SideMenuProps): JSX.Element => {
-    const containerClassnames = classnames(sideMenuCls.element('container'), {
+    const sideMenuRootClassnames = classnames(sideMenuCls.block, {
         [sideMenuCls.modifier(theme)]: theme,
     });
     return (
-        <div className={sideMenuCls.block}>
-            <nav className={containerClassnames}>
+        <div className={sideMenuRootClassnames}>
+            <nav className={sideMenuCls.element('container')}>
                 {heading && <Normaltekst className={sideMenuCls.element('heading')}>{heading}</Normaltekst>}
                 <ul className={sideMenuCls.element('link-list')}>
                     {links.map(({ label, active, iconSrc, iconAltText }, index) => (
