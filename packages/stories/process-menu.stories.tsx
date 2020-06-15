@@ -11,21 +11,24 @@ export const stateFromProps = (): React.ReactNode => (
             {
                 label: 'Inngangsvilkår',
                 type: StepType.success,
-                isFinished: true,
+                usePartialStatus: true,
             },
             {
                 label: 'Beregning',
                 type: StepType.success,
                 isFinished: true,
                 isActive: true,
+                usePartialStatus: true,
             },
             {
                 label: 'Uttak',
                 type: StepType.warning,
+                usePartialStatus: true,
             },
             {
                 label: 'Tilkjent ytelse',
                 type: StepType.danger,
+                usePartialStatus: true,
             },
             {
                 label: 'Simulering',

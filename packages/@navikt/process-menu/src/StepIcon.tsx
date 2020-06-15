@@ -1,5 +1,6 @@
 import bem from '@navikt/nap-bem-utils';
 import * as React from 'react';
+import classnames from 'classnames';
 import { StepType } from './Step';
 import './stepStyles';
 
@@ -13,21 +14,36 @@ interface StepIconProps {
     type: string;
     isFinished?: boolean;
     iconAltText?: string;
+    usePartialStatus?: boolean;
 }
 
 const stepCls = bem('step');
 
-const StepIcon = ({ type, isFinished, iconAltText }): JSX.Element => {
+const StepIcon = ({ type, isFinished, iconAltText, usePartialStatus }: StepIconProps): JSX.Element => {
+    const isWarning = type === StepType.warning;
+    const isDanger = type === StepType.danger;
+
+    if (usePartialStatus) {
+        return (
+            <div
+                className={classnames(stepCls.elementWithModifier('icon', 'partial'), {
+                    [stepCls.elementWithModifier('icon', 'success')]: !isWarning && !isDanger,
+                    [stepCls.elementWithModifier('icon', 'warning')]: isWarning,
+                    [stepCls.elementWithModifier('icon', 'danger')]: isDanger,
+                })}
+            />
+        );
+    }
     if (isFinished) {
         return (
             <img
                 src={checkImgPath}
-                alt="Behandlet - Oppgave løst/godkjent"
+                alt={iconAltText || 'Behandlet - Oppgave løst/godkjent'}
                 className={stepCls.elementWithModifier('icon', 'success')}
             />
         );
     }
-    if (type === StepType.warning) {
+    if (isWarning) {
         return (
             <img
                 src={advarselImgPath}
@@ -36,7 +52,7 @@ const StepIcon = ({ type, isFinished, iconAltText }): JSX.Element => {
             />
         );
     }
-    if (type === StepType.danger) {
+    if (isDanger) {
         return (
             <img
                 src={avslaatImgPath}

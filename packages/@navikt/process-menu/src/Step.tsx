@@ -12,20 +12,34 @@ export enum StepType {
     default = 'default',
 }
 
-interface StepProps {
+export interface StepProps {
     label: string;
-    index: number;
     isFinished?: boolean;
+    usePartialStatus?: boolean;
     isActive?: boolean;
     type?: StepType;
     onClick?: (index: number) => void;
     iconAltText?: string;
+    isDisabled?: boolean;
+}
+
+interface ComponentProps {
+    index: number;
 }
 
 const stepCls = bem('step');
 
 export const Step = React.memo(
-    ({ label, index, isActive, onClick, isFinished, type = StepType.default, iconAltText }: StepProps): JSX.Element => {
+    ({
+        label,
+        index,
+        isActive,
+        onClick,
+        isFinished,
+        type = StepType.default,
+        iconAltText,
+        usePartialStatus,
+    }: StepProps & ComponentProps): JSX.Element => {
         const handleButtonClick = (event: React.FormEvent<HTMLButtonElement>): void => {
             event.preventDefault();
             onClick(index);
@@ -33,6 +47,7 @@ export const Step = React.memo(
 
         const stepIndicatorCls = classnames(stepCls.elementWithModifier('indicator', type), {
             [stepCls.elementWithModifier('indicator', 'active')]: isActive,
+            [stepCls.elementWithModifier('indicator', 'partial')]: usePartialStatus,
         });
 
         return (
@@ -44,7 +59,12 @@ export const Step = React.memo(
                     data-tooltip={label}
                 >
                     <span className={stepCls.element('text-icon-container')}>
-                        <StepIcon type={type} isFinished={isFinished} iconAltText={iconAltText} />
+                        <StepIcon
+                            type={type}
+                            isFinished={isFinished}
+                            iconAltText={iconAltText}
+                            usePartialStatus={usePartialStatus}
+                        />
                         <Normaltekst tag="span">{label}</Normaltekst>
                     </span>
                     <span className={stepIndicatorCls} />

@@ -1,25 +1,9 @@
 import bem from '@navikt/nap-bem-utils';
 import * as React from 'react';
 import './indexStyles';
-import Step, { StepType } from './Step';
-
-interface StepProps {
-    label: string;
-    type?: StepType;
-    isActive?: boolean;
-    isFinished?: boolean;
-    isDisabled?: boolean;
-    iconAltText?: string;
-}
+import Step, { StepProps } from './Step';
 
 interface ProcessMenuProps {
-    /**
-     * label: string;
-    type?: StepType ('warning' | 'success' | 'danger' | 'default');
-    isActive?: boolean;
-    isFinished?: boolean;
-    isDisabled?: boolean;
-     */
     steps: StepProps[];
     onClick?: (index: number) => void;
 }
