@@ -8,7 +8,8 @@ import {
 } from 'react-popper';
 
 interface PopoverProps {
-    popperProps: PopperProps;
+    // eslint-disable-next-line
+    popperProps: PopperProps<any>;
     arrowProps?: Partial<ArrowProps>;
     referenceProps: ReferenceProps;
     popperIsVisible: boolean;
