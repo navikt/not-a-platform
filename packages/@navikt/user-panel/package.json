@@ -15,10 +15,10 @@
     "license": "MIT",
     "dependencies": {
         "@navikt/nap-bem-utils": "1.0.1",
-        "nav-frontend-chevron": "^1.0.10",
-        "nav-frontend-chevron-style": "^0.3.5",
-        "nav-frontend-typografi": "^2.0.16",
-        "nav-frontend-typografi-style": "^1.0.17"
+        "nav-frontend-chevron": "^1.0.28",
+        "nav-frontend-chevron-style": "^1.0.4",
+        "nav-frontend-typografi": "^3.0.3",
+        "nav-frontend-typografi-style": "^1.0.34"
     },
     "peerDependencies": {
         "react": "^16.11.0"
