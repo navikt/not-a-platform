@@ -7,7 +7,7 @@ export const stateFromProps = (): JSX.Element => {
     return (
         <div style={{ marginBottom: '50px', display: 'flex' }}>
             <PersonCard
-                name="Uda Walawwe Mahim Bandaralage Chanaka Asanga Welegedara"
+                name="Ekstremt Langt Navn Navnesen For Å Teste Hva Som Skjer Med Brytningen"
                 gender={'female' as const}
                 fodselsnummer="12345612345"
                 url="#"
