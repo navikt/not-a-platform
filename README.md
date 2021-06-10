@@ -1,6 +1,9 @@
 not-a-platform
 ================
 
+**OBS! Dette repoet er arkivert og tilhørende npm-moduler på npmjs.com er deprecated**
+
+----------------
 Dette er en samling av npm-moduler som skal kunne brukes på tvers av frontend-kodebaser i saksbehandlingsløsningene som utvikles for foreldrepenger og pleiepenger (og andre ytelser knyttet til kapittel 9 i Folketrygdloven). Bruken er ikke begrenset til disse bruksområdene, og koden skal for øvrig være helt frikoblet fra domenet som det jobbes med, men funksjonaliteten som lages er basert på behov som har oppstått/oppstår i forbindelse med saksbehandling av de nevnte ytelsene.
 
 Modulene består i hovedsak av React-komponenter med tilhørende styling og funksjonalitet, men vil også kunne omfatte andre ting som er lurt å lage likt på tvers.
